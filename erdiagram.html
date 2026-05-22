@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ER Diagram - Proximity Deals Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            background: #f4f4f4;
+            color: #171717;
+            font-family: "Poppins", Arial, sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            padding: 24px;
+        }
+
+        .slide {
+            width: min(96vw, 1440px);
+            aspect-ratio: 16 / 8.3;
+            background: #ffffff;
+            border: 1px solid #d7d7d7;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        text {
+            font-family: "Poppins", Arial, sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .page-title {
+            fill: #171717;
+            font-size: 29px;
+            font-weight: 700;
+        }
+
+        .page-subtitle {
+            fill: #525252;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .section {
+            fill: #525252;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .entity-card {
+            fill: #ffffff;
+            stroke: #171717;
+            stroke-width: 0.8;
+        }
+
+        .entity-head {
+            fill: #f2f2f2;
+            stroke: #171717;
+            stroke-width: 0.8;
+        }
+
+        .entity-title {
+            fill: #171717;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .field {
+            fill: #262626;
+            font-size: 10.5px;
+            font-weight: 400;
+        }
+
+        .field-key {
+            fill: #171717;
+            font-size: 10.5px;
+            font-weight: 700;
+        }
+
+        .field-muted {
+            fill: #606060;
+            font-size: 9.8px;
+            font-weight: 400;
+        }
+
+        .relationship {
+            fill: none;
+            stroke: #171717;
+            stroke-width: 0.75;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .relationship-light {
+            fill: none;
+            stroke: #8c8c8c;
+            stroke-width: 0.65;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 5 5;
+        }
+
+        .rel-label {
+            fill: #404040;
+            font-size: 9.5px;
+            font-weight: 600;
+        }
+
+        .note-box {
+            fill: #fafafa;
+            stroke: #cfcfcf;
+            stroke-width: 0.7;
+        }
+
+        .note-title {
+            fill: #171717;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .note-text {
+            fill: #525252;
+            font-size: 9.5px;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+<main class="slide">
+    <svg viewBox="0 0 1600 830" role="img" aria-label="Clean crow's foot ER diagram for real-time proximity deals platform">
+        <defs>
+            <marker id="one-end" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+                <path d="M 4 1 L 4 11 M 8 1 L 8 11" fill="none" stroke="#171717" stroke-width="0.75"></path>
+            </marker>
+            <marker id="one-start" markerWidth="12" markerHeight="12" refX="2" refY="6" orient="auto" markerUnits="strokeWidth">
+                <path d="M 8 1 L 8 11 M 4 1 L 4 11" fill="none" stroke="#171717" stroke-width="0.75"></path>
+            </marker>
+            <marker id="many-end" markerWidth="18" markerHeight="18" refX="17" refY="9" orient="auto" markerUnits="strokeWidth">
+                <path d="M 17 9 L 2 2 M 17 9 L 2 9 M 17 9 L 2 16" fill="none" stroke="#171717" stroke-width="0.75"></path>
+            </marker>
+            <marker id="many-start" markerWidth="18" markerHeight="18" refX="1" refY="9" orient="auto" markerUnits="strokeWidth">
+                <path d="M 1 9 L 16 2 M 1 9 L 16 9 M 1 9 L 16 16" fill="none" stroke="#171717" stroke-width="0.75"></path>
+            </marker>
+        </defs>
+
+        <text class="page-title" x="60" y="60">ER Diagram: Real-Time Proximity Deals Platform</text>
+        <text class="page-subtitle" x="60" y="86">Crow's foot model for app screens, 200m local market discovery, deal metadata, recommendations, notifications, and server-side feed ingestion.</text>
+
+        <text class="section" x="60" y="126">Client App Domain</text>
+        <text class="section" x="586" y="126">Deal Discovery Core</text>
+        <text class="section" x="1100" y="126">Server Query and Data Ingestion</text>
+
+        <path class="relationship" d="M 276 210 H 340" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship" d="M 170 274 V 330" marker-start="url(#one-start)" marker-end="url(#one-end)"></path>
+        <path class="relationship" d="M 276 234 H 308 V 430 H 340" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship" d="M 170 274 V 500" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship" d="M 276 250 H 318 V 570 H 340" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship" d="M 276 254 H 328 V 692 H 340" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship-light" d="M 556 210 H 600" marker-start="url(#many-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship-light" d="M 556 430 H 600" marker-start="url(#many-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship-light" d="M 556 570 C 578 570 578 430 600 430" marker-start="url(#many-start)" marker-end="url(#many-end)"></path>
+
+        <path class="relationship" d="M 796 210 H 852 V 368 H 894" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship" d="M 894 460 H 798" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship" d="M 700 486 V 510" marker-start="url(#one-start)" marker-end="url(#one-end)"></path>
+        <path class="relationship" d="M 700 631 V 692 H 556" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship" d="M 798 570 H 894" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+
+        <path class="relationship" d="M 1120 210 H 1048 V 210 H 796" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship" d="M 1210 274 V 326" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship" d="M 1320 392 H 1370" marker-start="url(#many-start)" marker-end="url(#one-end)"></path>
+        <path class="relationship" d="M 1480 456 V 505" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship" d="M 1370 568 H 1320" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship" d="M 1210 629 V 690 H 798" marker-start="url(#one-start)" marker-end="url(#many-end)"></path>
+        <path class="relationship-light" d="M 1120 560 H 798" marker-start="url(#many-start)" marker-end="url(#one-end)"></path>
+
+        <text class="rel-label" x="294" y="197">owns</text>
+        <text class="rel-label" x="184" y="314">has</text>
+        <text class="rel-label" x="290" y="410">sends</text>
+        <text class="rel-label" x="184" y="484">opens</text>
+        <text class="rel-label" x="304" y="554">receives</text>
+        <text class="rel-label" x="302" y="676">favorites</text>
+        <text class="rel-label" x="565" y="198">returns</text>
+        <text class="rel-label" x="565" y="418">shows</text>
+        <text class="rel-label" x="820" y="354">has deals</text>
+        <text class="rel-label" x="820" y="445">classified by</text>
+        <text class="rel-label" x="716" y="504">details</text>
+        <text class="rel-label" x="805" y="556">recommends</text>
+        <text class="rel-label" x="1010" y="198">located in</text>
+        <text class="rel-label" x="1224" y="314">maps</text>
+        <text class="rel-label" x="1338" y="378">from source</text>
+        <text class="rel-label" x="1492" y="488">runs</text>
+        <text class="rel-label" x="1332" y="556">fetches</text>
+        <text class="rel-label" x="1032" y="674">source for</text>
+
+        <g transform="translate(60 150)">
+            <rect class="entity-card" width="216" height="124" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">USER</text>
+            <text class="field-key" x="16" y="54">PK user_id</text>
+            <text class="field" x="16" y="73">email</text>
+            <text class="field" x="16" y="92">home_location_id FK</text>
+            <text class="field-muted" x="16" y="111">profile + preferences owner</text>
+        </g>
+
+        <g transform="translate(60 330)">
+            <rect class="entity-card" width="216" height="124" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">PROFILE</text>
+            <text class="field-key" x="16" y="54">PK profile_id</text>
+            <text class="field" x="16" y="73">user_id FK</text>
+            <text class="field" x="16" y="92">dietary_filters</text>
+            <text class="field-muted" x="16" y="111">notification settings</text>
+        </g>
+
+        <g transform="translate(60 500)">
+            <rect class="entity-card" width="216" height="136" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">USER_LOCATION</text>
+            <text class="field-key" x="16" y="54">PK location_id</text>
+            <text class="field" x="16" y="73">user_id FK</text>
+            <text class="field" x="16" y="92">latitude</text>
+            <text class="field" x="16" y="111">longitude</text>
+            <text class="field-muted" x="16" y="130">home / current</text>
+        </g>
+
+        <g transform="translate(340 150)">
+            <rect class="entity-card" width="216" height="124" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">YOUR_LIST</text>
+            <text class="field-key" x="16" y="54">PK list_id</text>
+            <text class="field" x="16" y="73">user_id FK</text>
+            <text class="field" x="16" y="92">list_type</text>
+            <text class="field-muted" x="16" y="111">best deals / you might like</text>
+        </g>
+
+        <g transform="translate(340 370)">
+            <rect class="entity-card" width="216" height="124" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">SEARCH_QUERY</text>
+            <text class="field-key" x="16" y="54">PK query_id</text>
+            <text class="field" x="16" y="73">user_id FK</text>
+            <text class="field" x="16" y="92">query_text</text>
+            <text class="field-muted" x="16" y="111">radius_meters: 200</text>
+        </g>
+
+        <g transform="translate(340 510)">
+            <rect class="entity-card" width="216" height="124" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">NOTIFICATION</text>
+            <text class="field-key" x="16" y="54">PK notification_id</text>
+            <text class="field" x="16" y="73">user_id FK</text>
+            <text class="field" x="16" y="92">deal_id FK</text>
+            <text class="field-muted" x="16" y="111">push_count / sent_at</text>
+        </g>
+
+        <g transform="translate(340 650)">
+            <rect class="entity-card" width="216" height="84" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">FAVORITE</text>
+            <text class="field-key" x="16" y="54">PK favorite_id</text>
+            <text class="field" x="16" y="73">user_id FK</text>
+        </g>
+
+        <g transform="translate(600 150)">
+            <rect class="entity-card" width="196" height="124" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 182 Q 196 0 196 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">MARKET</text>
+            <text class="field-key" x="16" y="54">PK market_id</text>
+            <text class="field" x="16" y="73">region_id FK</text>
+            <text class="field" x="16" y="92">lat / lng</text>
+            <text class="field-muted" x="16" y="111">near user within 200m</text>
+        </g>
+
+        <g transform="translate(600 370)">
+            <rect class="entity-card" width="198" height="116" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 184 Q 198 0 198 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">DEAL</text>
+            <text class="field-key" x="16" y="54">PK deal_id</text>
+            <text class="field" x="16" y="73">market_id FK</text>
+            <text class="field" x="16" y="92">category_id FK</text>
+        </g>
+
+        <g transform="translate(600 510)">
+            <rect class="entity-card" width="198" height="121" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 184 Q 198 0 198 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">DEAL_INFO</text>
+            <text class="field-key" x="16" y="54">PK deal_info_id</text>
+            <text class="field" x="16" y="73">deal_id FK</text>
+            <text class="field" x="16" y="92">discount_rate</text>
+            <text class="field-muted" x="16" y="111">price / price_measure</text>
+        </g>
+
+        <g transform="translate(894 370)">
+            <rect class="entity-card" width="206" height="116" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 192 Q 206 0 206 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">CATEGORY</text>
+            <text class="field-key" x="16" y="54">PK category_id</text>
+            <text class="field" x="16" y="73">category_name</text>
+            <text class="field-muted" x="16" y="92">deals / veggies / meat / etc.</text>
+        </g>
+
+        <g transform="translate(894 510)">
+            <rect class="entity-card" width="206" height="124" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 192 Q 206 0 206 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">RECOMMENDATION</text>
+            <text class="field-key" x="16" y="54">PK recommendation_id</text>
+            <text class="field" x="16" y="73">user_id FK</text>
+            <text class="field" x="16" y="92">deal_id FK</text>
+            <text class="field-muted" x="16" y="111">newest / best / might like</text>
+        </g>
+
+        <g transform="translate(1120 150)">
+            <rect class="entity-card" width="200" height="124" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 186 Q 200 0 200 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">REGION</text>
+            <text class="field-key" x="16" y="54">PK region_id</text>
+            <text class="field" x="16" y="73">city</text>
+            <text class="field" x="16" y="92">geo_boundary</text>
+            <text class="field-muted" x="16" y="111">regional mapping layer</text>
+        </g>
+
+        <g transform="translate(1120 326)">
+            <rect class="entity-card" width="200" height="124" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 186 Q 200 0 200 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">QUERY_DATA</text>
+            <text class="field-key" x="16" y="54">PK query_data_id</text>
+            <text class="field" x="16" y="73">region_id FK</text>
+            <text class="field" x="16" y="92">normalized_payload</text>
+            <text class="field-muted" x="16" y="111">live_updated_at</text>
+        </g>
+
+        <g transform="translate(1120 505)">
+            <rect class="entity-card" width="200" height="124" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 186 Q 200 0 200 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">RAW_FEED_ITEM</text>
+            <text class="field-key" x="16" y="54">PK raw_item_id</text>
+            <text class="field" x="16" y="73">source_id FK</text>
+            <text class="field" x="16" y="92">job_id FK</text>
+            <text class="field-muted" x="16" y="111">payload / fetched_at</text>
+        </g>
+
+        <g transform="translate(1370 330)">
+            <rect class="entity-card" width="166" height="126" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 152 Q 166 0 166 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">DATA_SOURCE</text>
+            <text class="field-key" x="16" y="54">PK source_id</text>
+            <text class="field" x="16" y="73">source_type</text>
+            <text class="field-muted" x="16" y="92">RSS / market API</text>
+            <text class="field-muted" x="16" y="111">flyer app</text>
+        </g>
+
+        <g transform="translate(1370 505)">
+            <rect class="entity-card" width="166" height="126" rx="14"></rect>
+            <path class="entity-head" d="M 14 0 H 152 Q 166 0 166 14 V 36 H 0 V 14 Q 0 0 14 0 Z"></path>
+            <text class="entity-title" x="16" y="24">INGESTION_JOB</text>
+            <text class="field-key" x="16" y="54">PK job_id</text>
+            <text class="field" x="16" y="73">source_id FK</text>
+            <text class="field" x="16" y="92">job_type</text>
+            <text class="field-muted" x="16" y="111">daily / 36h cleanup</text>
+        </g>
+
+        <rect class="note-box" x="60" y="755" width="1480" height="44" rx="12"></rect>
+        <text class="note-title" x="82" y="779">Operational rules</text>
+        <text class="note-text" x="218" y="779">Map and search default to a 200m radius. Server jobs ingest RSS, market APIs, and flyer-app data, normalize it into regional query data, and remove stale deals after 36 hours.</text>
+    </svg>
+</main>
+</body>
+</html>

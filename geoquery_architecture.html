@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ER Diagram - Geo-Query Deal Delivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            background: #f4f4f4;
+            color: #171717;
+            font-family: "Poppins", Arial, sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            padding: 24px;
+        }
+
+        .slide {
+            width: min(96vw, 1440px);
+            aspect-ratio: 16 / 9;
+            background: #ffffff;
+            border: 1px solid #d7d7d7;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        text {
+            font-family: "Poppins", Arial, sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .title {
+            fill: #171717;
+            font-size: 29px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            fill: #525252;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .section-label {
+            fill: #525252;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .entity {
+            fill: #ffffff;
+            stroke: #171717;
+            stroke-width: 0.8;
+        }
+
+        .entity-title {
+            fill: #171717;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .attr {
+            fill: #404040;
+            font-size: 10.2px;
+            font-weight: 400;
+        }
+
+        .key {
+            fill: #171717;
+            font-size: 10.2px;
+            font-weight: 700;
+        }
+
+        .relationship {
+            fill: #ffffff;
+            stroke: #171717;
+            stroke-width: 0.8;
+        }
+
+        .relationship-text {
+            fill: #171717;
+            font-size: 10.4px;
+            font-weight: 700;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+
+        .line {
+            fill: none;
+            stroke: #171717;
+            stroke-width: 0.75;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .cardinality {
+            fill: #171717;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .note-box {
+            fill: #ffffff;
+            stroke: #cfcfcf;
+            stroke-width: 0.7;
+        }
+
+        .note-title {
+            fill: #171717;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .note-text {
+            fill: #525252;
+            font-size: 9.5px;
+        }
+    </style>
+</head>
+<body>
+<main class="slide">
+    <svg viewBox="0 0 1600 900" role="img" aria-label="Chen notation ER diagram for geo-query deal delivery architecture">
+        <text class="title" x="60" y="60">ER Diagram: Geo-Query Deal Delivery Architecture</text>
+        <text class="subtitle" x="60" y="86">Chen-style ER diagram using rectangles for entities and diamonds for relationships: coordinate request, 2 km geo-query, store matching, live deal join, and GeoJSON map response.</text>
+
+        <text class="section-label" x="70" y="128">Client Layer</text>
+        <text class="section-label" x="450" y="128">Backend Query Layer</text>
+        <text class="section-label" x="870" y="128">Geo and Deal Data Layer</text>
+        <text class="section-label" x="1260" y="128">Map Response Layer</text>
+
+        <path class="line" d="M 260 220 H 335"></path>
+        <path class="line" d="M 425 220 H 520"></path>
+        <text class="cardinality" x="276" y="210">1</text>
+        <text class="cardinality" x="506" y="210">N</text>
+
+        <path class="line" d="M 700 220 H 775"></path>
+        <path class="line" d="M 865 220 H 940"></path>
+        <text class="cardinality" x="716" y="210">1</text>
+        <text class="cardinality" x="925" y="210">N</text>
+
+        <path class="line" d="M 1140 220 H 1215"></path>
+        <path class="line" d="M 1305 220 H 1360"></path>
+        <text class="cardinality" x="1156" y="210">1</text>
+        <text class="cardinality" x="1344" y="210">N</text>
+
+        <path class="line" d="M 620 280 V 355"></path>
+        <path class="line" d="M 620 445 V 520"></path>
+        <text class="cardinality" x="632" y="300">1</text>
+        <text class="cardinality" x="632" y="510">N</text>
+
+        <path class="line" d="M 760 610 H 835"></path>
+        <path class="line" d="M 925 610 H 1000"></path>
+        <text class="cardinality" x="776" y="600">N</text>
+        <text class="cardinality" x="984" y="600">N</text>
+
+        <path class="line" d="M 1180 610 H 1260 V 425 H 1385"></path>
+        <text class="cardinality" x="1196" y="600">N</text>
+        <text class="cardinality" x="1334" y="510">1</text>
+
+        <path class="line" d="M 1110 456 V 464"></path>
+        <path class="line" d="M 1110 512 V 520"></path>
+        <text class="cardinality" x="1122" y="464">1</text>
+        <text class="cardinality" x="1122" y="518">N</text>
+
+        <path class="line" d="M 1200 380 H 1340"></path>
+        <path class="line" d="M 1430 380 H 1460 V 280"></path>
+        <text class="cardinality" x="1276" y="370">1</text>
+        <text class="cardinality" x="1442" y="300">1</text>
+
+        <path class="line" d="M 260 610 H 335"></path>
+        <path class="line" d="M 425 610 H 520"></path>
+        <text class="cardinality" x="276" y="600">1</text>
+        <text class="cardinality" x="506" y="600">N</text>
+
+        <path class="line" d="M 260 250 V 580"></path>
+        <path class="line" d="M 1460 280 V 580 H 260"></path>
+
+        <g transform="translate(70 170)">
+            <rect class="entity" width="190" height="100"></rect>
+            <text class="entity-title" x="16" y="23">CLIENT</text>
+            <text class="key" x="16" y="54">PK client_session_id</text>
+            <text class="attr" x="16" y="74">app_web_channel</text>
+            <text class="attr" x="16" y="92">map_ui_filters</text>
+        </g>
+
+        <g transform="translate(520 170)">
+            <rect class="entity" width="180" height="110"></rect>
+            <text class="entity-title" x="16" y="23">BACKEND_API</text>
+            <text class="key" x="16" y="54">PK request_id</text>
+            <text class="attr" x="16" y="74">FastAPI / Node.js</text>
+            <text class="attr" x="16" y="94">auth + validation</text>
+        </g>
+
+        <g transform="translate(940 170)">
+            <rect class="entity" width="200" height="110"></rect>
+            <text class="entity-title" x="16" y="23">GEO_INDEX</text>
+            <text class="key" x="16" y="54">PK geo_index_id</text>
+            <text class="attr" x="16" y="74">PostGIS / Redis Geo</text>
+            <text class="attr" x="16" y="94">Google Maps source</text>
+        </g>
+
+        <g transform="translate(1360 170)">
+            <rect class="entity" width="190" height="110"></rect>
+            <text class="entity-title" x="16" y="23">MAP_RESPONSE</text>
+            <text class="key" x="16" y="54">PK response_id</text>
+            <text class="attr" x="16" y="74">GeoJSON payload</text>
+            <text class="attr" x="16" y="94">distance + deals[]</text>
+        </g>
+
+        <g transform="translate(520 520)">
+            <rect class="entity" width="240" height="108"></rect>
+            <text class="entity-title" x="16" y="23">STORE</text>
+            <text class="key" x="16" y="54">PK store_id</text>
+            <text class="attr" x="16" y="74">market_id, latitude, longitude</text>
+            <text class="attr" x="16" y="94">within 2 km candidate set</text>
+        </g>
+
+        <g transform="translate(1000 520)">
+            <rect class="entity" width="180" height="108"></rect>
+            <text class="entity-title" x="16" y="23">LIVE_DEAL</text>
+            <text class="key" x="16" y="54">PK deal_id</text>
+            <text class="attr" x="16" y="74">discount_rate</text>
+            <text class="attr" x="16" y="94">price_measure</text>
+        </g>
+
+        <g transform="translate(1020 348)">
+            <rect class="entity" width="180" height="108"></rect>
+            <text class="entity-title" x="16" y="23">DEAL_SOURCE</text>
+            <text class="key" x="16" y="54">PK source_id</text>
+            <text class="attr" x="16" y="74">Flipp API</text>
+            <text class="attr" x="16" y="94">PC Express GraphQL</text>
+        </g>
+
+        <g transform="translate(70 560)">
+            <rect class="entity" width="190" height="100"></rect>
+            <text class="entity-title" x="16" y="23">MAP_SDK</text>
+            <text class="key" x="16" y="54">PK render_id</text>
+            <text class="attr" x="16" y="74">Mapbox / Leaflet</text>
+            <text class="attr" x="16" y="92">Google Maps SDK</text>
+        </g>
+
+        <g transform="translate(335 168)">
+            <polygon class="relationship" points="45,0 90,52 45,104 0,52"></polygon>
+            <text class="relationship-text" x="45" y="43">SENDS</text>
+            <text class="relationship-text" x="45" y="58">LAT/LNG</text>
+        </g>
+
+        <g transform="translate(775 168)">
+            <polygon class="relationship" points="45,0 90,52 45,104 0,52"></polygon>
+            <text class="relationship-text" x="45" y="40">RUNS</text>
+            <text class="relationship-text" x="45" y="55">2 KM</text>
+            <text class="relationship-text" x="45" y="70">QUERY</text>
+        </g>
+
+        <g transform="translate(1215 168)">
+            <polygon class="relationship" points="45,0 90,52 45,104 0,52"></polygon>
+            <text class="relationship-text" x="45" y="42">BUILDS</text>
+            <text class="relationship-text" x="45" y="58">GEOJSON</text>
+        </g>
+
+        <g transform="translate(575 355)">
+            <polygon class="relationship" points="45,0 90,45 45,90 0,45"></polygon>
+            <text class="relationship-text" x="45" y="38">RETURNS</text>
+            <text class="relationship-text" x="45" y="54">STORES</text>
+        </g>
+
+        <g transform="translate(835 565)">
+            <polygon class="relationship" points="45,0 90,45 45,90 0,45"></polygon>
+            <text class="relationship-text" x="45" y="37">MATCHES</text>
+            <text class="relationship-text" x="45" y="53">STORE ID</text>
+        </g>
+
+        <g transform="translate(1065 464)">
+            <polygon class="relationship" points="45,0 90,24 45,48 0,24"></polygon>
+            <text class="relationship-text" x="45" y="18">SUPPLIES</text>
+            <text class="relationship-text" x="45" y="32">LIVE DATA</text>
+        </g>
+
+        <g transform="translate(1340 335)">
+            <polygon class="relationship" points="45,0 90,45 45,90 0,45"></polygon>
+            <text class="relationship-text" x="45" y="38">MAPS</text>
+            <text class="relationship-text" x="45" y="54">RESULT</text>
+        </g>
+
+        <g transform="translate(335 565)">
+            <polygon class="relationship" points="45,0 90,45 45,90 0,45"></polygon>
+            <text class="relationship-text" x="45" y="38">RENDERS</text>
+            <text class="relationship-text" x="45" y="54">MAP</text>
+        </g>
+
+        <rect class="note-box" x="60" y="804" width="1480" height="50"></rect>
+        <text class="note-title" x="82" y="828">Operational interpretation</text>
+        <text class="note-text" x="248" y="828">The backend receives coordinates, queries nearby stores within 2 km, matches store IDs against live deal sources, builds a GeoJSON response, and the map SDK renders market markers with deal metadata.</text>
+    </svg>
+</main>
+</body>
+</html>
+

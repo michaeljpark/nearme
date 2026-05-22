@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proximity Retail Stakeholder Mapping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #ffffff;
+            color: #171717;
+            font-family: "Poppins", sans-serif;
+        }
+
+        #container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        #chart {
+            position: relative;
+            flex: 1;
+            min-width: 0;
+            height: 100%;
+            background: #ffffff;
+        }
+
+        #sidebar {
+            width: 360px;
+            height: 100%;
+            padding: 24px;
+            overflow-y: auto;
+            background: #ffffff;
+            border-left: 1px solid #d4d4d4;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.03);
+            z-index: 10;
+        }
+
+        h2 {
+            margin: 0 0 8px;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .subtitle {
+            margin-bottom: 24px;
+            color: #525252;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .section-title {
+            margin: 20px 0 6px;
+            color: #737373;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .detail-card {
+            padding: 16px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+
+        .detail-name {
+            margin-bottom: 4px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .detail-layer {
+            display: inline-block;
+            margin-bottom: 12px;
+            padding: 2px 8px;
+            border-radius: 20px;
+            background: #eeeeee;
+            color: #262626;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .detail-desc {
+            color: #404040;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .orbit-line {
+            fill: none;
+            stroke: #d4d4d4;
+            stroke-dasharray: 4 4;
+            stroke-width: 1.25;
+        }
+
+        .orbit-label {
+            fill: #737373;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .node {
+            cursor: pointer;
+        }
+
+        .node circle {
+            transition: fill 0.12s ease, stroke-width 0.12s ease;
+        }
+
+        .node:hover circle {
+            stroke-width: 1.5px;
+        }
+
+        .node-text {
+            fill: #171717;
+            font-size: 9px;
+            font-weight: 500;
+            pointer-events: none;
+            text-anchor: middle;
+        }
+
+        .label-guide {
+            stroke: #d4d4d4;
+            stroke-width: 0.75;
+            pointer-events: none;
+        }
+
+        .legend-container {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 8px;
+            border: 1px solid #d4d4d4;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.92);
+            font-size: 11px;
+        }
+
+        .legend-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            min-width: 88px;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: #171717;
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .legend-toggle::after {
+            content: "-";
+            margin-left: 10px;
+            color: #525252;
+            font-weight: 700;
+        }
+
+        .legend-container.is-hidden .legend-toggle::after {
+            content: "+";
+        }
+
+        .legend-list {
+            margin-top: 10px;
+        }
+
+        .legend-container.is-hidden .legend-list {
+            display: none;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+            color: #404040;
+        }
+
+        .legend-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .legend-color {
+            width: 10px;
+            height: 10px;
+            margin-right: 8px;
+            border: 1px solid #525252;
+            border-radius: 50%;
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="chart">
+        <div class="legend-container">
+            <button class="legend-toggle" type="button" aria-expanded="true">Legend</button>
+            <div class="legend-list">
+                <div class="legend-item"><div class="legend-color"></div>Layer 1: Retail headquarters (25)</div>
+                <div class="legend-item"><div class="legend-color"></div>Layer 2: Local stores and branches (18)</div>
+                <div class="legend-item"><div class="legend-color"></div>Layer 3: Advertising and retail media (12)</div>
+                <div class="legend-item"><div class="legend-color"></div>Layer 4: Target users (8)</div>
+            </div>
+        </div>
+    </div>
+    <aside id="sidebar">
+        <h2>Real-Time Proximity Deal Platform<br>Stakeholder Mapping</h2>
+        <div class="subtitle">Hover over a node to review each stakeholder's business role and core value inside the platform.</div>
+
+        <div class="section-title">Selected stakeholder</div>
+        <div id="detail-content" class="detail-card">
+            <div class="detail-name">Select a node</div>
+            <div class="detail-desc">Explore the map to understand the local retail business ecosystem.</div>
+        </div>
+    </aside>
+</div>
+
+<script>
+    const legendContainer = document.querySelector(".legend-container");
+    const legendToggle = document.querySelector(".legend-toggle");
+
+    legendToggle.addEventListener("click", () => {
+        const isHidden = legendContainer.classList.toggle("is-hidden");
+        legendToggle.setAttribute("aria-expanded", String(!isHidden));
+    });
+
+    const data = {
+        nodes: [
+            { id: "L1_1", name: "Loblaw Companies", layer: 1, desc: "Canada's largest grocery group and a key partner for inventory, pricing, and promotion data pipelines." },
+            { id: "L1_2", name: "Metro Inc.", layer: 1, desc: "A major Ontario and Quebec retailer that can scale real-time fresh-food and local-store deal supply." },
+            { id: "L1_3", name: "Sobeys Inc.", layer: 1, desc: "A national retailer supporting store-level inventory digitization and localized promotion workflows." },
+            { id: "L1_4", name: "Pattison Food Group", layer: 1, desc: "A western Canadian retail group with regional market infrastructure for proximity-based deals." },
+            { id: "L1_5", name: "Walmart Canada", layer: 1, desc: "A high-volume retailer that can strengthen hyperlocal commerce through live store inventory feeds." },
+            { id: "L1_6", name: "Costco Wholesale", layer: 1, desc: "A warehouse retailer suited to rapid bulk-inventory clearance and nearby member deal activation." },
+            { id: "L1_7", name: "H Mart Canada", layer: 1, desc: "An Asian grocery group with strong demand for specialty fresh-food discovery and local matching." },
+            { id: "L1_8", name: "Galleria Supermarket", layer: 1, desc: "A Toronto-based Korean grocery operator with deli, prepared-food, and timed markdown opportunities." },
+            { id: "L1_9", name: "Dollarama Inc.", layer: 1, desc: "A value retailer that can drive immediate visits with low-price nearby inventory alerts." },
+            { id: "L1_10", name: "Canadian Tire", layer: 1, desc: "A hardware and outdoor retailer that benefits from seasonal, weather-aware local targeting." },
+            { id: "L1_11", name: "Rexall Pharmacy", layer: 1, desc: "A drugstore chain with health, beauty, convenience, and snack categories suited to proximity offers." },
+            { id: "L1_12", name: "Whole Foods Market", layer: 1, desc: "A premium organic grocer focused on same-day freshness and lower waste for high-value perishables." },
+            { id: "L1_13", name: "McEwan Fraser", layer: 1, desc: "A fine-food retailer that can promote limited premium ingredients and prepared-food availability." },
+            { id: "L1_14", name: "Farm Boy", layer: 1, desc: "A fresh-food brand that can improve same-day produce turnover through location-based offers." },
+            { id: "L1_15", name: "FreshCo HQ", layer: 1, desc: "A discount grocery headquarters that can expose local price competitiveness in real time." },
+            { id: "L1_16", name: "Food Basics HQ", layer: 1, desc: "A discount brand that can complement weekly flyers with day-specific local markdown channels." },
+            { id: "L1_17", name: "No Frills HQ", layer: 1, desc: "A hard-discount grocery network that can support franchise-led local flash deals." },
+            { id: "L1_18", name: "Real Canadian HQ", layer: 1, desc: "A superstore format with large inventory pools that benefit from real-time local clearance tools." },
+            { id: "L1_19", name: "Shoppers Drug Mart", layer: 1, desc: "A major drugstore chain that can convert nearby users for cosmetics, essentials, and convenience categories." },
+            { id: "L1_20", name: "Giant Tiger", layer: 1, desc: "A community-oriented discount chain suited to small-city and suburban proximity marketing." },
+            { id: "L1_21", name: "Couche-Tard / Circle K", layer: 1, desc: "A convenience-store network with strong late-night, commuter, and impulse-purchase use cases." },
+            { id: "L1_22", name: "7-Eleven Canada", layer: 1, desc: "A convenience chain that can promote time-sensitive hot food and snack inventory by location." },
+            { id: "L1_23", name: "Sobeys Voila", layer: 1, desc: "An online fulfillment operation that can turn surplus hub inventory into local pickup offers." },
+            { id: "L1_24", name: "Rabbit Hole Foods", layer: 1, desc: "An emerging alternative-food distributor that can sample and promote new products near trend-forward users." },
+            { id: "L1_25", name: "Sysco Canada", layer: 1, desc: "A B2B food distributor that can redirect surplus retail-ready supply into local deal channels." },
+
+            { id: "L2_1", name: "Metro Toronto", layer: 2, desc: "A downtown store for after-work deli, prepared-food, and short-window markdown campaigns." },
+            { id: "L2_2", name: "Loblaws Carlton", layer: 2, desc: "A flagship store and useful test bed for matching broad fresh inventory with live foot traffic." },
+            { id: "L2_3", name: "Longo's York Street", layer: 2, desc: "A financial-district store suited to lunch and takeout offers before peak office breaks." },
+            { id: "L2_4", name: "T&T Chinatown", layer: 2, desc: "A dense urban grocery location for bakery, seafood, and specialty Asian-food flash deals." },
+            { id: "L2_5", name: "No Frills Leslieville", layer: 2, desc: "A residential-area store for same-day meat, grocery, and household markdown activation." },
+            { id: "L2_6", name: "Food Basics Dupont", layer: 2, desc: "A value-focused store for produce-box deals aimed at nearby residents and students." },
+            { id: "L2_7", name: "FreshCo Bathurst", layer: 2, desc: "A multicultural neighborhood branch that can surface ethnic ingredient availability within 500 meters." },
+            { id: "L2_8", name: "Sobeys Urban Fresh", layer: 2, desc: "A compact urban format for single-household meal kits and prepared-food inventory turnover." },
+            { id: "L2_9", name: "Shoppers YongeSt", layer: 2, desc: "A transit-heavy branch for seasonal drinks, snacks, and quick convenience offers." },
+            { id: "L2_10", name: "Fortinos Vaughan", layer: 2, desc: "A suburban large-format store for bakery and grocery offers aimed at drivers and families." },
+            { id: "L2_11", name: "Valu-mart Danforth", layer: 2, desc: "A community grocery store suited to neighborhood events and local surplus inventory movement." },
+            { id: "L2_12", name: "Zehrs Markets", layer: 2, desc: "A regional Ontario branch for commuter and family shopping-route targeting." },
+            { id: "L2_13", name: "H Mart Downtown", layer: 2, desc: "A student-heavy location for K-food snacks, lunch boxes, and limited-time stock alerts." },
+            { id: "L2_14", name: "Galleria Express", layer: 2, desc: "A small urban branch for hourly prepared-food and side-dish inventory mapping." },
+            { id: "L2_15", name: "Whole Foods Yorkville", layer: 2, desc: "A premium branch for salad bar, organic prepared food, and same-day freshness deals." },
+            { id: "L2_16", name: "Farm Boy Harbourfront", layer: 2, desc: "A waterfront store for weekend, picnic, and visitor-oriented snack offers." },
+            { id: "L2_17", name: "Circle K Spadina", layer: 2, desc: "A campus-area convenience branch for late-night coffee, energy drink, and snack pushes." },
+            { id: "L2_18", name: "7-Eleven Bloor", layer: 2, desc: "A 24-hour branch for real-time late-night food and convenience-category mapping." },
+
+            { id: "L3_1", name: "Loblaw Media", layer: 3, desc: "A retail media network that can combine first-party purchase data with live proximity deal signals." },
+            { id: "L3_2", name: "Metro Media", layer: 3, desc: "A media solution that can connect in-store screens with mobile local-deal campaigns." },
+            { id: "L3_3", name: "Flipp Network", layer: 3, desc: "A digital flyer platform that can extend weekly promotions into minute-level local deal feeds." },
+            { id: "L3_4", name: "Criteo Canada", layer: 3, desc: "A retail media and retargeting partner for programmatic offers based on live physical location." },
+            { id: "L3_5", name: "CitrusAd", layer: 3, desc: "An ad-tech platform that helps stores expose location-based sponsored deals and product placements." },
+            { id: "L3_6", name: "Google Local", layer: 3, desc: "A local discovery channel that can connect map intent with nearby store deal availability." },
+            { id: "L3_7", name: "The Trade Desk", layer: 3, desc: "A demand-side platform for programmatic campaigns tied to local inventory and proximity audiences." },
+            { id: "L3_8", name: "Outfront Media", layer: 3, desc: "A digital out-of-home partner for showing nearby store inventory on transit and street screens." },
+            { id: "L3_9", name: "Pattison Outdoor", layer: 3, desc: "An outdoor media network that can pair mall and street signage with app-based proximity pushes." },
+            { id: "L3_10", name: "Attentive Mobile", layer: 3, desc: "An SMS and push platform for reaching users entering a store's local catchment area." },
+            { id: "L3_11", name: "Flyerify", layer: 3, desc: "A mobile flyer app that can add a live nearby-deals tab beside standard catalog content." },
+            { id: "L3_12", name: "LoyaltyOne (AirMiles)", layer: 3, desc: "A loyalty partner that can add points incentives to real-time offline store purchases." },
+
+            { id: "L4_1", name: "Budget Student", layer: 4, desc: "A student user who prioritizes food savings and responds quickly to nearby markdown alerts." },
+            { id: "L4_2", name: "Smart Deal Hunter", layer: 4, desc: "A value-focused shopper who compares live local prices and treats surplus inventory as discovery." },
+            { id: "L4_3", name: "Neighborhood Cook", layer: 4, desc: "A household cook who builds same-day meals around fresh discounted ingredients nearby." },
+            { id: "L4_4", name: "Impulse Shopper", layer: 4, desc: "An urban passerby who changes route after seeing a timely nearby bakery or snack offer." },
+            { id: "L4_5", name: "Busy Professional", layer: 4, desc: "A commuting office worker who values fast pickup of prepared meals along an existing route." },
+            { id: "L4_6", name: "Eco Food Saver", layer: 4, desc: "A waste-conscious user motivated by preventing edible food from being discarded." },
+            { id: "L4_7", name: "Local Walker / Commuter", layer: 4, desc: "A pedestrian or transit user who buys short-window deals while waiting or transferring." },
+            { id: "L4_8", name: "Ethnic Food Explorer", layer: 4, desc: "A food-curious user looking for specialty products and limited deals at nearby ethnic grocers." }
+        ]
+    };
+
+    const chart = document.getElementById("chart");
+    const width = chart.clientWidth;
+    const height = chart.clientHeight;
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const minSide = Math.min(width, height);
+
+    const svg = d3.select("#chart")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    const radiusMap = {
+        1: minSide * 0.34,
+        2: minSide * 0.255,
+        3: minSide * 0.17,
+        4: minSide * 0.085
+    };
+
+    const fillMap = {
+        1: "#ffffff",
+        2: "#f7f7f7",
+        3: "#eeeeee",
+        4: "#e5e5e5"
+    };
+
+    const strokeMap = {
+        1: "#171717",
+        2: "#404040",
+        3: "#525252",
+        4: "#737373"
+    };
+
+    Object.entries(radiusMap).forEach(([layer, radius]) => {
+        svg.append("circle")
+            .attr("cx", centerX)
+            .attr("cy", centerY)
+            .attr("r", radius)
+            .attr("class", "orbit-line");
+
+        svg.append("text")
+            .attr("x", centerX)
+            .attr("y", centerY - radius - 8)
+            .attr("class", "orbit-label")
+            .attr("text-anchor", "middle")
+            .text(`LAYER ${layer}`);
+    });
+
+    const layerAngles = {
+        1: -96,
+        2: -84,
+        3: -70,
+        4: -45
+    };
+
+    const nodesByLayer = d3.group(data.nodes, d => d.layer);
+
+    data.nodes.forEach(node => {
+        const layerNodes = nodesByLayer.get(node.layer);
+        const index = layerNodes.indexOf(node);
+        const total = layerNodes.length;
+        const angle = ((index / total) * 360 + layerAngles[node.layer]) * Math.PI / 180;
+
+        node.angle = angle;
+        node.x = centerX + radiusMap[node.layer] * Math.cos(angle);
+        node.y = centerY + radiusMap[node.layer] * Math.sin(angle);
+        node.labelX = centerX + (radiusMap[node.layer] + 34) * Math.cos(angle);
+        node.labelY = centerY + (radiusMap[node.layer] + 34) * Math.sin(angle);
+        node.labelWidth = Math.min(92, Math.max(48, node.name.length * 4.8));
+        node.collisionRadius = Math.max(18, node.labelWidth * 0.38);
+    });
+
+    const labelNodes = data.nodes.map(d => ({
+        source: d,
+        x: d.labelX,
+        y: d.labelY,
+        fx: null,
+        fy: null,
+        labelWidth: d.labelWidth,
+        collisionRadius: d.collisionRadius
+    }));
+
+    const margin = 46;
+    d3.forceSimulation(labelNodes)
+        .force("x", d3.forceX(d => d.source.labelX).strength(0.42))
+        .force("y", d3.forceY(d => d.source.labelY).strength(0.42))
+        .force("collide", d3.forceCollide(d => d.collisionRadius).strength(1).iterations(4))
+        .force("charge", d3.forceManyBody().strength(-8))
+        .stop()
+        .tick(420);
+
+    labelNodes.forEach(label => {
+        label.x = Math.max(margin, Math.min(width - margin, label.x));
+        label.y = Math.max(margin, Math.min(height - margin, label.y));
+    });
+
+    svg.selectAll(".label-guide")
+        .data(labelNodes)
+        .enter()
+        .append("line")
+        .attr("class", "label-guide")
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.x)
+        .attr("y2", d => d.y);
+
+    const nodeGroups = svg.selectAll(".node")
+        .data(data.nodes)
+        .enter()
+        .append("g")
+        .attr("class", "node")
+        .attr("transform", d => `translate(${d.x}, ${d.y})`)
+        .on("mouseenter", function(event, d) {
+            d3.select("#detail-content").html(`
+                <div class="detail-name">${d.name}</div>
+                <div class="detail-layer">Layer ${d.layer}</div>
+                <div class="detail-desc">${d.desc}</div>
+            `);
+
+            d3.select(this).select("circle")
+                .attr("fill", "#171717");
+        })
+        .on("mouseleave", function(event, d) {
+            d3.select(this).select("circle")
+                .attr("fill", fillMap[d.layer]);
+        });
+
+    nodeGroups.append("circle")
+        .attr("r", d => d.layer === 4 ? 3 : 2.5)
+        .attr("fill", d => fillMap[d.layer])
+        .attr("stroke", d => strokeMap[d.layer])
+        .attr("stroke-width", 0.75);
+
+    svg.selectAll(".node-text")
+        .data(labelNodes)
+        .enter()
+        .append("text")
+        .attr("class", "node-text")
+        .attr("x", d => d.x)
+        .attr("y", d => d.y)
+        .each(function(d) {
+            const words = d.source.name.split(/\s+/);
+            const lines = [];
+            let currentLine = "";
+
+            words.forEach(word => {
+                const testLine = currentLine ? `${currentLine} ${word}` : word;
+                if (testLine.length > 15 && currentLine) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = testLine;
+                }
+            });
+            lines.push(currentLine);
+
+            const text = d3.select(this);
+            const lineHeight = 10;
+            const startY = -((lines.length - 1) * lineHeight) / 2;
+
+            lines.forEach((line, index) => {
+                text.append("tspan")
+                    .attr("x", d.x)
+                    .attr("dy", index === 0 ? startY : lineHeight)
+                    .text(line);
+            });
+        });
+</script>
+</body>
+</html>

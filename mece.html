@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MECE — Channels retailers use today</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --paper: #fafaf8;
+    --paper-2: #f4f1ea;
+    --ink: #0a0a0a;
+    --ink-2: #2a2a2a;
+    --ink-3: #555555;
+    --ink-4: #888888;
+    --ink-5: #b8b6ae;
+    --rule: #e6e3da;
+    --rule-2: #efece5;
+  }
+  html, body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--paper);
+    font-family: 'Poppins', system-ui, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 56px 24px 40px;
+  }
+  .frame { width: 100%; max-width: 1300px; display: flex; flex-direction: column; align-items: center; }
+  header { text-align: center; width: 100%; position: relative; margin-bottom: 36px; }
+  .corner { position: absolute; top: -28px; font-size: 9.5px; letter-spacing: 1.8px; color: var(--ink-4); font-weight: 500; text-transform: uppercase; font-variant-numeric: tabular-nums; }
+  .corner.l { left: 0; } .corner.r { right: 0; }
+  .eyebrow { font-size: 10.5px; font-weight: 500; letter-spacing: 3px; color: var(--ink-3); text-transform: uppercase; margin-bottom: 14px; }
+  .eyebrow::before, .eyebrow::after { content: ""; display: inline-block; width: 22px; height: 1px; background: var(--ink-4); vertical-align: 4px; margin: 0 12px; }
+  h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.5px; line-height: 1.2; }
+  .subtitle { font-size: 13px; color: var(--ink-3); font-weight: 400; margin-top: 8px; }
+  .rule { width: 60px; height: 1px; background: var(--ink); margin: 18px auto 0; }
+
+  .tree-wrap { width: 100%; }
+  .tree-wrap svg { display: block; width: 100%; height: auto; }
+  .tree-wrap svg text { font-family: 'Poppins', system-ui, sans-serif; }
+  .line { stroke: var(--ink); stroke-width: 0.7; fill: none; }
+  .line-soft { stroke: var(--ink-4); stroke-width: 0.5; fill: none; }
+  .box { fill: var(--paper); stroke: var(--ink); stroke-width: 0.8; }
+  .box-soft { fill: var(--paper); stroke: var(--ink-3); stroke-width: 0.6; }
+  .box-gap { fill: var(--ink); stroke: var(--ink); stroke-width: 0.8; }
+  .lbl-root { font-size: 13px; font-weight: 600; fill: var(--ink); letter-spacing: -0.1px; }
+  .lbl-branch { font-size: 12px; font-weight: 600; fill: var(--ink); text-transform: uppercase; letter-spacing: 1.2px; }
+  .lbl-tag { font-size: 9px; font-weight: 600; fill: var(--ink-4); letter-spacing: 1.8px; }
+  .lbl-leaf { font-size: 12px; font-weight: 400; fill: var(--ink-2); }
+  .lbl-leaf-gap { font-size: 12.5px; font-weight: 600; fill: var(--paper); letter-spacing: 0.1px; }
+  .lbl-callout { font-size: 10.5px; font-weight: 500; fill: var(--ink); letter-spacing: 1.5px; text-transform: uppercase; }
+  .lbl-callout-2 { font-size: 11.5px; font-weight: 400; fill: var(--ink-3); font-style: italic; }
+
+  .observation {
+    margin-top: 36px;
+    max-width: 760px;
+    padding: 24px 28px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    text-align: left;
+  }
+  .observation .label { font-size: 9.5px; font-weight: 600; color: var(--ink-4); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 10px; }
+  .observation p { font-size: 14px; line-height: 1.55; color: var(--ink-2); font-weight: 400; letter-spacing: 0.1px; }
+  .observation p strong { font-weight: 600; color: var(--ink); }
+
+  footer { margin-top: 28px; font-size: 10px; color: var(--ink-4); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; text-align: center; }
+
+  @media (max-width: 900px) {
+    h1 { font-size: 22px; }
+    .corner { display: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <header>
+      <div class="corner l">Fig. 03</div>
+      <div class="corner r">MECE · 4 × N</div>
+      <div class="eyebrow">Mutually Exclusive · Collectively Exhaustive</div>
+      <h1>How retailers reach customers today</h1>
+      <div class="subtitle">Four channel families. Thirteen sub-channels. One structurally unoccupied node.</div>
+      <div class="rule"></div>
+    </header>
+
+    <div class="tree-wrap">
+      <svg viewBox="0 0 1300 600" preserveAspectRatio="xMidYMid meet" role="img">
+        <title>MECE decomposition of retailer-to-customer channels</title>
+        <desc>Tree showing four mutually exclusive channel families with sub-channels. The real-time proximity node is highlighted as the structural gap.</desc>
+
+        <!-- Root -->
+        <rect class="box" x="540" y="20" width="220" height="58" rx="2"/>
+        <text class="lbl-root" x="650" y="46" text-anchor="middle">Retail → customer</text>
+        <text class="lbl-root" x="650" y="64" text-anchor="middle">channels</text>
+
+        <!-- Trunk -->
+        <line class="line" x1="650" y1="78" x2="650" y2="105"/>
+        <line class="line" x1="163" y1="105" x2="1138" y2="105"/>
+        <line class="line" x1="163" y1="105" x2="163" y2="135"/>
+        <line class="line" x1="488" y1="105" x2="488" y2="135"/>
+        <line class="line" x1="813" y1="105" x2="813" y2="135"/>
+        <line class="line" x1="1138" y1="105" x2="1138" y2="135"/>
+
+        <!-- Branch tags -->
+        <text class="lbl-tag" x="163" y="128" text-anchor="middle">01</text>
+        <text class="lbl-tag" x="488" y="128" text-anchor="middle">02</text>
+        <text class="lbl-tag" x="813" y="128" text-anchor="middle">03</text>
+        <text class="lbl-tag" x="1138" y="128" text-anchor="middle">04</text>
+
+        <!-- Branch boxes -->
+        <rect class="box" x="53"   y="135" width="220" height="46" rx="2"/>
+        <rect class="box" x="378"  y="135" width="220" height="46" rx="2"/>
+        <rect class="box" x="703"  y="135" width="220" height="46" rx="2"/>
+        <rect class="box" x="1028" y="135" width="220" height="46" rx="2"/>
+        <text class="lbl-branch" x="163"  y="164" text-anchor="middle">Mass broadcast</text>
+        <text class="lbl-branch" x="488"  y="164" text-anchor="middle">Digital targeted</text>
+        <text class="lbl-branch" x="813"  y="164" text-anchor="middle">Location-aware</text>
+        <text class="lbl-branch" x="1138" y="164" text-anchor="middle">In-store</text>
+
+        <!-- Leaves: Branch 1 (Mass) -->
+        <rect class="box-soft" x="53" y="205" width="220" height="36" rx="2"/>
+        <text class="lbl-leaf" x="163" y="228" text-anchor="middle">TV / radio</text>
+        <rect class="box-soft" x="53" y="249" width="220" height="36" rx="2"/>
+        <text class="lbl-leaf" x="163" y="272" text-anchor="middle">OOH / billboards</text>
+        <rect class="box-soft" x="53" y="293" width="220" height="36" rx="2"/>
+        <text class="lbl-leaf" x="163" y="316" text-anchor="middle">Paper flyers / inserts</text>
+
+        <!-- Leaves: Branch 2 (Digital) -->
+        <rect class="box-soft" x="378" y="205" width="220" height="36" rx="2"/>
+        <text class="lbl-leaf" x="488" y="228" text-anchor="middle">Search ads (intent)</text>
+        <rect class="box-soft" x="378" y="249" width="220" height="36" rx="2"/>
+        <text class="lbl-leaf" x="488" y="272" text-anchor="middle">Social ads (interest)</text>
+        <rect class="box-soft" x="378" y="293" width="220" height="36" rx="2"/>
+        <text class="lbl-leaf" x="488" y="316" text-anchor="middle">Email / SMS (loyalty)</text>
+        <rect class="box-soft" x="378" y="337" width="220" height="36" rx="2"/>
+        <text class="lbl-leaf" x="488" y="360" text-anchor="middle">Programmatic display</text>
+
+        <!-- Leaves: Branch 3 (Location-aware) -->
+        <rect class="box-soft" x="703" y="205" width="220" height="36" rx="2"/>
+        <text class="lbl-leaf" x="813" y="228" text-anchor="middle">City flyer apps (Flipp, Reebee)</text>
+        <rect class="box-soft" x="703" y="249" width="220" height="36" rx="2"/>
+        <text class="lbl-leaf" x="813" y="272" text-anchor="middle">Neighborhood SEO / Yelp</text>
+        <!-- GAP LEAF -->
+        <rect class="box-gap" x="703" y="293" width="220" height="36" rx="2"/>
+        <text class="lbl-leaf-gap" x="813" y="316" text-anchor="middle">★  Real-time proximity</text>
+
+        <!-- Leaves: Branch 4 (In-store) -->
+        <rect class="box-soft" x="1028" y="205" width="220" height="36" rx="2"/>
+        <text class="lbl-leaf" x="1138" y="228" text-anchor="middle">Shelf merchandising</text>
+        <rect class="box-soft" x="1028" y="249" width="220" height="36" rx="2"/>
+        <text class="lbl-leaf" x="1138" y="272" text-anchor="middle">POS / coupon</text>
+        <rect class="box-soft" x="1028" y="293" width="220" height="36" rx="2"/>
+        <text class="lbl-leaf" x="1138" y="316" text-anchor="middle">In-store digital screens</text>
+
+        <!-- Callout for the gap -->
+        <path class="line" d="M 813 329 L 813 410 L 950 410"/>
+        <circle cx="813" cy="329" r="2.5" fill="#0a0a0a"/>
+        <text class="lbl-callout"   x="960" y="402">The gap</text>
+        <text class="lbl-callout-2" x="960" y="425">no incumbent occupies this node</text>
+        <text class="lbl-callout-2" x="960" y="442">— the addressable whitespace</text>
+
+        <!-- Decorative crosshair markers -->
+        <text class="lbl-tag" x="40"   y="22" text-anchor="start">L0</text>
+        <text class="lbl-tag" x="40"   y="160" text-anchor="start">L1</text>
+        <text class="lbl-tag" x="40"   y="226" text-anchor="start">L2</text>
+      </svg>
+    </div>
+
+    <div class="observation">
+      <div class="label">Key observation</div>
+      <p>Of <strong>13 channel sub-nodes</strong> mapped across four mutually exclusive families, twelve are operated by mature incumbents. <strong>Real-time proximity</strong> — hyperlocal, intent-aware, in-the-moment offer delivery — remains structurally unoccupied. Flyer apps stop at the city level; loyalty platforms target behavior but not location-in-time. The remaining whitespace is the channel best suited to physical retail's biggest natural advantage.</p>
+    </div>
+
+    <footer>1 root · 4 branches · 13 leaves · 1 gap</footer>
+  </div>
+</body>
+</html>

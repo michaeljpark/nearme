@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCG Matrix - Proximity Retail Channel</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 16mm 14mm;
+            @bottom-left {
+                content: "Real-Time Proximity Retail Channel - BCG Matrix";
+                font-family: Arial, sans-serif;
+                font-size: 8pt;
+                color: #666666;
+            }
+            @bottom-right {
+                content: counter(page);
+                font-family: Arial, sans-serif;
+                font-size: 8pt;
+                color: #666666;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #ffffff;
+            color: #171717;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10pt;
+            line-height: 1.5;
+        }
+
+        .page {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 28px;
+        }
+
+        header {
+            padding-bottom: 18px;
+            border-bottom: 2px solid #171717;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 24pt;
+            line-height: 1.1;
+            letter-spacing: 0;
+        }
+
+        .deck {
+            max-width: 780px;
+            margin: 0;
+            color: #404040;
+            font-size: 10.5pt;
+        }
+
+        h2 {
+            margin: 22px 0 10px;
+            font-size: 14pt;
+            line-height: 1.25;
+        }
+
+        p {
+            margin: 0 0 10px;
+        }
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 18px 0 22px;
+        }
+
+        .summary-card {
+            min-height: 84px;
+            padding: 12px;
+            border: 1px solid #bdbdbd;
+            background: #ffffff;
+        }
+
+        .summary-card strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 9pt;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .matrix-shell {
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            grid-template-rows: auto 42px;
+            gap: 8px;
+            margin: 18px 0 24px;
+            page-break-inside: avoid;
+        }
+
+        .axis-y {
+            grid-column: 1;
+            grid-row: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 560px;
+            border-right: 1px solid #171717;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-size: 9pt;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .axis-x {
+            grid-column: 2;
+            grid-row: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid #171717;
+            font-size: 9pt;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .matrix {
+            grid-column: 2;
+            grid-row: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            min-height: 560px;
+            border: 2px solid #171717;
+            background:
+                linear-gradient(to right, transparent calc(50% - 1px), #171717 calc(50% - 1px), #171717 calc(50% + 1px), transparent calc(50% + 1px)),
+                linear-gradient(to bottom, transparent calc(50% - 1px), #171717 calc(50% - 1px), #171717 calc(50% + 1px), transparent calc(50% + 1px));
+        }
+
+        .quadrant {
+            position: relative;
+            padding: 16px;
+            overflow: hidden;
+        }
+
+        .quadrant h3 {
+            margin: 0 0 4px;
+            font-size: 13pt;
+            line-height: 1.2;
+        }
+
+        .quadrant .definition {
+            margin-bottom: 12px;
+            color: #525252;
+            font-size: 8.5pt;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .node {
+            margin: 0 0 8px;
+            padding: 8px 9px;
+            border: 1px solid #525252;
+            background: #ffffff;
+        }
+
+        .node strong {
+            display: block;
+            margin-bottom: 2px;
+            font-size: 9.5pt;
+            line-height: 1.25;
+        }
+
+        .node span {
+            display: block;
+            color: #404040;
+            font-size: 8.5pt;
+            line-height: 1.35;
+        }
+
+        .whitespace {
+            border-width: 2px;
+            background:
+                repeating-linear-gradient(
+                    -45deg,
+                    #ffffff,
+                    #ffffff 7px,
+                    #f2f2f2 7px,
+                    #f2f2f2 14px
+                );
+        }
+
+        .quadrant-note {
+            position: absolute;
+            right: 12px;
+            bottom: 10px;
+            color: #737373;
+            font-size: 8pt;
+            font-style: italic;
+        }
+
+        .axis-corner {
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            margin-top: -18px;
+            color: #525252;
+            font-size: 8pt;
+        }
+
+        .axis-corner div:last-child {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 6px 0 8px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 9pt;
+        }
+
+        .table th,
+        .table td {
+            padding: 9px;
+            border: 1px solid #bdbdbd;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .table th {
+            background: #f5f5f5;
+            font-weight: 700;
+        }
+
+        .insight {
+            padding: 12px;
+            border: 1px solid #171717;
+            margin-top: 14px;
+            page-break-inside: avoid;
+        }
+
+        .insight strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 10.5pt;
+        }
+
+        @media (max-width: 820px) {
+            body {
+                overflow-x: auto;
+            }
+
+            .page {
+                min-width: 760px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<main class="page">
+    <header>
+        <h1>BCG Matrix: Proximity as the Missing Digital Channel</h1>
+        <p class="deck">
+            E-commerce wins on digital targeting. Physical retail wins on proximity.
+            The strategic gap is that proximity still lacks a real-time digital channel.
+        </p>
+    </header>
+
+    <section>
+        <h2>Strategic Context</h2>
+        <p>
+            As e-commerce expands, physical retail is losing ground in a way that is often overlooked.
+            The gap is not price or selection. It is the integration between digital channels and physical presence.
+            Online platforms target users based on real-time behavior and intent, while a brick-and-mortar store's
+            strongest natural advantage, being close to the customer right now, has no equivalent digital infrastructure
+            to activate it.
+        </p>
+        <p>
+            Merchants can promote products online, but they cannot reach a nearby customer with a personalized,
+            time-sensitive offer at the moment of intent. Shoppers can browse flyers and apps, but they cannot see what
+            is actually available within walking distance right now. Existing tools surface this week's deals at a city
+            level, not what is happening on the street where the customer is standing.
+        </p>
+    </section>
+
+    <section class="summary" aria-label="Core strategic summary">
+        <div class="summary-card">
+            <strong>Physical Retail Advantage</strong>
+            Proximity, immediate availability, local inventory, and walkable conversion.
+        </div>
+        <div class="summary-card">
+            <strong>Current Channel Failure</strong>
+            Flyers, loyalty platforms, and static ads do not activate location-in-time intent.
+        </div>
+        <div class="summary-card">
+            <strong>Proposed Channel</strong>
+            A real-time, geolocation-based deals map that turns proximity into a digital channel.
+        </div>
+    </section>
+
+    <section>
+        <h2>BCG Matrix</h2>
+        <p>
+            This matrix uses BCG logic at the channel level. The vertical axis measures market growth potential.
+            The horizontal axis measures relative market share or incumbent channel occupancy. High share on the left
+            means the category is already occupied by mature incumbents; low share on the right means the channel is
+            structurally underserved or unoccupied.
+        </p>
+
+        <div class="matrix-shell">
+            <div class="axis-y">Market Growth Potential: Low to High</div>
+            <div class="matrix">
+                <div class="quadrant">
+                    <h3>Stars</h3>
+                    <div class="definition">High growth / High incumbent share</div>
+                    <div class="node">
+                        <strong>E-commerce targeting platforms</strong>
+                        <span>Mature digital ad systems that convert behavior and intent into real-time offers.</span>
+                    </div>
+                    <div class="node">
+                        <strong>Retail media networks</strong>
+                        <span>Large retailers monetize first-party data, but mainly inside existing digital ad inventory.</span>
+                    </div>
+                    <div class="node">
+                        <strong>Programmatic ad platforms</strong>
+                        <span>Strong targeting infrastructure, but not built around live nearby store availability.</span>
+                    </div>
+                    <div class="quadrant-note">High-performing incumbents</div>
+                </div>
+
+                <div class="quadrant">
+                    <h3>Question Marks</h3>
+                    <div class="definition">High growth / Low incumbent share</div>
+                    <div class="node whitespace">
+                        <strong>Real-time proximity deals map</strong>
+                        <span>Hyperlocal, intent-aware, in-the-moment offer delivery based on what is available nearby now.</span>
+                    </div>
+                    <div class="node">
+                        <strong>Merchant real-time inventory channel</strong>
+                        <span>A direct way to clear inventory and accelerate turnover beyond flyers and static ads.</span>
+                    </div>
+                    <div class="node">
+                        <strong>Shopper live local availability layer</strong>
+                        <span>Personalized discovery of offers within walking distance at the moment of intent.</span>
+                    </div>
+                    <div class="quadrant-note">Primary whitespace</div>
+                </div>
+
+                <div class="quadrant">
+                    <h3>Cash Cows</h3>
+                    <div class="definition">Low growth / High incumbent share</div>
+                    <div class="node">
+                        <strong>Flyer apps</strong>
+                        <span>Useful weekly promotion discovery, but typically city-level and not inventory-aware.</span>
+                    </div>
+                    <div class="node">
+                        <strong>Loyalty platforms</strong>
+                        <span>Strong behavioral data and rewards infrastructure, but weak location-in-time activation.</span>
+                    </div>
+                    <div class="node">
+                        <strong>Store websites and marketplaces</strong>
+                        <span>Established digital surfaces that list products but rarely convert immediate nearby intent.</span>
+                    </div>
+                    <div class="node">
+                        <strong>POS and merchant SaaS systems</strong>
+                        <span>Stable operational infrastructure that can become a data source for real-time local offers.</span>
+                    </div>
+                    <div class="quadrant-note">Mature but limited</div>
+                </div>
+
+                <div class="quadrant">
+                    <h3>Dogs</h3>
+                    <div class="definition">Low growth / Low incumbent share</div>
+                    <div class="node">
+                        <strong>Static local ads</strong>
+                        <span>Low personalization, weak attribution, and no connection to live inventory or user intent.</span>
+                    </div>
+                    <div class="node">
+                        <strong>Generic city-level deal pages</strong>
+                        <span>Broad visibility without street-level relevance or real-time merchant activation.</span>
+                    </div>
+                    <div class="node">
+                        <strong>Untargeted printed promotions</strong>
+                        <span>Low responsiveness and limited ability to match offer timing with nearby demand.</span>
+                    </div>
+                    <div class="quadrant-note">Substitution targets</div>
+                </div>
+            </div>
+            <div class="axis-x">Relative Market Share / Incumbent Occupancy: High to Low</div>
+        </div>
+        <div class="axis-corner">
+            <div></div>
+            <div>
+                <span>High share / occupied</span>
+                <span>Low share / whitespace</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Channel Mapping Across 13 Sub-Nodes</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 22%;">BCG Position</th>
+                    <th style="width: 28%;">Channel Family</th>
+                    <th>Sub-Nodes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Stars</td>
+                    <td>Digital targeting incumbents</td>
+                    <td>E-commerce targeting platforms; retail media networks; programmatic ad platforms.</td>
+                </tr>
+                <tr>
+                    <td>Question Marks</td>
+                    <td>Real-time proximity</td>
+                    <td>Real-time proximity deals map; merchant real-time inventory channel; shopper live local availability layer.</td>
+                </tr>
+                <tr>
+                    <td>Cash Cows</td>
+                    <td>Mature retail promotion infrastructure</td>
+                    <td>Flyer apps; loyalty platforms; store websites and marketplaces; POS and merchant SaaS systems.</td>
+                </tr>
+                <tr>
+                    <td>Dogs</td>
+                    <td>Low-resolution local advertising</td>
+                    <td>Static local ads; generic city-level deal pages; untargeted printed promotions.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="insight">
+        <strong>Strategic Implication</strong>
+        Of 13 channel sub-nodes mapped across four mutually exclusive families, twelve are operated by mature
+        incumbents or structurally resemble mature incumbent channels. Real-time proximity remains the only
+        structurally unoccupied space: hyperlocal, intent-aware, in-the-moment offer delivery. Flyer apps stop at the
+        city level; loyalty platforms target behavior but not location-in-time. The remaining whitespace is the channel
+        best suited to physical retail's strongest natural advantage.
+    </section>
+</main>
+</body>
+</html>

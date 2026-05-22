@@ -1,0 +1,125 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+}
+.slide {
+  width: 100vw;
+  height: 45.4545vw;
+  max-height: 100vh;
+  aspect-ratio: auto;
+  background: #ffffff;
+  font-family: 'Poppins', system-ui, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  padding: 14px;
+  box-sizing: border-box;
+  color: #171717;
+}
+.matrix { position: relative; display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+.m-title { font-size: 11px; font-weight: 500; color: #171717; margin-bottom: 5px; letter-spacing: 0.1px; }
+.plot { position: relative; flex: 1; border: 0.5px solid #cfcfcf; background: #ffffff; }
+.plot .ws { position: absolute; top: 0; right: 0; width: 50%; height: 50%; background: #e5e5e5; opacity: 0.75; pointer-events: none; }
+.plot .vd { position: absolute; top: 0; left: 50%; width: 0; height: 100%; border-left: 0.5px dashed #d9d9d9; }
+.plot .hd { position: absolute; top: 50%; left: 0; width: 100%; height: 0; border-top: 0.5px dashed #d9d9d9; }
+.axis { position: absolute; font-size: 10px; color: #737373; pointer-events: none; line-height: 1; font-weight: 400; letter-spacing: 0.2px; }
+.axis.tl { top: 5px; left: 7px; }
+.axis.tr { top: 5px; right: 7px; }
+.axis.bl { bottom: 5px; left: 7px; }
+.axis.br { bottom: 5px; right: 7px; }
+.node { position: absolute; transform: translate(-50%, -100%); display: flex; flex-direction: column; align-items: center; pointer-events: none; }
+.node .lbl { font-size: 10px; color: #525252; white-space: nowrap; font-weight: 400; line-height: 1; padding-bottom: 2px; }
+.node .pt { width: 5px; height: 5px; border-radius: 50%; background: #ffffff; border: 1px solid #737373; }
+.node.star .lbl { color: #171717; font-weight: 600; font-size: 11px; }
+.node.star .pt { width: 9px; height: 9px; background: #262626; border: none; }
+</style>
+
+<div class="slide">
+
+<div class="matrix">
+<div class="m-title">1. Data freshness × locational data</div>
+<div class="plot">
+<div class="ws"></div><div class="vd"></div><div class="hd"></div>
+<div class="axis tl">↑ Hyperlocal</div>
+<div class="axis tr">Broad</div>
+<div class="axis bl">Weekly</div>
+<div class="axis br">Real-time →</div>
+<div class="node" style="left:18%;top:78%;"><span class="lbl">Flipp</span><span class="pt"></span></div>
+<div class="node" style="left:72%;top:62%;"><span class="lbl">Many Penny</span><span class="pt"></span></div>
+<div class="node" style="left:75%;top:28%;"><span class="lbl">Flashfood</span><span class="pt"></span></div>
+<div class="node" style="left:60%;top:42%;"><span class="lbl">Foodhero</span><span class="pt"></span></div>
+<div class="node" style="left:38%;top:86%;"><span class="lbl">Checkout 51</span><span class="pt"></span></div>
+<div class="node" style="left:30%;top:24%;"><span class="lbl">Rabba</span><span class="pt"></span></div>
+<div class="node" style="left:14%;top:42%;"><span class="lbl">T&amp;T</span><span class="pt"></span></div>
+<div class="node" style="left:22%;top:60%;"><span class="lbl">Bestco</span><span class="pt"></span></div>
+<div class="node star" style="left:92%;top:13%;"><span class="lbl">nearme</span><span class="pt"></span></div>
+</div>
+</div>
+
+<div class="matrix">
+<div class="m-title">2. Interaction model × engagement mode</div>
+<div class="plot">
+<div class="ws"></div><div class="vd"></div><div class="hd"></div>
+<div class="axis tl">↑ Discovery</div>
+<div class="axis tr">Comparison</div>
+<div class="axis bl">Pull</div>
+<div class="axis br">Push →</div>
+<div class="node" style="left:20%;top:82%;"><span class="lbl">Flipp</span><span class="pt"></span></div>
+<div class="node" style="left:70%;top:75%;"><span class="lbl">Many Penny</span><span class="pt"></span></div>
+<div class="node" style="left:58%;top:30%;"><span class="lbl">Flashfood</span><span class="pt"></span></div>
+<div class="node" style="left:48%;top:42%;"><span class="lbl">Foodhero</span><span class="pt"></span></div>
+<div class="node" style="left:36%;top:86%;"><span class="lbl">Checkout 51</span><span class="pt"></span></div>
+<div class="node" style="left:24%;top:48%;"><span class="lbl">Rabba</span><span class="pt"></span></div>
+<div class="node" style="left:14%;top:65%;"><span class="lbl">T&amp;T</span><span class="pt"></span></div>
+<div class="node" style="left:12%;top:80%;"><span class="lbl">Bestco</span><span class="pt"></span></div>
+<div class="node star" style="left:92%;top:13%;"><span class="lbl">nearme</span><span class="pt"></span></div>
+</div>
+</div>
+
+<div class="matrix">
+<div class="m-title">3. Category scope × supply architecture</div>
+<div class="plot">
+<div class="ws"></div><div class="vd"></div><div class="hd"></div>
+<div class="axis tl">↑ Multi-merchant</div>
+<div class="axis tr">Single banner</div>
+<div class="axis bl">Single category</div>
+<div class="axis br">Multi-category →</div>
+<div class="node" style="left:62%;top:30%;"><span class="lbl">Flipp</span><span class="pt"></span></div>
+<div class="node" style="left:25%;top:28%;"><span class="lbl">Many Penny</span><span class="pt"></span></div>
+<div class="node" style="left:14%;top:42%;"><span class="lbl">Flashfood</span><span class="pt"></span></div>
+<div class="node" style="left:30%;top:46%;"><span class="lbl">Foodhero</span><span class="pt"></span></div>
+<div class="node" style="left:48%;top:22%;"><span class="lbl">Checkout 51</span><span class="pt"></span></div>
+<div class="node" style="left:28%;top:78%;"><span class="lbl">Rabba</span><span class="pt"></span></div>
+<div class="node" style="left:75%;top:72%;"><span class="lbl">T&amp;T</span><span class="pt"></span></div>
+<div class="node" style="left:66%;top:88%;"><span class="lbl">Bestco</span><span class="pt"></span></div>
+<div class="node star" style="left:92%;top:13%;"><span class="lbl">nearme</span><span class="pt"></span></div>
+</div>
+</div>
+
+<div class="matrix">
+<div class="m-title">4. Inventory awareness × personalization</div>
+<div class="plot">
+<div class="ws"></div><div class="vd"></div><div class="hd"></div>
+<div class="axis tl">↑ Inventory-aware</div>
+<div class="axis tr">Inventory-blind</div>
+<div class="axis bl">Generic</div>
+<div class="axis br">Personal →</div>
+<div class="node" style="left:22%;top:82%;"><span class="lbl">Flipp</span><span class="pt"></span></div>
+<div class="node" style="left:74%;top:68%;"><span class="lbl">Many Penny</span><span class="pt"></span></div>
+<div class="node" style="left:76%;top:26%;"><span class="lbl">Flashfood</span><span class="pt"></span></div>
+<div class="node" style="left:60%;top:38%;"><span class="lbl">Foodhero</span><span class="pt"></span></div>
+<div class="node" style="left:38%;top:86%;"><span class="lbl">Checkout 51</span><span class="pt"></span></div>
+<div class="node" style="left:30%;top:50%;"><span class="lbl">Rabba</span><span class="pt"></span></div>
+<div class="node" style="left:16%;top:75%;"><span class="lbl">T&amp;T</span><span class="pt"></span></div>
+<div class="node" style="left:12%;top:88%;"><span class="lbl">Bestco</span><span class="pt"></span></div>
+<div class="node star" style="left:92%;top:13%;"><span class="lbl">nearme</span><span class="pt"></span></div>
+</div>
+</div>
+
+</div>
