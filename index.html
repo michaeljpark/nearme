@@ -50,9 +50,9 @@
 .em-bcg .bcg-scard{min-height:84px;padding:12px;border:1px solid var(--line);background:transparent;}
 .em-bcg .bcg-scard strong{display:block;margin-bottom:6px;font-size:9pt;text-transform:uppercase;letter-spacing:0.04em;}
 .em-bcg .bcg-shell{display:grid;grid-template-columns:36px 1fr;grid-template-rows:1fr 36px;gap:0;margin:0;aspect-ratio:16/9;width:100%;}
-.em-bcg .bcg-axis-y{grid-column:1;grid-row:1;display:flex;align-items:center;justify-content:center;border-right:1px solid #171717;writing-mode:vertical-rl;transform:rotate(180deg);font-size:8pt;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;}
-.em-bcg .bcg-axis-x{grid-column:2;grid-row:2;display:flex;align-items:center;justify-content:center;border-top:1px solid #171717;font-size:9pt;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;}
-.em-bcg .bcg-matrix{grid-column:2;grid-row:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border:1px solid var(--ink);background:linear-gradient(to right,transparent calc(50% - 1px),#171717 calc(50% - 1px),#171717 calc(50% + 1px),transparent calc(50% + 1px)),linear-gradient(to bottom,transparent calc(50% - 1px),#171717 calc(50% - 1px),#171717 calc(50% + 1px),transparent calc(50% + 1px));}
+.em-bcg .bcg-axis-y{grid-column:1;grid-row:1;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--line);writing-mode:vertical-rl;transform:rotate(180deg);font-size:8pt;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;}
+.em-bcg .bcg-axis-x{grid-column:2;grid-row:2;display:flex;align-items:center;justify-content:center;border-top:1px solid var(--line);font-size:9pt;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;}
+.em-bcg .bcg-matrix{grid-column:2;grid-row:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border:1px solid var(--line);background:linear-gradient(to right,transparent calc(50% - 0.4px),var(--line) calc(50% - 0.4px),var(--line) calc(50% + 0.4px),transparent calc(50% + 0.4px)),linear-gradient(to bottom,transparent calc(50% - 0.4px),var(--line) calc(50% - 0.4px),var(--line) calc(50% + 0.4px),transparent calc(50% + 0.4px));}
 .em-bcg .bcg-quad{position:relative;padding:16px;overflow:hidden;}
 .em-bcg .bcg-h3{margin:0 0 4px;font-size:13pt;line-height:1.2;font-weight:500;letter-spacing:inherit;}
 .em-bcg .bcg-def{margin-bottom:12px;color:#525252;font-size:8.5pt;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;}
@@ -66,7 +66,7 @@
 .em-bcg .bcg-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:9pt;}
 .em-bcg .bcg-table th,.em-bcg .bcg-table td{padding:9px;border:1px solid #bdbdbd;text-align:left;vertical-align:top;}
 .em-bcg .bcg-table th{background:#ebebea;font-weight:500;}
-.em-bcg .bcg-insight{padding:12px;border:1px solid #171717;margin-top:14px;}
+.em-bcg .bcg-insight{padding:12px;border:1px solid var(--line);margin-top:14px;}
 .em-bcg .bcg-insight strong{display:block;margin-bottom:6px;font-size:10.5pt;font-weight:500;}
 
 .em-comp{width:100%;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:inherit;overflow-x:auto;}
@@ -87,15 +87,14 @@
 .em-comp .comp-node.star .lbl{color:#171717;font-weight:500;font-size:11px;}
 .em-comp .comp-node.star .pt{width:9px;height:9px;background:#262626;border:none;}
 
-.em-stake{width:100%;height:680px;position:relative;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:inherit;overflow:hidden;}
+.em-stake{width:100%;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:inherit;}
 .em-stake *{box-sizing:border-box;}
-.em-stake #sk-container{display:flex;width:100%;height:100%;}
+.em-stake #sk-container{display:flex;width:100%;aspect-ratio:16/9;overflow:hidden;}
 .em-stake #sk-chart{position:relative;flex:1;min-width:0;height:100%;}
-.em-stake .sk-legend{position:absolute;bottom:16px;left:16px;padding:6px 8px;border:1px solid var(--line);background:rgba(245,245,243,0.94);font-size:10px;z-index:10;}
-.em-stake .sk-legend-list{margin-top:6px;}
-.em-stake .sk-legend-item{display:flex;align-items:center;margin-bottom:5px;color:#404040;}
-.em-stake .sk-legend-item:last-child{margin-bottom:0;}
-.em-stake .sk-legend-dot{width:10px;height:10px;margin-right:8px;border:1px solid #525252;border-radius:50%;background:var(--bg);}
+.em-stake .sk-legend{padding-top:16px;font-size:10px;}
+.em-stake .sk-legend-list{display:flex;flex-wrap:wrap;gap:8px 24px;}
+.em-stake .sk-legend-item{display:flex;align-items:center;color:#404040;}
+.em-stake .sk-legend-dot{width:10px;height:10px;margin-right:8px;border:1px solid #525252;border-radius:50%;background:var(--bg);flex-shrink:0;}
 .em-stake .orbit-line{fill:none;stroke:#c8c8c8;stroke-dasharray:4 4;stroke-width:0.75;}
 .em-stake .orbit-label{fill:#737373;font-size:10px;font-weight:500;letter-spacing:0.05em;}
 .em-stake .sk-node circle{fill-opacity:1;}
@@ -111,7 +110,7 @@
 .em-bmc .bmc-h1{font-size:26px;font-weight:500;letter-spacing:-0.5px;color:#0a0a0a;line-height:1.2;margin:0;}
 .em-bmc .bmc-sub{font-size:13px;color:#555;font-weight:400;margin-top:8px;}
 .em-bmc .bmc-rule{width:60px;height:1px;background:#0a0a0a;margin:18px auto 0;}
-.em-bmc .bmc-grid{display:grid;grid-template-columns:repeat(10,1fr);grid-template-rows:minmax(200px,auto) minmax(200px,auto) minmax(150px,auto);gap:1px;background:#0a0a0a;border:1px solid #0a0a0a;width:100%;}
+.em-bmc .bmc-grid{display:grid;grid-template-columns:repeat(10,1fr);grid-template-rows:minmax(200px,auto) minmax(200px,auto) minmax(150px,auto);gap:1px;background:var(--line);border:1px solid var(--line);width:100%;}
 .em-bmc .bmc-cell{background:var(--bg);padding:18px 20px 22px;display:flex;flex-direction:column;gap:12px;}
 .em-bmc .bmc-kp{grid-column:1/3;grid-row:1/3;}
 .em-bmc .bmc-ka{grid-column:3/5;grid-row:1/2;}
@@ -184,9 +183,6 @@
 .er-field.pk,.geo-field.pk{color:var(--ink);font-weight:500;}
 
 /* Mobile overrides for inlined diagrams */
-@media(max-width:760px){
-  .em-stake{height:520px;}
-}
 /* MECE mobile cards */
 .mece-mobile{display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);}
 .mece-mc{background:var(--bg);padding:14px 12px;aspect-ratio:3/4;display:flex;flex-direction:column;overflow:hidden;}
@@ -226,12 +222,12 @@
   .bcg-mobile{display:grid;}
   .em-er .er-slide,.em-geo .geo-slide{display:none;}
   .er-mobile,.geo-mobile{display:grid;}
-  .em-stake{height:min(600px,calc(100vw * 4/3));}
+  .em-stake #sk-container{aspect-ratio:unset;height:min(600px,calc(100vw * 4/3));}
   .em-stake .sk-node-text{font-size:7px;}
   .em-stake .orbit-label{font-size:8px;}
 }
 @media(max-width:560px){
-  .em-stake{height:min(520px,calc(100vw * 4/3));}
+  .em-stake #sk-container{height:min(520px,calc(100vw * 4/3));}
   .em-bmc .bmc-grid{font-size:11px;}
 }
 </style>
@@ -765,16 +761,14 @@
   <div class="diagram-wrap" style="margin-top:32px;">
     <div class="em-stake">
       <div id="sk-container">
-        <div id="sk-chart">
-          <div class="sk-legend">
-            <div style="font-weight:500;color:#171717;font-size:10px;margin-bottom:2px;">Legend</div>
-            <div class="sk-legend-list">
-              <div class="sk-legend-item"><div class="sk-legend-dot"></div>Layer 1: Retail headquarters (25)</div>
-              <div class="sk-legend-item"><div class="sk-legend-dot"></div>Layer 2: Local stores and branches (18)</div>
-              <div class="sk-legend-item"><div class="sk-legend-dot"></div>Layer 3: Advertising and retail media (12)</div>
-              <div class="sk-legend-item"><div class="sk-legend-dot"></div>Layer 4: Target users (8)</div>
-            </div>
-          </div>
+        <div id="sk-chart"></div>
+      </div>
+      <div class="sk-legend">
+        <div class="sk-legend-list">
+          <div class="sk-legend-item"><div class="sk-legend-dot"></div>Layer 1: Retail headquarters (25)</div>
+          <div class="sk-legend-item"><div class="sk-legend-dot"></div>Layer 2: Local stores and branches (18)</div>
+          <div class="sk-legend-item"><div class="sk-legend-dot"></div>Layer 3: Advertising and retail media (12)</div>
+          <div class="sk-legend-item"><div class="sk-legend-dot"></div>Layer 4: Target users (8)</div>
         </div>
       </div>
     </div>
@@ -850,19 +844,25 @@
   ];
 
   var skChart = document.getElementById('sk-chart');
+  requestAnimationFrame(function(){
   var w = skChart.clientWidth, h = skChart.clientHeight;
   var cx = w/2, cy = h/2, minS = Math.min(w,h);
-  var radii = {1:minS*0.40,2:minS*0.30,3:minS*0.20,4:minS*0.10};
   var fills = {1:'#f5f5f3',2:'#eaeae8',3:'#dfdfdd',4:'#d2d2d0'};
   var strokes = {1:'#171717',2:'#404040',3:'#525252',4:'#737373'};
   var layerAngles = {1:-96,2:-84,3:-70,4:-45};
+  var om = [0.40,0.30,0.20,0.10];
+  var radii = {1:minS*om[0],2:minS*om[1],3:minS*om[2],4:minS*om[3]};
+  var compact = minS < 460;
+  var labelOff = compact ? 14 : 34;
+  var margin   = compact ? 20 : 46;
 
   var svg = d3.select('#sk-chart').append('svg').attr('width',w).attr('height',h);
 
   Object.entries(radii).forEach(function(e){
-    var layer=e[0],r=e[1];
+    var layer=+e[0], r=e[1];
     svg.append('circle').attr('cx',cx).attr('cy',cy).attr('r',r).attr('class','orbit-line');
-    svg.append('text').attr('x',cx).attr('y',cy-r-8).attr('class','orbit-label').attr('text-anchor','middle').text('LAYER '+layer);
+    svg.append('text').attr('x',cx).attr('y',cy-r-8)
+       .attr('class','orbit-label').attr('text-anchor','middle').text('LAYER '+layer);
   });
 
   var byLayer = d3.group(skData, function(d){return d.layer;});
@@ -872,22 +872,21 @@
     var total = layerNodes.length;
     var angle = ((idx/total)*360+layerAngles[node.layer])*Math.PI/180;
     node.angle=angle;
-    node.x=cx+radii[node.layer]*Math.cos(angle);
-    node.y=cy+radii[node.layer]*Math.sin(angle);
-    node.lx=cx+(radii[node.layer]+34)*Math.cos(angle);
-    node.ly=cy+(radii[node.layer]+34)*Math.sin(angle);
-    node.lw=Math.min(92,Math.max(48,node.name.length*4.8));
-    node.cr=Math.max(18,node.lw*0.38);
+    node.x =cx+radii[node.layer]*Math.cos(angle);
+    node.y =cy+radii[node.layer]*Math.sin(angle);
+    node.lx=cx+(radii[node.layer]+labelOff)*Math.cos(angle);
+    node.ly=cy+(radii[node.layer]+labelOff)*Math.sin(angle);
+    node.lw=compact ? Math.min(60,Math.max(32,node.name.length*3.2)) : Math.min(92,Math.max(48,node.name.length*4.8));
+    node.cr=compact ? Math.max(11,node.lw*0.26) : Math.max(18,node.lw*0.38);
   });
 
   var labelNodes = skData.map(function(d){return {source:d,x:d.lx,y:d.ly,lw:d.lw,cr:d.cr};});
-  var margin=46;
   d3.forceSimulation(labelNodes)
-    .force('x',d3.forceX(function(d){return d.source.lx;}).strength(0.42))
-    .force('y',d3.forceY(function(d){return d.source.ly;}).strength(0.42))
-    .force('collide',d3.forceCollide(function(d){return d.cr;}).strength(1).iterations(4))
-    .force('charge',d3.forceManyBody().strength(-8))
-    .stop().tick(420);
+    .force('x',d3.forceX(function(d){return d.source.lx;}).strength(compact ? 0.35 : 0.42))
+    .force('y',d3.forceY(function(d){return d.source.ly;}).strength(compact ? 0.35 : 0.42))
+    .force('collide',d3.forceCollide(function(d){return d.cr;}).strength(1).iterations(compact ? 8 : 4))
+    .force('charge',d3.forceManyBody().strength(compact ? -14 : -8))
+    .stop().tick(compact ? 600 : 420);
   labelNodes.forEach(function(d){
     d.x=Math.max(margin,Math.min(w-margin,d.x));
     d.y=Math.max(margin,Math.min(h-margin,d.y));
@@ -921,7 +920,7 @@
       var txt=d3.select(this),lh=10,sy=-((lines.length-1)*lh)/2;
       lines.forEach(function(line,i){txt.append('tspan').attr('x',d.x).attr('dy',i===0?sy:lh).text(line);});
     });
-
+  });
 })();
 </script>
 
@@ -1176,9 +1175,9 @@
           <g transform="translate(1120 505)"><rect class="entity-card" width="200" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 186 Q 200 0 200 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">RAW_FEED_ITEM</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK raw_item_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">source_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">job_id FK</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">payload / fetched_at</text></g>
           <g transform="translate(1370 330)"><rect class="entity-card" width="166" height="126" rx="14"/><path class="entity-head" d="M 14 0 H 152 Q 166 0 166 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">DATA_SOURCE</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK source_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">source_type</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">RSS / market API</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">flyer app</text></g>
           <g transform="translate(1370 505)"><rect class="entity-card" width="166" height="126" rx="14"/><path class="entity-head" d="M 14 0 H 152 Q 166 0 166 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">INGESTION_JOB</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK job_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">source_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">job_type</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">daily / 36h cleanup</text></g>
-          <rect class="note-box" x="60" y="755" width="1480" height="44" rx="12"/>
-          <text x="82" y="779" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#171717">Operational rules</text>
-          <text x="218" y="779" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="#525252">Map and search default to a 200m radius. Server jobs ingest RSS, market APIs, and flyer-app data, normalize it into regional query data, and remove stale deals after 36 hours.</text>
+          <rect class="note-box" x="60" y="748" width="1480" height="76" rx="12"/>
+          <text x="82" y="772" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="500" fill="#171717">Operational rules</text>
+          <text x="82" y="796" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#525252">Map and search default to a 200m radius. Server jobs ingest RSS, market APIs, and flyer-app data, normalize it into regional query data, and remove stale deals after 36 hours.</text>
         </svg>
       </div>
       <div class="er-mobile">
@@ -1261,9 +1260,9 @@
           <g transform="translate(1065 464)"><polygon class="geo-relationship" points="45,0 90,24 45,48 0,24"/><text x="45" y="18" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">SUPPLIES</text><text x="45" y="32" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">LIVE DATA</text></g>
           <g transform="translate(1340 335)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="38" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">MAPS</text><text x="45" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">RESULT</text></g>
           <g transform="translate(335 565)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="38" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">RENDERS</text><text x="45" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">MAP</text></g>
-          <rect class="geo-note-box" x="60" y="804" width="1480" height="50"/>
-          <text x="82" y="828" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#171717">Operational interpretation</text>
-          <text x="248" y="828" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="#525252">The backend receives coordinates, queries nearby stores within 2 km, matches store IDs against live deal sources, builds a GeoJSON response, and the map SDK renders market markers with deal metadata.</text>
+          <rect class="geo-note-box" x="60" y="796" width="1480" height="82"/>
+          <text x="82" y="822" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="500" fill="#171717">Operational interpretation</text>
+          <text x="82" y="848" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#525252">The backend receives coordinates, queries nearby stores within 2 km, matches store IDs against live deal sources, builds a GeoJSON response, and the map SDK renders market markers with deal metadata.</text>
         </svg>
       </div>
       <div class="geo-mobile">
