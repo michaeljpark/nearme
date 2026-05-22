@@ -1290,59 +1290,89 @@ document.addEventListener('DOMContentLoaded', function () {
   var revealed = items.map(function () { return false; });
   var rail = document.querySelector('.roadmap-rail');
   var roadmapEl = document.querySelector('.roadmap');
+  var section = document.querySelector('.roadmap-section');
+  var vpH = window.innerHeight;
+  var snapTimer = null;
+  var isSnapping = false;
+
+  window.addEventListener('resize', function () { vpH = window.innerHeight; });
 
   function getActiveIndex() {
-    var vpH = window.innerHeight;
-    var sweetSpot = window.scrollY + vpH * 0.42;
-    var best = -1;
-    var bestDist = Infinity;
-
+    var sweetSpot = window.scrollY + vpH * 0.38;
+    var best = -1, bestDist = Infinity;
     items.forEach(function (item, i) {
-      var hdr = item.querySelector('.roadmap-header');
-      var r = hdr.getBoundingClientRect();
-      var hdrCenter = window.scrollY + r.top + r.height / 2;
-      var dist = Math.abs(sweetSpot - hdrCenter);
-      if (dist < bestDist) { bestDist = dist; best = i; }
+      var r = item.querySelector('.roadmap-header').getBoundingClientRect();
+      var mid = window.scrollY + r.top + r.height / 2;
+      var d = Math.abs(sweetSpot - mid);
+      if (d < bestDist) { bestDist = d; best = i; }
     });
-
     if (best === -1) {
       var allGone = items.every(function (item) {
         return item.querySelector('.roadmap-header').getBoundingClientRect().bottom < 0;
       });
       if (allGone) best = items.length - 1;
     }
-
     return best;
   }
 
   function update() {
     var active = getActiveIndex();
-
     items.forEach(function (item, i) {
-      if (!revealed[i] && item.getBoundingClientRect().top < window.innerHeight * 0.88) {
+      if (!revealed[i] && item.getBoundingClientRect().top < vpH * 0.88) {
         revealed[i] = true;
         item.classList.add('visible');
       }
       var card = item.querySelector('.roadmap-card');
-      if (i === active) {
-        card.classList.add('open');
-        item.classList.add('active');
-      } else {
-        card.classList.remove('open');
-        item.classList.remove('active');
-      }
+      if (i === active) { card.classList.add('open'); item.classList.add('active'); }
+      else               { card.classList.remove('open'); item.classList.remove('active'); }
     });
-
     if (rail && roadmapEl && active >= 0) {
       var rmTop = roadmapEl.getBoundingClientRect().top;
-      var hdr = items[active].querySelector('.roadmap-header');
-      var hdrTop = hdr.getBoundingClientRect().top;
-      var dotOffset = hdrTop - rmTop + 43;
-      rail.style.height = Math.max(0, dotOffset) + 'px';
+      var hdrTop = items[active].querySelector('.roadmap-header').getBoundingClientRect().top;
+      rail.style.height = Math.max(0, hdrTop - rmTop + 43) + 'px';
     }
   }
 
-  window.addEventListener('scroll', update, { passive: true });
+  function easeOutExpo(t) {
+    return t >= 1 ? 1 : 1 - Math.pow(2, -10 * t);
+  }
+
+  function snapTo(targetY) {
+    var startY = window.scrollY;
+    var diff = targetY - startY;
+    if (Math.abs(diff) < 8) { isSnapping = false; return; }
+    var dur = Math.min(560, Math.max(200, Math.abs(diff) * 0.55));
+    var startTime = null;
+    isSnapping = true;
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      var p = Math.min((ts - startTime) / dur, 1);
+      window.scrollTo(0, startY + diff * easeOutExpo(p));
+      if (p < 1) requestAnimationFrame(step);
+      else isSnapping = false;
+    }
+    requestAnimationFrame(step);
+  }
+
+  function trySnap() {
+    if (isSnapping || !section) return;
+    var sr = section.getBoundingClientRect();
+    if (sr.top > vpH * 0.9 || sr.bottom < vpH * 0.1) return;
+    var active = getActiveIndex();
+    if (active < 0) return;
+    var hr = items[active].querySelector('.roadmap-header').getBoundingClientRect();
+    var hdrMid = window.scrollY + hr.top + hr.height / 2;
+    snapTo(hdrMid - vpH * 0.35);
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!isSnapping) {
+      update();
+      clearTimeout(snapTimer);
+      snapTimer = setTimeout(trySnap, 160);
+    }
+  }, { passive: true });
+
   update();
 });
 </script>
