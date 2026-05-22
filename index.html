@@ -8,15 +8,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="./nearme.css" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-.em-mece{width:100%;background:#fafaf8;font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:normal;color:#0a0a0a;}
+.em-mece{width:100%;background:var(--bg);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:inherit;color:#0a0a0a;}
 .em-mece *{box-sizing:border-box;}
-.em-mece .mece-frame{width:100%;max-width:1300px;margin:0 auto;display:flex;flex-direction:column;align-items:center;padding:40px 24px 32px;}
+.em-mece .mece-frame{width:100%;max-width:1300px;margin:0 auto;display:flex;flex-direction:column;align-items:center;padding:0;}
 .em-mece .mece-header{text-align:center;width:100%;position:relative;margin-bottom:36px;}
 .em-mece .mece-eyebrow{font-size:10.5px;font-weight:500;letter-spacing:3px;color:#555;text-transform:uppercase;margin-bottom:14px;}
 .em-mece .mece-eyebrow::before,.em-mece .mece-eyebrow::after{content:"";display:inline-block;width:22px;height:1px;background:#888;vertical-align:4px;margin:0 12px;}
-.em-mece .mece-h1{font-size:26px;font-weight:600;letter-spacing:-0.5px;line-height:1.2;margin:0;color:#0a0a0a;}
+.em-mece .mece-h1{font-size:26px;font-weight:500;letter-spacing:-0.5px;line-height:1.2;margin:0;color:#0a0a0a;}
 .em-mece .mece-sub{font-size:13px;color:#555;font-weight:400;margin-top:8px;}
 .em-mece .mece-rule{width:60px;height:1px;background:#0a0a0a;margin:18px auto 0;}
 .em-mece .mece-tree{width:100%;}
@@ -26,56 +25,56 @@
 .em-mece .em-box{fill:#fafaf8;stroke:#0a0a0a;stroke-width:0.8;}
 .em-mece .em-box-soft{fill:#fafaf8;stroke:#555;stroke-width:0.6;}
 .em-mece .em-box-gap{fill:#0a0a0a;stroke:#0a0a0a;stroke-width:0.8;}
-.em-mece .lbl-root{font-size:13px;font-weight:600;fill:#0a0a0a;}
-.em-mece .lbl-branch{font-size:12px;font-weight:600;fill:#0a0a0a;text-transform:uppercase;letter-spacing:1.2px;}
-.em-mece .lbl-tag{font-size:9px;font-weight:600;fill:#888;letter-spacing:1.8px;}
+.em-mece .lbl-root{font-size:13px;font-weight:500;fill:#0a0a0a;}
+.em-mece .lbl-branch{font-size:12px;font-weight:500;fill:#0a0a0a;text-transform:uppercase;letter-spacing:1.2px;}
+.em-mece .lbl-tag{font-size:9px;font-weight:500;fill:#888;letter-spacing:1.8px;}
 .em-mece .lbl-leaf{font-size:12px;font-weight:400;fill:#2a2a2a;}
-.em-mece .lbl-leaf-gap{font-size:12.5px;font-weight:600;fill:#fafaf8;}
+.em-mece .lbl-leaf-gap{font-size:12.5px;font-weight:500;fill:#fafaf8;}
 .em-mece .lbl-callout{font-size:10.5px;font-weight:500;fill:#0a0a0a;letter-spacing:1.5px;text-transform:uppercase;}
 .em-mece .lbl-callout-2{font-size:11.5px;font-weight:400;fill:#555;font-style:italic;}
 .em-mece .mece-obs{margin-top:36px;max-width:760px;padding:24px 28px;border-top:1px solid #0a0a0a;border-bottom:1px solid #0a0a0a;}
-.em-mece .obs-label{font-size:9.5px;font-weight:600;color:#888;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px;}
-.em-mece .obs-p{font-size:14px;line-height:1.55;color:#2a2a2a;font-weight:400;letter-spacing:0;margin:0;}
-.em-mece .obs-p strong{font-weight:600;color:#0a0a0a;}
+.em-mece .obs-label{font-size:9.5px;font-weight:500;color:#888;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px;}
+.em-mece .obs-p{font-size:14px;line-height:1.55;color:#2a2a2a;font-weight:400;letter-spacing:inherit;margin:0;}
+.em-mece .obs-p strong{font-weight:500;color:#0a0a0a;}
 .em-mece .mece-footer{margin-top:28px;font-size:10px;color:#888;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;text-align:center;}
 
-.em-bcg{width:100%;background:#fff;font-family:Arial,Helvetica,sans-serif;font-size:10pt;line-height:1.5;color:#171717;letter-spacing:normal;overflow-x:auto;}
+.em-bcg{width:100%;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:10pt;line-height:1.5;color:#171717;letter-spacing:inherit;overflow-x:auto;}
 .em-bcg *{box-sizing:border-box;}
-.em-bcg .bcg-page{max-width:980px;margin:0 auto;padding:28px;min-width:760px;}
+.em-bcg .bcg-page{width:100%;padding:0;min-width:640px;}
 .em-bcg .bcg-header{padding-bottom:18px;border-bottom:2px solid #171717;margin-bottom:18px;}
-.em-bcg .bcg-h1{margin:0 0 8px;font-size:24pt;line-height:1.1;font-weight:700;letter-spacing:0;}
+.em-bcg .bcg-h1{margin:0 0 8px;font-size:24pt;line-height:1.1;font-weight:500;letter-spacing:inherit;}
 .em-bcg .bcg-deck{max-width:780px;color:#404040;font-size:10.5pt;margin:0;}
-.em-bcg .bcg-h2{margin:22px 0 10px;font-size:14pt;line-height:1.25;font-weight:700;letter-spacing:0;}
+.em-bcg .bcg-h2{margin:22px 0 10px;font-size:14pt;line-height:1.25;font-weight:500;letter-spacing:inherit;}
 .em-bcg .bcg-p{margin:0 0 10px;}
 .em-bcg .bcg-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 22px;}
-.em-bcg .bcg-scard{min-height:84px;padding:12px;border:1px solid #bdbdbd;background:#fff;}
+.em-bcg .bcg-scard{min-height:84px;padding:12px;border:1px solid var(--line);background:transparent;}
 .em-bcg .bcg-scard strong{display:block;margin-bottom:6px;font-size:9pt;text-transform:uppercase;letter-spacing:0.04em;}
-.em-bcg .bcg-shell{display:grid;grid-template-columns:42px 1fr;grid-template-rows:auto 42px;gap:8px;margin:18px 0 24px;}
-.em-bcg .bcg-axis-y{grid-column:1;grid-row:1;display:flex;align-items:center;justify-content:center;min-height:560px;border-right:1px solid #171717;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9pt;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
-.em-bcg .bcg-axis-x{grid-column:2;grid-row:2;display:flex;align-items:center;justify-content:center;border-top:1px solid #171717;font-size:9pt;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
-.em-bcg .bcg-matrix{grid-column:2;grid-row:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;min-height:560px;border:2px solid #171717;background:linear-gradient(to right,transparent calc(50% - 1px),#171717 calc(50% - 1px),#171717 calc(50% + 1px),transparent calc(50% + 1px)),linear-gradient(to bottom,transparent calc(50% - 1px),#171717 calc(50% - 1px),#171717 calc(50% + 1px),transparent calc(50% + 1px));}
+.em-bcg .bcg-shell{display:grid;grid-template-columns:36px 1fr;grid-template-rows:1fr 36px;gap:0;margin:0;aspect-ratio:16/9;width:100%;}
+.em-bcg .bcg-axis-y{grid-column:1;grid-row:1;display:flex;align-items:center;justify-content:center;border-right:1px solid #171717;writing-mode:vertical-rl;transform:rotate(180deg);font-size:8pt;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;}
+.em-bcg .bcg-axis-x{grid-column:2;grid-row:2;display:flex;align-items:center;justify-content:center;border-top:1px solid #171717;font-size:9pt;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;}
+.em-bcg .bcg-matrix{grid-column:2;grid-row:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border:2px solid #171717;background:linear-gradient(to right,transparent calc(50% - 1px),#171717 calc(50% - 1px),#171717 calc(50% + 1px),transparent calc(50% + 1px)),linear-gradient(to bottom,transparent calc(50% - 1px),#171717 calc(50% - 1px),#171717 calc(50% + 1px),transparent calc(50% + 1px));}
 .em-bcg .bcg-quad{position:relative;padding:16px;overflow:hidden;}
-.em-bcg .bcg-h3{margin:0 0 4px;font-size:13pt;line-height:1.2;font-weight:700;letter-spacing:0;}
-.em-bcg .bcg-def{margin-bottom:12px;color:#525252;font-size:8.5pt;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
-.em-bcg .bcg-node{margin:0 0 8px;padding:8px 9px;border:1px solid #525252;background:#fff;}
-.em-bcg .bcg-node strong{display:block;margin-bottom:2px;font-size:9.5pt;line-height:1.25;font-weight:700;}
+.em-bcg .bcg-h3{margin:0 0 4px;font-size:13pt;line-height:1.2;font-weight:500;letter-spacing:inherit;}
+.em-bcg .bcg-def{margin-bottom:12px;color:#525252;font-size:8.5pt;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;}
+.em-bcg .bcg-node{margin:0 0 8px;padding:8px 9px;border:1px solid #d0d0ce;background:transparent;}
+.em-bcg .bcg-node strong{display:block;margin-bottom:2px;font-size:9.5pt;line-height:1.25;font-weight:500;}
 .em-bcg .bcg-node span{display:block;color:#404040;font-size:8.5pt;line-height:1.35;}
-.em-bcg .bcg-ws{border-width:2px;background:repeating-linear-gradient(-45deg,#fff,#fff 7px,#f2f2f2 7px,#f2f2f2 14px);}
+.em-bcg .bcg-ws{border-color:#0a0a0a;border-width:1px;background:repeating-linear-gradient(-45deg,var(--bg),var(--bg) 7px,#e8e8e6 7px,#e8e8e6 14px);}
 .em-bcg .bcg-qnote{position:absolute;right:12px;bottom:10px;color:#737373;font-size:8pt;font-style:italic;}
-.em-bcg .bcg-corner-row{display:grid;grid-template-columns:42px 1fr;margin-top:-18px;color:#525252;font-size:8pt;}
+.em-bcg .bcg-corner-row{display:grid;grid-template-columns:36px 1fr;margin-top:6px;color:#525252;font-size:8pt;}
 .em-bcg .bcg-corner-row div:last-child{display:flex;justify-content:space-between;padding:0 6px 0 8px;}
 .em-bcg .bcg-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:9pt;}
 .em-bcg .bcg-table th,.em-bcg .bcg-table td{padding:9px;border:1px solid #bdbdbd;text-align:left;vertical-align:top;}
-.em-bcg .bcg-table th{background:#f5f5f5;font-weight:700;}
+.em-bcg .bcg-table th{background:#ebebea;font-weight:500;}
 .em-bcg .bcg-insight{padding:12px;border:1px solid #171717;margin-top:14px;}
-.em-bcg .bcg-insight strong{display:block;margin-bottom:6px;font-size:10.5pt;font-weight:700;}
+.em-bcg .bcg-insight strong{display:block;margin-bottom:6px;font-size:10.5pt;font-weight:500;}
 
-.em-comp{width:100%;background:#fff;font-family:'Poppins',system-ui,sans-serif;letter-spacing:normal;overflow-x:auto;}
+.em-comp{width:100%;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:inherit;overflow-x:auto;}
 .em-comp *{box-sizing:border-box;}
-.em-comp .comp-slide{min-width:560px;width:100%;aspect-ratio:11/5;background:#fff;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;padding:14px;color:#171717;}
+.em-comp .comp-slide{min-width:560px;width:100%;aspect-ratio:11/5;background:var(--bg);display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;padding:14px;color:#171717;}
 .em-comp .comp-matrix{position:relative;display:flex;flex-direction:column;min-width:0;min-height:0;}
 .em-comp .comp-title{font-size:11px;font-weight:500;color:#171717;margin-bottom:5px;letter-spacing:0.1px;}
-.em-comp .comp-plot{position:relative;flex:1;border:0.5px solid #cfcfcf;background:#fff;}
+.em-comp .comp-plot{position:relative;flex:1;border:0.5px solid #cfcfcf;background:var(--bg);}
 .em-comp .comp-ws{position:absolute;top:0;right:0;width:50%;height:50%;background:#e5e5e5;opacity:0.75;pointer-events:none;}
 .em-comp .comp-vd{position:absolute;top:0;left:50%;width:0;height:100%;border-left:0.5px dashed #d9d9d9;}
 .em-comp .comp-hd{position:absolute;top:50%;left:0;width:100%;height:0;border-top:0.5px dashed #d9d9d9;}
@@ -84,65 +83,49 @@
 .em-comp .comp-axis.bl{bottom:5px;left:7px;}.em-comp .comp-axis.br{bottom:5px;right:7px;}
 .em-comp .comp-node{position:absolute;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;pointer-events:none;}
 .em-comp .comp-node .lbl{font-size:10px;color:#525252;white-space:nowrap;font-weight:400;line-height:1;padding-bottom:2px;}
-.em-comp .comp-node .pt{width:5px;height:5px;border-radius:50%;background:#fff;border:1px solid #737373;}
-.em-comp .comp-node.star .lbl{color:#171717;font-weight:600;font-size:11px;}
+.em-comp .comp-node .pt{width:5px;height:5px;border-radius:50%;background:var(--bg);border:1px solid #737373;}
+.em-comp .comp-node.star .lbl{color:#171717;font-weight:500;font-size:11px;}
 .em-comp .comp-node.star .pt{width:9px;height:9px;background:#262626;border:none;}
 
-.em-stake{width:100%;height:640px;position:relative;background:#fff;font-family:'Poppins',sans-serif;letter-spacing:normal;overflow:hidden;}
+.em-stake{width:100%;height:680px;position:relative;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:inherit;overflow:hidden;}
 .em-stake *{box-sizing:border-box;}
 .em-stake #sk-container{display:flex;width:100%;height:100%;}
-.em-stake #sk-chart{position:relative;flex:1;min-width:0;height:100%;background:#fff;}
-.em-stake #sk-sidebar{width:320px;height:100%;padding:20px;overflow-y:auto;background:#fff;border-left:1px solid #d4d4d4;}
-.em-stake #sk-sidebar .sk-h2{margin:0 0 8px;font-size:16px;font-weight:700;line-height:1.4;color:#171717;letter-spacing:0;}
-.em-stake .sk-subtitle{margin-bottom:20px;color:#525252;font-size:11px;line-height:1.5;}
-.em-stake .sk-sec-title{margin:16px 0 6px;color:#737373;font-size:10px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;}
-.em-stake .sk-detail{padding:14px;border:1px solid #e5e5e5;border-radius:8px;background:#fafafa;}
-.em-stake .sk-dname{margin-bottom:4px;font-size:14px;font-weight:600;color:#171717;}
-.em-stake .sk-dlayer{display:inline-block;margin-bottom:10px;padding:2px 8px;border-radius:20px;background:#eee;color:#262626;font-size:10px;font-weight:600;}
-.em-stake .sk-ddesc{color:#404040;font-size:11px;line-height:1.6;}
-.em-stake .sk-legend{position:absolute;bottom:16px;left:16px;padding:8px;border:1px solid #d4d4d4;border-radius:6px;background:rgba(255,255,255,0.92);font-size:10px;z-index:10;}
-.em-stake .sk-legend-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;min-width:80px;padding:0;border:0;background:transparent;color:#171717;font:inherit;font-weight:600;cursor:pointer;}
-.em-stake .sk-legend-toggle::after{content:"-";margin-left:10px;color:#525252;font-weight:700;}
-.em-stake .sk-legend.is-hidden .sk-legend-toggle::after{content:"+";}
-.em-stake .sk-legend-list{margin-top:8px;}
-.em-stake .sk-legend.is-hidden .sk-legend-list{display:none;}
+.em-stake #sk-chart{position:relative;flex:1;min-width:0;height:100%;}
+.em-stake .sk-legend{position:absolute;bottom:16px;left:16px;padding:6px 8px;border:1px solid var(--line);background:rgba(245,245,243,0.94);font-size:10px;z-index:10;}
+.em-stake .sk-legend-list{margin-top:6px;}
 .em-stake .sk-legend-item{display:flex;align-items:center;margin-bottom:5px;color:#404040;}
 .em-stake .sk-legend-item:last-child{margin-bottom:0;}
-.em-stake .sk-legend-dot{width:10px;height:10px;margin-right:8px;border:1px solid #525252;border-radius:50%;background:#fff;}
+.em-stake .sk-legend-dot{width:10px;height:10px;margin-right:8px;border:1px solid #525252;border-radius:50%;background:var(--bg);}
 .em-stake .orbit-line{fill:none;stroke:#d4d4d4;stroke-dasharray:4 4;stroke-width:1.25;}
-.em-stake .orbit-label{fill:#737373;font-size:10px;font-weight:600;letter-spacing:0.05em;}
-.em-stake .sk-node{cursor:pointer;}
-.em-stake .sk-node circle{transition:fill 0.12s ease,stroke-width 0.12s ease;}
-.em-stake .sk-node:hover circle{stroke-width:1.5px;}
+.em-stake .orbit-label{fill:#737373;font-size:10px;font-weight:500;letter-spacing:0.05em;}
+.em-stake .sk-node circle{fill-opacity:1;}
 .em-stake .sk-node-text{fill:#171717;font-size:9px;font-weight:500;pointer-events:none;text-anchor:middle;}
 .em-stake .sk-guide{stroke:#d4d4d4;stroke-width:0.75;pointer-events:none;}
-@media(max-width:760px){.em-stake #sk-sidebar{width:200px;}}
-@media(max-width:520px){.em-stake{height:400px;}.em-stake #sk-sidebar{display:none;}}
 
-.em-bmc{width:100%;background:#fafaf8;font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:normal;}
+.em-bmc{width:100%;background:var(--bg);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:inherit;}
 .em-bmc *{box-sizing:border-box;}
-.em-bmc .bmc-frame{width:100%;max-width:1400px;margin:0 auto;display:flex;flex-direction:column;align-items:center;padding:40px 24px 32px;}
+.em-bmc .bmc-frame{width:100%;max-width:1400px;margin:0 auto;display:flex;flex-direction:column;padding:0;}
 .em-bmc .bmc-header{text-align:center;width:100%;position:relative;margin-bottom:36px;}
 .em-bmc .bmc-eyebrow{font-size:10.5px;font-weight:500;letter-spacing:3px;color:#555;text-transform:uppercase;margin-bottom:14px;}
 .em-bmc .bmc-eyebrow::before,.em-bmc .bmc-eyebrow::after{content:"";display:inline-block;width:22px;height:1px;background:#888;vertical-align:4px;margin:0 12px;}
-.em-bmc .bmc-h1{font-size:26px;font-weight:600;letter-spacing:-0.5px;color:#0a0a0a;line-height:1.2;margin:0;}
+.em-bmc .bmc-h1{font-size:26px;font-weight:500;letter-spacing:-0.5px;color:#0a0a0a;line-height:1.2;margin:0;}
 .em-bmc .bmc-sub{font-size:13px;color:#555;font-weight:400;margin-top:8px;}
 .em-bmc .bmc-rule{width:60px;height:1px;background:#0a0a0a;margin:18px auto 0;}
 .em-bmc .bmc-grid{display:grid;grid-template-columns:repeat(10,1fr);grid-template-rows:minmax(200px,auto) minmax(200px,auto) minmax(150px,auto);gap:1px;background:#0a0a0a;border:1px solid #0a0a0a;width:100%;}
-.em-bmc .bmc-cell{background:#fafaf8;padding:18px 20px 22px;display:flex;flex-direction:column;gap:12px;}
+.em-bmc .bmc-cell{background:var(--bg);padding:18px 20px 22px;display:flex;flex-direction:column;gap:12px;}
 .em-bmc .bmc-kp{grid-column:1/3;grid-row:1/3;}
 .em-bmc .bmc-ka{grid-column:3/5;grid-row:1/2;}
 .em-bmc .bmc-kr{grid-column:3/5;grid-row:2/3;}
-.em-bmc .bmc-vp{grid-column:5/7;grid-row:1/3;background:#f4f1ea;}
+.em-bmc .bmc-vp{grid-column:5/7;grid-row:1/3;background:#efefee;}
 .em-bmc .bmc-cr{grid-column:7/9;grid-row:1/2;}
 .em-bmc .bmc-ch{grid-column:7/9;grid-row:2/3;}
 .em-bmc .bmc-cs{grid-column:9/11;grid-row:1/3;}
 .em-bmc .bmc-cost{grid-column:1/6;grid-row:3/4;}
 .em-bmc .bmc-rev{grid-column:6/11;grid-row:3/4;}
 .em-bmc .bmc-head{display:flex;align-items:baseline;gap:10px;padding-bottom:10px;border-bottom:0.5px dashed #e6e3da;}
-.em-bmc .bmc-num{font-size:9.5px;font-weight:600;color:#888;letter-spacing:0.5px;width:18px;flex-shrink:0;}
-.em-bmc .bmc-ttl{font-size:11px;font-weight:600;color:#0a0a0a;text-transform:uppercase;letter-spacing:1.8px;}
-.em-bmc .bmc-glabel{font-size:9.5px;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;margin-top:2px;}
+.em-bmc .bmc-num{font-size:9.5px;font-weight:500;color:#888;letter-spacing:0.5px;width:18px;flex-shrink:0;}
+.em-bmc .bmc-ttl{font-size:11px;font-weight:500;color:#0a0a0a;text-transform:uppercase;letter-spacing:1.8px;}
+.em-bmc .bmc-glabel{font-size:9.5px;font-weight:500;color:#555;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;margin-top:2px;}
 .em-bmc .bmc-group+.bmc-group{margin-top:10px;}
 .em-bmc .bmc-ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin:0;padding:0;}
 .em-bmc .bmc-li{font-size:12.5px;line-height:1.45;color:#2a2a2a;font-weight:400;padding-left:12px;position:relative;letter-spacing:0.1px;margin:0;}
@@ -158,40 +141,72 @@
 }
 @media(max-width:600px){.em-bmc .bmc-grid{grid-template-columns:1fr;}.em-bmc .bmc-vp,.em-bmc .bmc-cost,.em-bmc .bmc-rev{grid-column:auto;}}
 
-.em-er{width:100%;background:#f4f4f4;display:flex;align-items:center;justify-content:center;padding:16px;overflow-x:auto;}
+.em-er{width:100%;overflow-x:auto;}
 .em-er *{box-sizing:border-box;}
-.em-er .er-slide{min-width:600px;width:100%;aspect-ratio:16/8.3;background:#fff;border:1px solid #d7d7d7;box-shadow:0 8px 28px rgba(0,0,0,0.06);overflow:hidden;}
+.em-er .er-slide{min-width:600px;width:100%;aspect-ratio:16/8.3;overflow:hidden;}
 .em-er .er-slide svg{display:block;width:100%;height:100%;}
-.em-er .entity-card{fill:#fff;stroke:#171717;stroke-width:0.8;}
-.em-er .entity-head{fill:#f2f2f2;stroke:#171717;stroke-width:0.8;}
-.em-er .entity-title{fill:#171717;font-size:13px;font-weight:700;}
-.em-er .field{fill:#262626;font-size:10.5px;font-weight:400;}
-.em-er .field-key{fill:#171717;font-size:10.5px;font-weight:700;}
-.em-er .field-muted{fill:#606060;font-size:9.8px;font-weight:400;}
+.em-er .entity-card{fill:var(--bg);stroke:#171717;stroke-width:0.8;}
+.em-er .entity-head{fill:#e8e8e6;stroke:#171717;stroke-width:0.8;}
+.em-er .entity-title{fill:#171717;font-size:13px;font-weight:500;}
+.em-er .field{fill:#262626;font-size:10.5px;font-weight:500;}
+.em-er .field-key{fill:#171717;font-size:10.5px;font-weight:500;}
+.em-er .field-muted{fill:#525252;font-size:10px;font-weight:500;}
 .em-er .relationship{fill:none;stroke:#171717;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;}
 .em-er .relationship-light{fill:none;stroke:#8c8c8c;stroke-width:0.65;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:5 5;}
-.em-er .rel-label{fill:#404040;font-size:9.5px;font-weight:600;}
-.em-er .note-box{fill:#fafafa;stroke:#cfcfcf;stroke-width:0.7;}
-.em-er .note-title{fill:#171717;font-size:11px;font-weight:700;}
-.em-er .note-text{fill:#525252;font-size:9.5px;font-weight:400;}
+.em-er .rel-label{fill:#404040;font-size:9.5px;font-weight:500;}
+.em-er .note-box{fill:var(--bg);stroke:#cfcfcf;stroke-width:0.7;}
+.em-er .note-title{fill:#171717;font-size:11px;font-weight:500;}
+.em-er .note-text{fill:#525252;font-size:10px;font-weight:500;}
 @media(max-width:640px){.em-er{padding:0;}}
 
-.em-geo{width:100%;background:#f4f4f4;display:flex;align-items:center;justify-content:center;padding:16px;overflow-x:auto;}
+.em-geo{width:100%;overflow-x:auto;}
 .em-geo *{box-sizing:border-box;}
-.em-geo .geo-slide{min-width:600px;width:100%;aspect-ratio:16/9;background:#fff;border:1px solid #d7d7d7;box-shadow:0 8px 28px rgba(0,0,0,0.06);overflow:hidden;}
+.em-geo .geo-slide{min-width:600px;width:100%;aspect-ratio:16/9;overflow:hidden;}
 .em-geo .geo-slide svg{display:block;width:100%;height:100%;}
-.em-geo .geo-entity{fill:#fff;stroke:#171717;stroke-width:0.8;}
-.em-geo .geo-entity-title{fill:#171717;font-size:13px;font-weight:700;}
-.em-geo .geo-attr{fill:#404040;font-size:10.2px;font-weight:400;}
-.em-geo .geo-key{fill:#171717;font-size:10.2px;font-weight:700;}
-.em-geo .geo-relationship{fill:#fff;stroke:#171717;stroke-width:0.8;}
-.em-geo .geo-rel-text{fill:#171717;font-size:10.4px;font-weight:700;text-anchor:middle;dominant-baseline:middle;}
+.em-geo .geo-entity{fill:var(--bg);stroke:#171717;stroke-width:0.8;}
+.em-geo .geo-entity-title{fill:#171717;font-size:13px;font-weight:500;}
+.em-geo .geo-attr{fill:#404040;font-size:10.5px;font-weight:500;}
+.em-geo .geo-key{fill:#171717;font-size:10.2px;font-weight:500;}
+.em-geo .geo-relationship{fill:var(--bg);stroke:#171717;stroke-width:0.8;}
+.em-geo .geo-rel-text{fill:#171717;font-size:10.4px;font-weight:500;text-anchor:middle;dominant-baseline:middle;}
 .em-geo .geo-line{fill:none;stroke:#171717;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;}
-.em-geo .geo-cardinality{fill:#171717;font-size:10px;font-weight:700;}
-.em-geo .geo-note-box{fill:#fff;stroke:#cfcfcf;stroke-width:0.7;}
-.em-geo .geo-note-title{fill:#171717;font-size:11px;font-weight:700;}
-.em-geo .geo-note-text{fill:#525252;font-size:9.5px;}
+.em-geo .geo-cardinality{fill:#171717;font-size:10px;font-weight:500;}
+.em-geo .geo-note-box{fill:var(--bg);stroke:#cfcfcf;stroke-width:0.7;}
+.em-geo .geo-note-title{fill:#171717;font-size:11px;font-weight:500;}
+.em-geo .geo-note-text{fill:#525252;font-size:10px;font-weight:500;}
 @media(max-width:640px){.em-geo{padding:0;}}
+
+/* Mobile entity cards (hidden by default, shown on small screens) */
+.er-mobile,.geo-mobile{display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);}
+.er-card,.geo-card{background:var(--bg);padding:10px 12px;}
+.er-name,.geo-name{font-size:10px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:7px;}
+.er-field,.geo-field{font-size:10px;line-height:1.5;color:var(--muted);letter-spacing:-0.02em;}
+.er-field.pk,.geo-field.pk{color:var(--ink);font-weight:500;}
+
+/* Mobile overrides for inlined diagrams */
+@media(max-width:760px){
+  .em-mece{overflow-x:auto;}
+  .em-mece .mece-tree{min-width:680px;}
+  .em-stake{height:520px;}
+}
+@media(max-width:640px){
+  .em-comp .comp-slide{
+    grid-template-columns:1fr;
+    grid-template-rows:none;
+    min-width:0;
+    aspect-ratio:auto;
+    padding:8px;
+    gap:8px;
+  }
+  .em-comp .comp-matrix{aspect-ratio:3/4;}
+  .em-er .er-slide,.em-geo .geo-slide{display:none;}
+  .er-mobile,.geo-mobile{display:grid;}
+}
+@media(max-width:560px){
+  .em-bcg .bcg-page{min-width:520px;}
+  .em-stake{height:400px;}
+  .em-bmc .bmc-grid{font-size:11px;}
+}
 </style>
 </head>
 <body>
@@ -229,6 +244,178 @@
   </div>
 </section>
 
+<!-- KPI -->
+<section class="kpi-section wrap">
+  <div class="kpi-head">
+    <div class="kpi-title-wrap">
+      <div class="kpi-title">KPIs</div>
+      <div class="kpi-title-meta">(Projected · Lorem Ipsum, 2026)</div>
+    </div>
+    <div class="kpi-hero">
+      <span class="kpi-hero-num">—</span>
+      <span class="kpi-hero-label">Active Users</span>
+    </div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-item">
+      <div class="kpi-num"><span>—</span><span class="unit">Deals Found</span></div>
+      <div class="kpi-label">Lorem ipsum metric label</div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-num"><span>—%</span></div>
+      <div class="kpi-label">Deal Redemption Rate</div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-num"><span>—</span><span class="unit">Sec</span></div>
+      <div class="kpi-label">Avg. Time to First Deal</div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-num"><span>—</span><span class="unit">km</span></div>
+      <div class="kpi-label">Median Search Radius</div>
+    </div>
+  </div>
+</section>
+
+<!-- Divider quote -->
+<section class="divider-section wrap">
+  <p class="divider-text">
+    "Physical retail's greatest advantage is proximity. <em>The infrastructure to activate it doesn't exist yet.</em>"
+  </p>
+</section>
+
+<!-- Design Strategies Roadmap -->
+<section class="roadmap-section wrap">
+  <div class="ph-label" style="margin-bottom:16px;">Design Strategies</div>
+  <h2 class="ph-heading">Horizon Roadmap</h2>
+
+  <div class="roadmap">
+    <div class="roadmap-rail"></div>
+
+    <!-- H-1 -->
+    <div class="roadmap-item">
+      <div class="roadmap-card">
+        <div class="roadmap-header">
+          <span class="roadmap-h">H-1</span>
+          <div>
+            <div class="roadmap-title">Foundation</div>
+            <div class="roadmap-goal">Anchor partner secured, white-label MVP embedded</div>
+          </div>
+          <span class="roadmap-period">0 – 12 months</span>
+        </div>
+        <div class="roadmap-body">
+          <div class="roadmap-body-inner">
+            <div class="roadmap-cols">
+              <div class="roadmap-col">
+                <div class="roadmap-col-label">Key Moves</div>
+                <ul class="roadmap-list">
+                  <li>Land LOI / Pilot with anchor retailer — Loblaws, Empire, Metro, or Canadian Tire</li>
+                  <li>Build white-label SDK or embedded module</li>
+                  <li>Geo core to ±50m accuracy</li>
+                  <li>Partner store-network data pipeline</li>
+                </ul>
+              </div>
+              <div class="roadmap-col">
+                <div class="roadmap-col-label">KPIs</div>
+                <ul class="roadmap-list">
+                  <li>In-app deal engagement rate</li>
+                  <li>Store-visit conversion attributable to Near Me</li>
+                  <li>Pilot NPS from partner side</li>
+                </ul>
+              </div>
+              <div class="roadmap-col watch-col">
+                <div class="roadmap-col-label">Watch</div>
+                <p class="roadmap-watch">Exclusivity clause scope — keep narrow (e.g., "grocery vertical, 18 months") so H-3 expansion stays open. Retain Near Me brand and IP ownership.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- H-2 -->
+    <div class="roadmap-item">
+      <div class="roadmap-card">
+        <div class="roadmap-header">
+          <span class="roadmap-h">H-2</span>
+          <div>
+            <div class="roadmap-title">Scale Core Loop</div>
+            <div class="roadmap-goal">Embedded launch live, geo optimized, revenue flowing from partner</div>
+          </div>
+          <span class="roadmap-period">12 – 24 months</span>
+        </div>
+        <div class="roadmap-body">
+          <div class="roadmap-body-inner">
+            <div class="roadmap-cols">
+              <div class="roadmap-col">
+                <div class="roadmap-col-label">Key Moves</div>
+                <ul class="roadmap-list">
+                  <li>Launch inside partner loyalty app — PC Optimum, Scene+, moi, or Triangle</li>
+                  <li>Cover all banner stores across partner network</li>
+                  <li>Geo upgrade: indoor positioning, dwell-time, route prediction</li>
+                  <li>Revenue: SaaS license fee + attributed-sales rev share</li>
+                </ul>
+              </div>
+              <div class="roadmap-col">
+                <div class="roadmap-col-label">KPIs</div>
+                <ul class="roadmap-list">
+                  <li>Feature usage within partner MAU</li>
+                  <li>Attributed sales lift vs. control group</li>
+                  <li>Indoor geo accuracy at scale</li>
+                </ul>
+              </div>
+              <div class="roadmap-col watch-col">
+                <div class="roadmap-col-label">Watch</div>
+                <p class="roadmap-watch">Must prove measurable lift to unlock H-3 expansion budget — instrument attribution from day one.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- H-3 -->
+    <div class="roadmap-item">
+      <div class="roadmap-card">
+        <div class="roadmap-header">
+          <span class="roadmap-h">H-3</span>
+          <div>
+            <div class="roadmap-title">Multi-Tenant Platform</div>
+            <div class="roadmap-goal">Second partner onboarded, platform identity established</div>
+          </div>
+          <span class="roadmap-period">24M+</span>
+        </div>
+        <div class="roadmap-body">
+          <div class="roadmap-body-inner">
+            <div class="roadmap-cols">
+              <div class="roadmap-col">
+                <div class="roadmap-col-label">Key Moves</div>
+                <ul class="roadmap-list">
+                  <li>Add category-non-compete partner — Canadian Tire if H-1 was grocer, or vice versa</li>
+                  <li>Re-architect for multi-tenancy: per-tenant data isolation, shared geo intelligence layer</li>
+                  <li>Brand shift from "feature of X" to "platform powering Canadian retail"</li>
+                </ul>
+              </div>
+              <div class="roadmap-col">
+                <div class="roadmap-col-label">KPIs</div>
+                <ul class="roadmap-list">
+                  <li>Time-to-onboard 2nd tenant</li>
+                  <li>Cross-tenant geo model performance</li>
+                  <li>% revenue from non-anchor tenant</li>
+                </ul>
+              </div>
+              <div class="roadmap-col watch-col">
+                <div class="roadmap-col-label">Watch</div>
+                <p class="roadmap-watch">Brand positioning work must begin at H-2. The identity shift is the hardest transition — "feature" to "infrastructure."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- Strategic Value -->
 <section class="project-section wrap">
   <div class="two-col align-center">
@@ -260,12 +447,6 @@
   <div class="diagram-wrap" style="margin-top:32px;">
     <div class="em-mece">
       <div class="mece-frame">
-        <div class="mece-header">
-          <div class="mece-eyebrow">Mutually Exclusive · Collectively Exhaustive</div>
-          <div class="mece-h1">How retailers reach customers today</div>
-          <div class="mece-sub">Four channel families. Thirteen sub-channels. One structurally unoccupied node.</div>
-          <div class="mece-rule"></div>
-        </div>
         <div class="mece-tree">
           <svg viewBox="0 0 1300 600" preserveAspectRatio="xMidYMid meet" role="img">
             <rect class="em-box" x="540" y="20" width="220" height="58" rx="2"/>
@@ -325,11 +506,6 @@
             <text class="lbl-tag" x="40" y="226" text-anchor="start">L2</text>
           </svg>
         </div>
-        <div class="mece-obs">
-          <div class="obs-label">Key observation</div>
-          <p class="obs-p">Of <strong>13 channel sub-nodes</strong> mapped across four mutually exclusive families, twelve are operated by mature incumbents. <strong>Real-time proximity</strong> — hyperlocal, intent-aware, in-the-moment offer delivery — remains structurally unoccupied. Flyer apps stop at the city level; loyalty platforms target behaviour but not location-in-time. The remaining whitespace is the channel best suited to physical retail's biggest natural advantage.</p>
-        </div>
-        <div class="mece-footer">1 root · 4 branches · 13 leaves · 1 gap</div>
       </div>
     </div>
   </div>
@@ -343,20 +519,6 @@
   <div class="diagram-wrap" style="margin-top:32px;">
     <div class="em-bcg">
       <div class="bcg-page">
-        <div class="bcg-header">
-          <div class="bcg-h1">BCG Matrix: Proximity as the Missing Digital Channel</div>
-          <p class="bcg-deck">E-commerce wins on digital targeting. Physical retail wins on proximity. The strategic gap is that proximity still lacks a real-time digital channel.</p>
-        </div>
-        <div class="bcg-h2">Strategic Context</div>
-        <p class="bcg-p">As e-commerce expands, physical retail is losing ground in a way that is often overlooked. The gap is not price or selection. It is the integration between digital channels and physical presence. Online platforms target users based on real-time behavior and intent, while a brick-and-mortar store's strongest natural advantage, being close to the customer right now, has no equivalent digital infrastructure to activate it.</p>
-        <p class="bcg-p">Merchants can promote products online, but they cannot reach a nearby customer with a personalized, time-sensitive offer at the moment of intent. Shoppers can browse flyers and apps, but they cannot see what is actually available within walking distance right now.</p>
-        <div class="bcg-summary">
-          <div class="bcg-scard"><strong>Physical Retail Advantage</strong>Proximity, immediate availability, local inventory, and walkable conversion.</div>
-          <div class="bcg-scard"><strong>Current Channel Failure</strong>Flyers, loyalty platforms, and static ads do not activate location-in-time intent.</div>
-          <div class="bcg-scard"><strong>Proposed Channel</strong>A real-time, geolocation-based deals map that turns proximity into a digital channel.</div>
-        </div>
-        <div class="bcg-h2">BCG Matrix</div>
-        <p class="bcg-p">This matrix uses BCG logic at the channel level. The vertical axis measures market growth potential. The horizontal axis measures relative market share or incumbent channel occupancy.</p>
         <div class="bcg-shell">
           <div class="bcg-axis-y">Market Growth Potential: Low to High</div>
           <div class="bcg-matrix">
@@ -498,13 +660,13 @@
 <section class="diagram-section wrap">
   <div class="ph-label" style="margin-bottom:16px;">Stakeholder Ecosystem</div>
   <h2 class="ph-heading">Four layers of the local retail network</h2>
-  <p class="ph-body" style="max-width:680px; margin-top:16px;">Retail headquarters, local store branches, advertising and retail media partners, and end-user personas — mapped by influence and proximity to the platform. Hover nodes to explore.</p>
+  <p class="ph-body" style="max-width:680px; margin-top:16px;">Retail headquarters, local store branches, advertising and retail media partners, and end-user personas — mapped by influence and proximity to the platform.</p>
   <div class="diagram-wrap" style="margin-top:32px;">
     <div class="em-stake">
       <div id="sk-container">
         <div id="sk-chart">
           <div class="sk-legend">
-            <button class="sk-legend-toggle" type="button" aria-expanded="true">Legend</button>
+            <div style="font-weight:500;color:#171717;font-size:10px;margin-bottom:2px;">Legend</div>
             <div class="sk-legend-list">
               <div class="sk-legend-item"><div class="sk-legend-dot"></div>Layer 1: Retail headquarters (25)</div>
               <div class="sk-legend-item"><div class="sk-legend-dot"></div>Layer 2: Local stores and branches (18)</div>
@@ -513,15 +675,6 @@
             </div>
           </div>
         </div>
-        <aside id="sk-sidebar">
-          <div class="sk-h2">Stakeholder Mapping</div>
-          <div class="sk-subtitle">Hover over a node to review each stakeholder's role and core value inside the platform.</div>
-          <div class="sk-sec-title">Selected stakeholder</div>
-          <div id="sk-detail" class="sk-detail">
-            <div class="sk-dname">Select a node</div>
-            <div class="sk-ddesc">Explore the map to understand the local retail business ecosystem.</div>
-          </div>
-        </aside>
       </div>
     </div>
   </div>
@@ -598,8 +751,8 @@
   var skChart = document.getElementById('sk-chart');
   var w = skChart.clientWidth, h = skChart.clientHeight;
   var cx = w/2, cy = h/2, minS = Math.min(w,h);
-  var radii = {1:minS*0.34,2:minS*0.255,3:minS*0.17,4:minS*0.085};
-  var fills = {1:'#ffffff',2:'#f7f7f7',3:'#eeeeee',4:'#e5e5e5'};
+  var radii = {1:minS*0.40,2:minS*0.30,3:minS*0.20,4:minS*0.10};
+  var fills = {1:'#f5f5f3',2:'#eaeae8',3:'#dfdfdd',4:'#d2d2d0'};
   var strokes = {1:'#171717',2:'#404040',3:'#525252',4:'#737373'};
   var layerAngles = {1:-96,2:-84,3:-70,4:-45};
 
@@ -647,13 +800,7 @@
   var nodeGs = svg.selectAll('.sk-node').data(skData).enter().append('g')
     .attr('class','sk-node')
     .attr('transform',function(d){return 'translate('+d.x+','+d.y+')';})
-    .on('mouseenter',function(event,d){
-      d3.select('#sk-detail').html('<div class="sk-dname">'+d.name+'</div><div class="sk-dlayer">Layer '+d.layer+'</div><div class="sk-ddesc">'+d.desc+'</div>');
-      d3.select(this).select('circle').attr('fill','#171717');
-    })
-    .on('mouseleave',function(event,d){
-      d3.select(this).select('circle').attr('fill',fills[d.layer]);
-    });
+;
   nodeGs.append('circle')
     .attr('r',function(d){return d.layer===4?3:2.5;})
     .attr('fill',function(d){return fills[d.layer];})
@@ -674,63 +821,8 @@
       lines.forEach(function(line,i){txt.append('tspan').attr('x',d.x).attr('dy',i===0?sy:lh).text(line);});
     });
 
-  var leg=document.querySelector('#sk-chart .sk-legend');
-  var legBtn=document.querySelector('#sk-chart .sk-legend-toggle');
-  legBtn.addEventListener('click',function(){
-    var h=leg.classList.toggle('is-hidden');
-    legBtn.setAttribute('aria-expanded',String(!h));
-  });
 })();
 </script>
-
-<!-- KPI -->
-<section class="kpi-section wrap">
-  <div class="kpi-head">
-    <div class="kpi-title-wrap">
-      <div class="kpi-title">KPIs</div>
-      <div class="kpi-title-meta">(Projected · Lorem Ipsum, 2026)</div>
-    </div>
-    <div class="kpi-hero">
-      <span class="kpi-hero-num">—</span>
-      <span class="kpi-hero-label">Active Users</span>
-    </div>
-  </div>
-  <div class="kpi-grid">
-    <div class="kpi-item">
-      <div class="kpi-num"><span>—</span><span class="unit">Deals Found</span></div>
-      <div class="kpi-label">Lorem ipsum metric label</div>
-    </div>
-    <div class="kpi-item">
-      <div class="kpi-num"><span>—%</span></div>
-      <div class="kpi-label">Deal Redemption Rate</div>
-    </div>
-    <div class="kpi-item">
-      <div class="kpi-num"><span>—</span><span class="unit">Sec</span></div>
-      <div class="kpi-label">Avg. Time to First Deal</div>
-    </div>
-    <div class="kpi-item">
-      <div class="kpi-num"><span>—</span><span class="unit">km</span></div>
-      <div class="kpi-label">Median Search Radius</div>
-    </div>
-  </div>
-</section>
-
-<!-- Divider quote -->
-<section class="divider-section wrap">
-  <p class="divider-text">
-    "Physical retail's greatest advantage is proximity. <em>The infrastructure to activate it doesn't exist yet.</em>"
-  </p>
-</section>
-
-<!-- Mobile screens -->
-<section class="project-section wrap">
-  <div class="ph-label" style="margin-bottom:32px; text-align:center;">App Screens</div>
-  <div class="mobile-row">
-    <div class="mobile-frame">Screen A</div>
-    <div class="mobile-frame tall">Screen B</div>
-    <div class="mobile-frame">Screen C</div>
-  </div>
-</section>
 
 <!-- Feature grid -->
 <section class="project-section wrap">
@@ -754,13 +846,6 @@
   </div>
 </section>
 
-<!-- Second video placeholder -->
-<section class="project-section wrap">
-  <div class="ph-video">
-    <video src="./testvid.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Near Me demo video"></video>
-  </div>
-</section>
-
 <!-- Business Model Canvas -->
 <section class="diagram-section wrap">
   <div class="ph-label" style="margin-bottom:16px;">Business Model</div>
@@ -769,12 +854,6 @@
   <div class="diagram-wrap" style="margin-top:32px;">
     <div class="em-bmc">
       <div class="bmc-frame">
-        <div class="bmc-header">
-          <div class="bmc-eyebrow">Business Model Canvas</div>
-          <div class="bmc-h1">Proximity, as a digital channel</div>
-          <div class="bmc-sub">Real-time geolocation deals for physical retail · Toronto market</div>
-          <div class="bmc-rule"></div>
-        </div>
         <div class="bmc-grid">
           <div class="bmc-cell bmc-kp">
             <div class="bmc-head"><span class="bmc-num">08</span><span class="bmc-ttl">Key Partners</span></div>
@@ -886,7 +965,6 @@
             </ul>
           </div>
         </div>
-        <div class="bmc-footer">9 blocks · Osterwalder numbering · monochrome</div>
       </div>
     </div>
   </div>
@@ -938,11 +1016,9 @@
             <marker id="many-end" markerWidth="18" markerHeight="18" refX="17" refY="9" orient="auto" markerUnits="strokeWidth"><path d="M 17 9 L 2 2 M 17 9 L 2 9 M 17 9 L 2 16" fill="none" stroke="#171717" stroke-width="0.75"/></marker>
             <marker id="many-start" markerWidth="18" markerHeight="18" refX="1" refY="9" orient="auto" markerUnits="strokeWidth"><path d="M 1 9 L 16 2 M 1 9 L 16 9 M 1 9 L 16 16" fill="none" stroke="#171717" stroke-width="0.75"/></marker>
           </defs>
-          <text class="page-title" x="60" y="60" font-family="Poppins,Arial,sans-serif" font-size="29" font-weight="700" fill="#171717">ER Diagram: Real-Time Proximity Deals Platform</text>
-          <text class="page-subtitle" x="60" y="86" font-family="Poppins,Arial,sans-serif" font-size="13" fill="#525252">Crow's foot model — 200m local market discovery, deal metadata, recommendations, notifications, and server-side feed ingestion.</text>
-          <text x="60" y="126" font-family="Poppins,Arial,sans-serif" font-size="12" font-weight="700" fill="#525252" text-transform="uppercase">Client App Domain</text>
-          <text x="586" y="126" font-family="Poppins,Arial,sans-serif" font-size="12" font-weight="700" fill="#525252">Deal Discovery Core</text>
-          <text x="1100" y="126" font-family="Poppins,Arial,sans-serif" font-size="12" font-weight="700" fill="#525252">Server Query and Data Ingestion</text>
+          <text x="60" y="48" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#767676" letter-spacing="0.05em">CLIENT APP DOMAIN</text>
+          <text x="586" y="126" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="500" fill="#525252">Deal Discovery Core</text>
+          <text x="1100" y="126" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" font-weight="500" fill="#525252">Server Query and Data Ingestion</text>
           <path class="relationship" d="M 276 210 H 340" marker-start="url(#one-start)" marker-end="url(#many-end)"/>
           <path class="relationship" d="M 170 274 V 330" marker-start="url(#one-start)" marker-end="url(#one-end)"/>
           <path class="relationship" d="M 276 234 H 308 V 430 H 340" marker-start="url(#one-start)" marker-end="url(#many-end)"/>
@@ -964,45 +1040,64 @@
           <path class="relationship" d="M 1370 568 H 1320" marker-start="url(#one-start)" marker-end="url(#many-end)"/>
           <path class="relationship" d="M 1210 629 V 690 H 798" marker-start="url(#one-start)" marker-end="url(#many-end)"/>
           <path class="relationship-light" d="M 1120 560 H 798" marker-start="url(#many-start)" marker-end="url(#one-end)"/>
-          <text class="rel-label" x="294" y="197" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">owns</text>
-          <text class="rel-label" x="184" y="314" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">has</text>
-          <text class="rel-label" x="290" y="410" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">sends</text>
-          <text class="rel-label" x="184" y="484" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">opens</text>
-          <text class="rel-label" x="304" y="554" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">receives</text>
-          <text class="rel-label" x="302" y="676" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">favorites</text>
-          <text class="rel-label" x="565" y="198" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">returns</text>
-          <text class="rel-label" x="565" y="418" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">shows</text>
-          <text class="rel-label" x="820" y="354" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">has deals</text>
-          <text class="rel-label" x="820" y="445" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">classified by</text>
-          <text class="rel-label" x="716" y="504" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">details</text>
-          <text class="rel-label" x="805" y="556" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">recommends</text>
-          <text class="rel-label" x="1010" y="198" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">located in</text>
-          <text class="rel-label" x="1224" y="314" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">maps</text>
-          <text class="rel-label" x="1338" y="378" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">from source</text>
-          <text class="rel-label" x="1492" y="488" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">runs</text>
-          <text class="rel-label" x="1332" y="556" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">fetches</text>
-          <text class="rel-label" x="1032" y="674" font-family="Poppins,Arial,sans-serif" font-size="9.5" font-weight="600" fill="#404040">source for</text>
-          <g transform="translate(60 150)"><rect class="entity-card" width="216" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text class="entity-title" x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">USER</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK user_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">email</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">home_location_id FK</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">profile + preferences owner</text></g>
-          <g transform="translate(60 330)"><rect class="entity-card" width="216" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">PROFILE</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK profile_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">dietary_filters</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">notification settings</text></g>
-          <g transform="translate(60 500)"><rect class="entity-card" width="216" height="136" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">USER_LOCATION</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK location_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">latitude</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">longitude</text><text x="16" y="130" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">home / current</text></g>
-          <g transform="translate(340 150)"><rect class="entity-card" width="216" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">YOUR_LIST</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK list_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">list_type</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">best deals / you might like</text></g>
-          <g transform="translate(340 370)"><rect class="entity-card" width="216" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">SEARCH_QUERY</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK query_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">query_text</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">radius_meters: 200</text></g>
-          <g transform="translate(340 510)"><rect class="entity-card" width="216" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">NOTIFICATION</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK notification_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">deal_id FK</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">push_count / sent_at</text></g>
-          <g transform="translate(340 650)"><rect class="entity-card" width="216" height="84" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">FAVORITE</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK favorite_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text></g>
-          <g transform="translate(600 150)"><rect class="entity-card" width="196" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 182 Q 196 0 196 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">MARKET</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK market_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">region_id FK</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">lat / lng</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">near user within 200m</text></g>
-          <g transform="translate(600 370)"><rect class="entity-card" width="198" height="116" rx="14"/><path class="entity-head" d="M 14 0 H 184 Q 198 0 198 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">DEAL</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK deal_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">market_id FK</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">category_id FK</text></g>
-          <g transform="translate(600 510)"><rect class="entity-card" width="198" height="121" rx="14"/><path class="entity-head" d="M 14 0 H 184 Q 198 0 198 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">DEAL_INFO</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK deal_info_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">deal_id FK</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">discount_rate</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">price / price_measure</text></g>
-          <g transform="translate(894 370)"><rect class="entity-card" width="206" height="116" rx="14"/><path class="entity-head" d="M 14 0 H 192 Q 206 0 206 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">CATEGORY</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK category_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">category_name</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">deals / veggies / meat / etc.</text></g>
-          <g transform="translate(894 510)"><rect class="entity-card" width="206" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 192 Q 206 0 206 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">RECOMMENDATION</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK recommendation_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">deal_id FK</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">newest / best / might like</text></g>
-          <g transform="translate(1120 150)"><rect class="entity-card" width="200" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 186 Q 200 0 200 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">REGION</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK region_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">city</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">geo_boundary</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">regional mapping layer</text></g>
-          <g transform="translate(1120 326)"><rect class="entity-card" width="200" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 186 Q 200 0 200 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">QUERY_DATA</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK query_data_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">region_id FK</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">normalized_payload</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">live_updated_at</text></g>
-          <g transform="translate(1120 505)"><rect class="entity-card" width="200" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 186 Q 200 0 200 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">RAW_FEED_ITEM</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK raw_item_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">source_id FK</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">job_id FK</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">payload / fetched_at</text></g>
-          <g transform="translate(1370 330)"><rect class="entity-card" width="166" height="126" rx="14"/><path class="entity-head" d="M 14 0 H 152 Q 166 0 166 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">DATA_SOURCE</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK source_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">source_type</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">RSS / market API</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">flyer app</text></g>
-          <g transform="translate(1370 505)"><rect class="entity-card" width="166" height="126" rx="14"/><path class="entity-head" d="M 14 0 H 152 Q 166 0 166 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">INGESTION_JOB</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#171717">PK job_id</text><text x="16" y="73" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">source_id FK</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.5" fill="#262626">job_type</text><text x="16" y="111" font-family="Poppins,Arial,sans-serif" font-size="9.8" fill="#606060">daily / 36h cleanup</text></g>
+          <text class="rel-label" x="294" y="197" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">owns</text>
+          <text class="rel-label" x="184" y="314" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">has</text>
+          <text class="rel-label" x="290" y="410" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">sends</text>
+          <text class="rel-label" x="184" y="484" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">opens</text>
+          <text class="rel-label" x="304" y="554" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">receives</text>
+          <text class="rel-label" x="302" y="676" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">favorites</text>
+          <text class="rel-label" x="565" y="198" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">returns</text>
+          <text class="rel-label" x="565" y="418" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">shows</text>
+          <text class="rel-label" x="820" y="354" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">has deals</text>
+          <text class="rel-label" x="820" y="445" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">classified by</text>
+          <text class="rel-label" x="716" y="504" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">details</text>
+          <text class="rel-label" x="805" y="556" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">recommends</text>
+          <text class="rel-label" x="1010" y="198" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">located in</text>
+          <text class="rel-label" x="1224" y="314" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">maps</text>
+          <text class="rel-label" x="1338" y="378" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">from source</text>
+          <text class="rel-label" x="1492" y="488" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">runs</text>
+          <text class="rel-label" x="1332" y="556" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">fetches</text>
+          <text class="rel-label" x="1032" y="674" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" font-weight="500" fill="#404040">source for</text>
+          <g transform="translate(60 150)"><rect class="entity-card" width="216" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text class="entity-title" x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">USER</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK user_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">email</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">home_location_id FK</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">profile + preferences owner</text></g>
+          <g transform="translate(60 330)"><rect class="entity-card" width="216" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">PROFILE</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK profile_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">dietary_filters</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">notification settings</text></g>
+          <g transform="translate(60 500)"><rect class="entity-card" width="216" height="136" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">USER_LOCATION</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK location_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">latitude</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">longitude</text><text x="16" y="130" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">home / current</text></g>
+          <g transform="translate(340 150)"><rect class="entity-card" width="216" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">YOUR_LIST</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK list_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">list_type</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">best deals / you might like</text></g>
+          <g transform="translate(340 370)"><rect class="entity-card" width="216" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">SEARCH_QUERY</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK query_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">query_text</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">radius_meters: 200</text></g>
+          <g transform="translate(340 510)"><rect class="entity-card" width="216" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">NOTIFICATION</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK notification_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">deal_id FK</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">push_count / sent_at</text></g>
+          <g transform="translate(340 650)"><rect class="entity-card" width="216" height="84" rx="14"/><path class="entity-head" d="M 14 0 H 202 Q 216 0 216 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">FAVORITE</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK favorite_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text></g>
+          <g transform="translate(600 150)"><rect class="entity-card" width="196" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 182 Q 196 0 196 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">MARKET</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK market_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">region_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">lat / lng</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">near user within 200m</text></g>
+          <g transform="translate(600 370)"><rect class="entity-card" width="198" height="116" rx="14"/><path class="entity-head" d="M 14 0 H 184 Q 198 0 198 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">DEAL</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK deal_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">market_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">category_id FK</text></g>
+          <g transform="translate(600 510)"><rect class="entity-card" width="198" height="121" rx="14"/><path class="entity-head" d="M 14 0 H 184 Q 198 0 198 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">DEAL_INFO</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK deal_info_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">deal_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">discount_rate</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">price / price_measure</text></g>
+          <g transform="translate(894 370)"><rect class="entity-card" width="206" height="116" rx="14"/><path class="entity-head" d="M 14 0 H 192 Q 206 0 206 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">CATEGORY</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK category_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">category_name</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">deals / veggies / meat / etc.</text></g>
+          <g transform="translate(894 510)"><rect class="entity-card" width="206" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 192 Q 206 0 206 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">RECOMMENDATION</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK recommendation_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">user_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">deal_id FK</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">newest / best / might like</text></g>
+          <g transform="translate(1120 150)"><rect class="entity-card" width="200" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 186 Q 200 0 200 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">REGION</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK region_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">city</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">geo_boundary</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">regional mapping layer</text></g>
+          <g transform="translate(1120 326)"><rect class="entity-card" width="200" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 186 Q 200 0 200 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">QUERY_DATA</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK query_data_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">region_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">normalized_payload</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">live_updated_at</text></g>
+          <g transform="translate(1120 505)"><rect class="entity-card" width="200" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 186 Q 200 0 200 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">RAW_FEED_ITEM</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK raw_item_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">source_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">job_id FK</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">payload / fetched_at</text></g>
+          <g transform="translate(1370 330)"><rect class="entity-card" width="166" height="126" rx="14"/><path class="entity-head" d="M 14 0 H 152 Q 166 0 166 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">DATA_SOURCE</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK source_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">source_type</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">RSS / market API</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">flyer app</text></g>
+          <g transform="translate(1370 505)"><rect class="entity-card" width="166" height="126" rx="14"/><path class="entity-head" d="M 14 0 H 152 Q 166 0 166 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">INGESTION_JOB</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK job_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">source_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">job_type</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">daily / 36h cleanup</text></g>
           <rect class="note-box" x="60" y="755" width="1480" height="44" rx="12"/>
-          <text x="82" y="779" font-family="Poppins,Arial,sans-serif" font-size="11" font-weight="700" fill="#171717">Operational rules</text>
-          <text x="218" y="779" font-family="Poppins,Arial,sans-serif" font-size="9.5" fill="#525252">Map and search default to a 200m radius. Server jobs ingest RSS, market APIs, and flyer-app data, normalize it into regional query data, and remove stale deals after 36 hours.</text>
+          <text x="82" y="779" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#171717">Operational rules</text>
+          <text x="218" y="779" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="#525252">Map and search default to a 200m radius. Server jobs ingest RSS, market APIs, and flyer-app data, normalize it into regional query data, and remove stale deals after 36 hours.</text>
         </svg>
+      </div>
+      <div class="er-mobile">
+        <div class="er-card"><div class="er-name">USER</div><div class="er-field pk">PK user_id</div><div class="er-field">email</div><div class="er-field">home_location_id FK</div></div>
+        <div class="er-card"><div class="er-name">PROFILE</div><div class="er-field pk">PK profile_id</div><div class="er-field">user_id FK</div><div class="er-field">dietary_filters</div></div>
+        <div class="er-card"><div class="er-name">USER_LOCATION</div><div class="er-field pk">PK location_id</div><div class="er-field">user_id FK</div><div class="er-field">latitude, longitude</div></div>
+        <div class="er-card"><div class="er-name">YOUR_LIST</div><div class="er-field pk">PK list_id</div><div class="er-field">user_id FK</div><div class="er-field">list_type</div></div>
+        <div class="er-card"><div class="er-name">SEARCH_QUERY</div><div class="er-field pk">PK query_id</div><div class="er-field">user_id FK</div><div class="er-field">query_text</div></div>
+        <div class="er-card"><div class="er-name">NOTIFICATION</div><div class="er-field pk">PK notification_id</div><div class="er-field">user_id FK</div><div class="er-field">deal_id FK</div></div>
+        <div class="er-card"><div class="er-name">FAVORITE</div><div class="er-field pk">PK favorite_id</div><div class="er-field">user_id FK</div></div>
+        <div class="er-card"><div class="er-name">MARKET</div><div class="er-field pk">PK market_id</div><div class="er-field">region_id FK</div><div class="er-field">lat / lng</div></div>
+        <div class="er-card"><div class="er-name">DEAL</div><div class="er-field pk">PK deal_id</div><div class="er-field">market_id FK</div><div class="er-field">category_id FK</div></div>
+        <div class="er-card"><div class="er-name">DEAL_INFO</div><div class="er-field pk">PK deal_info_id</div><div class="er-field">deal_id FK</div><div class="er-field">discount_rate</div></div>
+        <div class="er-card"><div class="er-name">CATEGORY</div><div class="er-field pk">PK category_id</div><div class="er-field">category_name</div></div>
+        <div class="er-card"><div class="er-name">RECOMMENDATION</div><div class="er-field pk">PK recommendation_id</div><div class="er-field">user_id FK</div><div class="er-field">deal_id FK</div></div>
+        <div class="er-card"><div class="er-name">REGION</div><div class="er-field pk">PK region_id</div><div class="er-field">city</div><div class="er-field">geo_boundary</div></div>
+        <div class="er-card"><div class="er-name">QUERY_DATA</div><div class="er-field pk">PK query_data_id</div><div class="er-field">region_id FK</div><div class="er-field">normalized_payload</div></div>
+        <div class="er-card"><div class="er-name">RAW_FEED_ITEM</div><div class="er-field pk">PK raw_item_id</div><div class="er-field">source_id FK</div><div class="er-field">job_id FK</div></div>
+        <div class="er-card"><div class="er-name">DATA_SOURCE</div><div class="er-field pk">PK source_id</div><div class="er-field">source_type</div></div>
+        <div class="er-card"><div class="er-name">INGESTION_JOB</div><div class="er-field pk">PK job_id</div><div class="er-field">source_id FK</div><div class="er-field">job_type</div></div>
       </div>
     </div>
   </div>
@@ -1017,194 +1112,70 @@
     <div class="em-geo">
       <div class="geo-slide">
         <svg viewBox="0 0 1600 900" role="img" aria-label="Chen notation ER diagram for geo-query deal delivery architecture">
-          <text x="60" y="60" font-family="Poppins,Arial,sans-serif" font-size="29" font-weight="700" fill="#171717">ER Diagram: Geo-Query Deal Delivery Architecture</text>
-          <text x="60" y="86" font-family="Poppins,Arial,sans-serif" font-size="13" fill="#525252">Chen-style ER diagram: coordinate request, 2 km geo-query, store matching, live deal join, and GeoJSON map response.</text>
-          <text x="70" y="128" font-family="Poppins,Arial,sans-serif" font-size="11" font-weight="700" fill="#525252">Client Layer</text>
-          <text x="450" y="128" font-family="Poppins,Arial,sans-serif" font-size="11" font-weight="700" fill="#525252">Backend Query Layer</text>
-          <text x="870" y="128" font-family="Poppins,Arial,sans-serif" font-size="11" font-weight="700" fill="#525252">Geo and Deal Data Layer</text>
-          <text x="1260" y="128" font-family="Poppins,Arial,sans-serif" font-size="11" font-weight="700" fill="#525252">Map Response Layer</text>
+          <text x="70" y="40" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#767676" letter-spacing="0.05em">CLIENT LAYER</text>
+          <text x="450" y="40" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#767676" letter-spacing="0.05em">BACKEND QUERY LAYER</text>
+          <text x="870" y="40" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#767676" letter-spacing="0.05em">GEO &amp; DEAL DATA LAYER</text>
+          <text x="1260" y="40" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#767676" letter-spacing="0.05em">MAP RESPONSE LAYER</text>
           <path class="geo-line" d="M 260 220 H 335"/><path class="geo-line" d="M 425 220 H 520"/>
-          <text x="276" y="210" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">1</text>
-          <text x="506" y="210" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">N</text>
+          <text x="276" y="210" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">1</text>
+          <text x="506" y="210" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">N</text>
           <path class="geo-line" d="M 700 220 H 775"/><path class="geo-line" d="M 865 220 H 940"/>
-          <text x="716" y="210" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">1</text>
-          <text x="925" y="210" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">N</text>
+          <text x="716" y="210" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">1</text>
+          <text x="925" y="210" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">N</text>
           <path class="geo-line" d="M 1140 220 H 1215"/><path class="geo-line" d="M 1305 220 H 1360"/>
-          <text x="1156" y="210" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">1</text>
-          <text x="1344" y="210" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">N</text>
+          <text x="1156" y="210" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">1</text>
+          <text x="1344" y="210" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">N</text>
           <path class="geo-line" d="M 620 280 V 355"/><path class="geo-line" d="M 620 445 V 520"/>
-          <text x="632" y="300" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">1</text>
-          <text x="632" y="510" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">N</text>
+          <text x="632" y="300" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">1</text>
+          <text x="632" y="510" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">N</text>
           <path class="geo-line" d="M 760 610 H 835"/><path class="geo-line" d="M 925 610 H 1000"/>
-          <text x="776" y="600" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">N</text>
-          <text x="984" y="600" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">N</text>
+          <text x="776" y="600" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">N</text>
+          <text x="984" y="600" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">N</text>
           <path class="geo-line" d="M 1180 610 H 1260 V 425 H 1385"/>
-          <text x="1196" y="600" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">N</text>
-          <text x="1334" y="510" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">1</text>
+          <text x="1196" y="600" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">N</text>
+          <text x="1334" y="510" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">1</text>
           <path class="geo-line" d="M 1110 456 V 464"/><path class="geo-line" d="M 1110 512 V 520"/>
-          <text x="1122" y="464" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">1</text>
-          <text x="1122" y="518" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">N</text>
+          <text x="1122" y="464" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">1</text>
+          <text x="1122" y="518" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">N</text>
           <path class="geo-line" d="M 1200 380 H 1340"/><path class="geo-line" d="M 1430 380 H 1460 V 280"/>
-          <text x="1276" y="370" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">1</text>
-          <text x="1442" y="300" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">1</text>
+          <text x="1276" y="370" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">1</text>
+          <text x="1442" y="300" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">1</text>
           <path class="geo-line" d="M 260 610 H 335"/><path class="geo-line" d="M 425 610 H 520"/>
-          <text x="276" y="600" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">1</text>
-          <text x="506" y="600" font-family="Poppins,Arial,sans-serif" font-size="10" font-weight="700" fill="#171717">N</text>
+          <text x="276" y="600" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">1</text>
+          <text x="506" y="600" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10" font-weight="500" fill="#171717">N</text>
           <path class="geo-line" d="M 260 250 V 580"/><path class="geo-line" d="M 1460 280 V 580 H 260"/>
-          <g transform="translate(70 170)"><rect class="geo-entity" width="190" height="100"/><text x="16" y="23" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">CLIENT</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.2" font-weight="700" fill="#171717">PK client_session_id</text><text x="16" y="74" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">app_web_channel</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">map_ui_filters</text></g>
-          <g transform="translate(520 170)"><rect class="geo-entity" width="180" height="110"/><text x="16" y="23" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">BACKEND_API</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.2" font-weight="700" fill="#171717">PK request_id</text><text x="16" y="74" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">FastAPI / Node.js</text><text x="16" y="94" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">auth + validation</text></g>
-          <g transform="translate(940 170)"><rect class="geo-entity" width="200" height="110"/><text x="16" y="23" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">GEO_INDEX</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.2" font-weight="700" fill="#171717">PK geo_index_id</text><text x="16" y="74" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">PostGIS / Redis Geo</text><text x="16" y="94" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">Google Maps source</text></g>
-          <g transform="translate(1360 170)"><rect class="geo-entity" width="190" height="110"/><text x="16" y="23" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">MAP_RESPONSE</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.2" font-weight="700" fill="#171717">PK response_id</text><text x="16" y="74" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">GeoJSON payload</text><text x="16" y="94" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">distance + deals[]</text></g>
-          <g transform="translate(520 520)"><rect class="geo-entity" width="240" height="108"/><text x="16" y="23" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">STORE</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.2" font-weight="700" fill="#171717">PK store_id</text><text x="16" y="74" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">market_id, latitude, longitude</text><text x="16" y="94" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">within 2 km candidate set</text></g>
-          <g transform="translate(1000 520)"><rect class="geo-entity" width="180" height="108"/><text x="16" y="23" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">LIVE_DEAL</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.2" font-weight="700" fill="#171717">PK deal_id</text><text x="16" y="74" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">discount_rate</text><text x="16" y="94" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">price_measure</text></g>
-          <g transform="translate(1020 348)"><rect class="geo-entity" width="180" height="108"/><text x="16" y="23" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">DEAL_SOURCE</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.2" font-weight="700" fill="#171717">PK source_id</text><text x="16" y="74" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">Flipp API</text><text x="16" y="94" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">PC Express GraphQL</text></g>
-          <g transform="translate(70 560)"><rect class="geo-entity" width="190" height="100"/><text x="16" y="23" font-family="Poppins,Arial,sans-serif" font-size="13" font-weight="700" fill="#171717">MAP_SDK</text><text x="16" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.2" font-weight="700" fill="#171717">PK render_id</text><text x="16" y="74" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">Mapbox / Leaflet</text><text x="16" y="92" font-family="Poppins,Arial,sans-serif" font-size="10.2" fill="#404040">Google Maps SDK</text></g>
-          <g transform="translate(335 168)"><polygon class="geo-relationship" points="45,0 90,52 45,104 0,52"/><text x="45" y="43" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">SENDS</text><text x="45" y="58" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">LAT/LNG</text></g>
-          <g transform="translate(775 168)"><polygon class="geo-relationship" points="45,0 90,52 45,104 0,52"/><text x="45" y="40" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">RUNS</text><text x="45" y="55" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">2 KM</text><text x="45" y="70" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">QUERY</text></g>
-          <g transform="translate(1215 168)"><polygon class="geo-relationship" points="45,0 90,52 45,104 0,52"/><text x="45" y="42" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">BUILDS</text><text x="45" y="58" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">GEOJSON</text></g>
-          <g transform="translate(575 355)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="38" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">RETURNS</text><text x="45" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">STORES</text></g>
-          <g transform="translate(835 565)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="37" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">MATCHES</text><text x="45" y="53" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">STORE ID</text></g>
-          <g transform="translate(1065 464)"><polygon class="geo-relationship" points="45,0 90,24 45,48 0,24"/><text x="45" y="18" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">SUPPLIES</text><text x="45" y="32" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">LIVE DATA</text></g>
-          <g transform="translate(1340 335)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="38" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">MAPS</text><text x="45" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">RESULT</text></g>
-          <g transform="translate(335 565)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="38" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">RENDERS</text><text x="45" y="54" font-family="Poppins,Arial,sans-serif" font-size="10.4" font-weight="700" fill="#171717" text-anchor="middle" dominant-baseline="middle">MAP</text></g>
+          <g transform="translate(70 170)"><rect class="geo-entity" width="190" height="100"/><text x="16" y="23" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">CLIENT</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" font-weight="500" fill="#171717">PK client_session_id</text><text x="16" y="74" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">app_web_channel</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">map_ui_filters</text></g>
+          <g transform="translate(520 170)"><rect class="geo-entity" width="180" height="110"/><text x="16" y="23" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">BACKEND_API</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" font-weight="500" fill="#171717">PK request_id</text><text x="16" y="74" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">FastAPI / Node.js</text><text x="16" y="94" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">auth + validation</text></g>
+          <g transform="translate(940 170)"><rect class="geo-entity" width="200" height="110"/><text x="16" y="23" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">GEO_INDEX</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" font-weight="500" fill="#171717">PK geo_index_id</text><text x="16" y="74" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">PostGIS / Redis Geo</text><text x="16" y="94" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">Google Maps source</text></g>
+          <g transform="translate(1360 170)"><rect class="geo-entity" width="190" height="110"/><text x="16" y="23" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">MAP_RESPONSE</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" font-weight="500" fill="#171717">PK response_id</text><text x="16" y="74" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">GeoJSON payload</text><text x="16" y="94" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">distance + deals[]</text></g>
+          <g transform="translate(520 520)"><rect class="geo-entity" width="240" height="108"/><text x="16" y="23" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">STORE</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" font-weight="500" fill="#171717">PK store_id</text><text x="16" y="74" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">market_id, latitude, longitude</text><text x="16" y="94" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">within 2 km candidate set</text></g>
+          <g transform="translate(1000 520)"><rect class="geo-entity" width="180" height="108"/><text x="16" y="23" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">LIVE_DEAL</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" font-weight="500" fill="#171717">PK deal_id</text><text x="16" y="74" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">discount_rate</text><text x="16" y="94" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">price_measure</text></g>
+          <g transform="translate(1020 348)"><rect class="geo-entity" width="180" height="108"/><text x="16" y="23" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">DEAL_SOURCE</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" font-weight="500" fill="#171717">PK source_id</text><text x="16" y="74" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">Flipp API</text><text x="16" y="94" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">PC Express GraphQL</text></g>
+          <g transform="translate(70 560)"><rect class="geo-entity" width="190" height="100"/><text x="16" y="23" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">MAP_SDK</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" font-weight="500" fill="#171717">PK render_id</text><text x="16" y="74" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">Mapbox / Leaflet</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.2" fill="#404040">Google Maps SDK</text></g>
+          <g transform="translate(335 168)"><polygon class="geo-relationship" points="45,0 90,52 45,104 0,52"/><text x="45" y="43" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">SENDS</text><text x="45" y="58" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">LAT/LNG</text></g>
+          <g transform="translate(775 168)"><polygon class="geo-relationship" points="45,0 90,52 45,104 0,52"/><text x="45" y="40" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">RUNS</text><text x="45" y="55" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">2 KM</text><text x="45" y="70" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">QUERY</text></g>
+          <g transform="translate(1215 168)"><polygon class="geo-relationship" points="45,0 90,52 45,104 0,52"/><text x="45" y="42" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">BUILDS</text><text x="45" y="58" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">GEOJSON</text></g>
+          <g transform="translate(575 355)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="38" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">RETURNS</text><text x="45" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">STORES</text></g>
+          <g transform="translate(835 565)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="37" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">MATCHES</text><text x="45" y="53" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">STORE ID</text></g>
+          <g transform="translate(1065 464)"><polygon class="geo-relationship" points="45,0 90,24 45,48 0,24"/><text x="45" y="18" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">SUPPLIES</text><text x="45" y="32" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">LIVE DATA</text></g>
+          <g transform="translate(1340 335)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="38" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">MAPS</text><text x="45" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">RESULT</text></g>
+          <g transform="translate(335 565)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="38" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">RENDERS</text><text x="45" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">MAP</text></g>
           <rect class="geo-note-box" x="60" y="804" width="1480" height="50"/>
-          <text x="82" y="828" font-family="Poppins,Arial,sans-serif" font-size="11" font-weight="700" fill="#171717">Operational interpretation</text>
-          <text x="248" y="828" font-family="Poppins,Arial,sans-serif" font-size="9.5" fill="#525252">The backend receives coordinates, queries nearby stores within 2 km, matches store IDs against live deal sources, builds a GeoJSON response, and the map SDK renders market markers with deal metadata.</text>
+          <text x="82" y="828" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="500" fill="#171717">Operational interpretation</text>
+          <text x="248" y="828" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.5" fill="#525252">The backend receives coordinates, queries nearby stores within 2 km, matches store IDs against live deal sources, builds a GeoJSON response, and the map SDK renders market markers with deal metadata.</text>
         </svg>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Design Strategies Roadmap -->
-<section class="roadmap-section wrap">
-  <div class="ph-label" style="margin-bottom:16px;">Design Strategies</div>
-  <h2 class="ph-heading">Horizon Roadmap</h2>
-
-  <div class="roadmap">
-
-    <!-- H-1 -->
-    <div class="roadmap-item">
-      <div class="roadmap-card">
-        <div class="roadmap-header">
-          <span class="roadmap-h">H-1</span>
-          <div>
-            <div class="roadmap-title">Foundation</div>
-            <div class="roadmap-goal">Anchor partner secured, white-label MVP embedded</div>
-          </div>
-          <span class="roadmap-period">0 – 12 months</span>
-        </div>
-        <div class="roadmap-body">
-          <div class="roadmap-body-inner">
-            <div class="roadmap-cols">
-              <div class="roadmap-col">
-                <div class="roadmap-col-label">Key Moves</div>
-                <ul class="roadmap-list">
-                  <li>Land LOI / Pilot with anchor retailer — Loblaws, Empire, Metro, or Canadian Tire</li>
-                  <li>Build white-label SDK or embedded module</li>
-                  <li>Geo core to ±50m accuracy</li>
-                  <li>Partner store-network data pipeline</li>
-                </ul>
-              </div>
-              <div class="roadmap-col">
-                <div class="roadmap-col-label">KPIs</div>
-                <ul class="roadmap-list">
-                  <li>In-app deal engagement rate</li>
-                  <li>Store-visit conversion attributable to Near Me</li>
-                  <li>Pilot NPS from partner side</li>
-                </ul>
-              </div>
-              <div class="roadmap-col watch-col">
-                <div class="roadmap-col-label">Watch</div>
-                <p class="roadmap-watch">Exclusivity clause scope — keep narrow (e.g., "grocery vertical, 18 months") so H-3 expansion stays open. Retain Near Me brand and IP ownership.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="geo-mobile">
+        <div class="geo-card"><div class="geo-name">CLIENT</div><div class="geo-field pk">PK client_session_id</div><div class="geo-field">app_web_channel</div><div class="geo-field">map_ui_filters</div></div>
+        <div class="geo-card"><div class="geo-name">BACKEND_API</div><div class="geo-field pk">PK request_id</div><div class="geo-field">FastAPI / Node.js</div><div class="geo-field">auth + validation</div></div>
+        <div class="geo-card"><div class="geo-name">GEO_INDEX</div><div class="geo-field pk">PK geo_index_id</div><div class="geo-field">PostGIS / Redis Geo</div><div class="geo-field">Google Maps source</div></div>
+        <div class="geo-card"><div class="geo-name">MAP_RESPONSE</div><div class="geo-field pk">PK response_id</div><div class="geo-field">GeoJSON payload</div><div class="geo-field">distance + deals[]</div></div>
+        <div class="geo-card"><div class="geo-name">STORE</div><div class="geo-field pk">PK store_id</div><div class="geo-field">market_id, lat, lng</div><div class="geo-field">within 2km candidate set</div></div>
+        <div class="geo-card"><div class="geo-name">LIVE_DEAL</div><div class="geo-field pk">PK deal_id</div><div class="geo-field">discount_rate</div><div class="geo-field">price_measure</div></div>
+        <div class="geo-card"><div class="geo-name">DEAL_SOURCE</div><div class="geo-field pk">PK source_id</div><div class="geo-field">Flipp API</div><div class="geo-field">PC Express GraphQL</div></div>
+        <div class="geo-card"><div class="geo-name">MAP_SDK</div><div class="geo-field pk">PK render_id</div><div class="geo-field">Mapbox / Leaflet</div><div class="geo-field">Google Maps SDK</div></div>
       </div>
     </div>
-
-    <!-- H-2 -->
-    <div class="roadmap-item">
-      <div class="roadmap-card">
-        <div class="roadmap-header">
-          <span class="roadmap-h">H-2</span>
-          <div>
-            <div class="roadmap-title">Scale Core Loop</div>
-            <div class="roadmap-goal">Embedded launch live, geo optimized, revenue flowing from partner</div>
-          </div>
-          <span class="roadmap-period">12 – 24 months</span>
-        </div>
-        <div class="roadmap-body">
-          <div class="roadmap-body-inner">
-            <div class="roadmap-cols">
-              <div class="roadmap-col">
-                <div class="roadmap-col-label">Key Moves</div>
-                <ul class="roadmap-list">
-                  <li>Launch inside partner loyalty app — PC Optimum, Scene+, moi, or Triangle</li>
-                  <li>Cover all banner stores across partner network</li>
-                  <li>Geo upgrade: indoor positioning, dwell-time, route prediction</li>
-                  <li>Revenue: SaaS license fee + attributed-sales rev share</li>
-                </ul>
-              </div>
-              <div class="roadmap-col">
-                <div class="roadmap-col-label">KPIs</div>
-                <ul class="roadmap-list">
-                  <li>Feature usage within partner MAU</li>
-                  <li>Attributed sales lift vs. control group</li>
-                  <li>Indoor geo accuracy at scale</li>
-                </ul>
-              </div>
-              <div class="roadmap-col watch-col">
-                <div class="roadmap-col-label">Watch</div>
-                <p class="roadmap-watch">Must prove measurable lift to unlock H-3 expansion budget — instrument attribution from day one.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- H-3 -->
-    <div class="roadmap-item">
-      <div class="roadmap-card">
-        <div class="roadmap-header">
-          <span class="roadmap-h">H-3</span>
-          <div>
-            <div class="roadmap-title">Multi-Tenant Platform</div>
-            <div class="roadmap-goal">Second partner onboarded, platform identity established</div>
-          </div>
-          <span class="roadmap-period">24M+</span>
-        </div>
-        <div class="roadmap-body">
-          <div class="roadmap-body-inner">
-            <div class="roadmap-cols">
-              <div class="roadmap-col">
-                <div class="roadmap-col-label">Key Moves</div>
-                <ul class="roadmap-list">
-                  <li>Add category-non-compete partner — Canadian Tire if H-1 was grocer, or vice versa</li>
-                  <li>Re-architect for multi-tenancy: per-tenant data isolation, shared geo intelligence layer</li>
-                  <li>Brand shift from "feature of X" to "platform powering Canadian retail"</li>
-                </ul>
-              </div>
-              <div class="roadmap-col">
-                <div class="roadmap-col-label">KPIs</div>
-                <ul class="roadmap-list">
-                  <li>Time-to-onboard 2nd tenant</li>
-                  <li>Cross-tenant geo model performance</li>
-                  <li>% revenue from non-anchor tenant</li>
-                </ul>
-              </div>
-              <div class="roadmap-col watch-col">
-                <div class="roadmap-col-label">Watch</div>
-                <p class="roadmap-watch">Brand positioning work must begin at H-2. The identity shift is the hardest transition — "feature" to "infrastructure."</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -1217,23 +1188,23 @@
 document.addEventListener('DOMContentLoaded', function () {
   var items = Array.from(document.querySelectorAll('.roadmap-item'));
   var revealed = items.map(function () { return false; });
+  var rail = document.querySelector('.roadmap-rail');
+  var roadmapEl = document.querySelector('.roadmap');
 
   function getActiveIndex() {
     var vpH = window.innerHeight;
-    var sweetSpot = window.scrollY + vpH * 0.38;
+    var sweetSpot = window.scrollY + vpH * 0.42;
     var best = -1;
     var bestDist = Infinity;
 
     items.forEach(function (item, i) {
       var hdr = item.querySelector('.roadmap-header');
       var r = hdr.getBoundingClientRect();
-      if (r.bottom < 0 || r.top > vpH) return;
       var hdrCenter = window.scrollY + r.top + r.height / 2;
       var dist = Math.abs(sweetSpot - hdrCenter);
       if (dist < bestDist) { bestDist = dist; best = i; }
     });
 
-    // all headers scrolled above viewport → keep last
     if (best === -1) {
       var allGone = items.every(function (item) {
         return item.querySelector('.roadmap-header').getBoundingClientRect().bottom < 0;
@@ -1246,15 +1217,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function update() {
     var active = getActiveIndex();
+
     items.forEach(function (item, i) {
       if (!revealed[i] && item.getBoundingClientRect().top < window.innerHeight * 0.88) {
         revealed[i] = true;
         item.classList.add('visible');
       }
       var card = item.querySelector('.roadmap-card');
-      if (i === active) card.classList.add('open');
-      else card.classList.remove('open');
+      if (i === active) {
+        card.classList.add('open');
+        item.classList.add('active');
+      } else {
+        card.classList.remove('open');
+        item.classList.remove('active');
+      }
     });
+
+    if (rail && roadmapEl && active >= 0) {
+      var rmTop = roadmapEl.getBoundingClientRect().top;
+      var hdr = items[active].querySelector('.roadmap-header');
+      var hdrTop = hdr.getBoundingClientRect().top;
+      var dotOffset = hdrTop - rmTop + 43;
+      rail.style.height = Math.max(0, dotOffset) + 'px';
+    }
   }
 
   window.addEventListener('scroll', update, { passive: true });
