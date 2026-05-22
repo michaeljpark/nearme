@@ -185,10 +185,29 @@
 
 /* Mobile overrides for inlined diagrams */
 @media(max-width:760px){
-  .em-mece{overflow-x:auto;}
-  .em-mece .mece-tree{min-width:680px;}
   .em-stake{height:520px;}
 }
+/* MECE mobile cards */
+.mece-mobile{display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);}
+.mece-mc{background:var(--bg);padding:14px 12px;aspect-ratio:3/4;display:flex;flex-direction:column;overflow:hidden;}
+.mece-mc.gap-col{background:#ebebea;}
+.mece-mc-label{font-size:10px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:10px;}
+.mece-mc ul{list-style:none;display:flex;flex-direction:column;gap:7px;flex:1;margin:0;padding:0;}
+.mece-mc li{font-size:11px;color:var(--muted);line-height:1.4;padding-left:10px;position:relative;letter-spacing:-0.01em;}
+.mece-mc li::before{content:"–";position:absolute;left:0;color:var(--line);}
+.mece-mc .gap-li{color:var(--ink);font-weight:500;}
+
+/* BCG mobile cards */
+.bcg-mobile{display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);}
+.bcg-mc{background:var(--bg);padding:12px;aspect-ratio:3/4;display:flex;flex-direction:column;overflow:hidden;}
+.bcg-mc.primary-mc{background:#ebebea;}
+.bcg-mc-title{font-size:12px;font-weight:500;letter-spacing:-0.03em;color:var(--ink);margin-bottom:3px;}
+.bcg-mc-def{font-size:9px;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:10px;}
+.bcg-mc ul{list-style:none;display:flex;flex-direction:column;gap:6px;flex:1;margin:0;padding:0;}
+.bcg-mc li{font-size:10px;color:var(--muted);line-height:1.4;padding-left:10px;position:relative;}
+.bcg-mc li::before{content:"–";position:absolute;left:0;color:var(--line);}
+.bcg-mc .star-li{color:var(--ink);font-weight:500;}
+
 @media(max-width:640px){
   .em-comp .comp-slide{
     grid-template-columns:1fr;
@@ -199,12 +218,20 @@
     gap:8px;
   }
   .em-comp .comp-matrix{aspect-ratio:3/4;}
+  .em-mece{overflow-x:visible;}
+  .em-mece .mece-tree{display:none;}
+  .mece-mobile{display:grid;}
+  .em-bcg .bcg-shell,.em-bcg .bcg-corner-row{display:none;}
+  .em-bcg .bcg-page{min-width:0;}
+  .bcg-mobile{display:grid;}
   .em-er .er-slide,.em-geo .geo-slide{display:none;}
   .er-mobile,.geo-mobile{display:grid;}
+  .em-stake{height:min(600px,calc(100vw * 4/3));}
+  .em-stake .sk-node-text{font-size:7px;}
+  .em-stake .orbit-label{font-size:8px;}
 }
 @media(max-width:560px){
-  .em-bcg .bcg-page{min-width:520px;}
-  .em-stake{height:400px;}
+  .em-stake{height:min(520px,calc(100vw * 4/3));}
   .em-bmc .bmc-grid{font-size:11px;}
 }
 </style>
@@ -507,6 +534,41 @@
           </svg>
         </div>
       </div>
+      <div class="mece-mobile">
+        <div class="mece-mc">
+          <div class="mece-mc-label">01 Mass Broadcast</div>
+          <ul>
+            <li>TV / radio</li>
+            <li>OOH / billboards</li>
+            <li>Paper flyers / inserts</li>
+          </ul>
+        </div>
+        <div class="mece-mc">
+          <div class="mece-mc-label">02 Digital Targeted</div>
+          <ul>
+            <li>Search ads (intent)</li>
+            <li>Social ads (interest)</li>
+            <li>Email / SMS (loyalty)</li>
+            <li>Programmatic display</li>
+          </ul>
+        </div>
+        <div class="mece-mc gap-col">
+          <div class="mece-mc-label">03 Location-Aware</div>
+          <ul>
+            <li>City flyer apps</li>
+            <li>Neighbourhood SEO / Yelp</li>
+            <li class="gap-li">★ Real-time proximity</li>
+          </ul>
+        </div>
+        <div class="mece-mc">
+          <div class="mece-mc-label">04 In-Store</div>
+          <ul>
+            <li>Shelf merchandising</li>
+            <li>POS / coupon</li>
+            <li>In-store digital screens</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -570,6 +632,45 @@
           </tbody>
         </table>
         <div class="bcg-insight"><strong>Strategic Implication</strong>Of 13 channel sub-nodes mapped across four mutually exclusive families, twelve are operated by mature incumbents or structurally resemble mature incumbent channels. Real-time proximity remains the only structurally unoccupied space: hyperlocal, intent-aware, in-the-moment offer delivery. The remaining whitespace is the channel best suited to physical retail's strongest natural advantage.</div>
+      </div>
+      <div class="bcg-mobile">
+        <div class="bcg-mc">
+          <div class="bcg-mc-title">Stars</div>
+          <div class="bcg-mc-def">High growth · High share</div>
+          <ul>
+            <li>E-commerce targeting platforms</li>
+            <li>Retail media networks</li>
+            <li>Programmatic ad platforms</li>
+          </ul>
+        </div>
+        <div class="bcg-mc primary-mc">
+          <div class="bcg-mc-title">Question Marks</div>
+          <div class="bcg-mc-def">High growth · Low share</div>
+          <ul>
+            <li class="star-li">Real-time proximity deals map</li>
+            <li>Merchant inventory channel</li>
+            <li>Shopper local availability layer</li>
+          </ul>
+        </div>
+        <div class="bcg-mc">
+          <div class="bcg-mc-title">Cash Cows</div>
+          <div class="bcg-mc-def">Low growth · High share</div>
+          <ul>
+            <li>Flyer apps</li>
+            <li>Loyalty platforms</li>
+            <li>Store websites</li>
+            <li>POS / merchant SaaS</li>
+          </ul>
+        </div>
+        <div class="bcg-mc">
+          <div class="bcg-mc-title">Dogs</div>
+          <div class="bcg-mc-def">Low growth · Low share</div>
+          <ul>
+            <li>Static local ads</li>
+            <li>Generic city-level deal pages</li>
+            <li>Untargeted printed promotions</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
