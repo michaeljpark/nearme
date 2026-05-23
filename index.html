@@ -247,7 +247,15 @@
 </nav>
 
 <header class="hero wrap">
-  <div class="hero-back"><a href="https://michaeljpark.github.io/porrtfolio2026/">← Back to Work</a></div>
+  <div class="hero-back"><a href="https://michaeljpark.github.io/porrtfolio2026/" id="back-link">← Back to Work</a></div>
+<script>
+(function(){
+  var link = document.getElementById('back-link');
+  if(document.referrer && document.referrer !== window.location.href){
+    link.addEventListener('click', function(e){ e.preventDefault(); history.back(); });
+  }
+})();
+</script>
   <div class="hero-greeting">Product Design</div>
   <h1 class="hero-name">Near Me</h1>
   <p class="hero-tagline">Geolocation-Based Market Deal Checker</p>
