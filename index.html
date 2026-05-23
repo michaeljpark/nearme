@@ -288,6 +288,9 @@
   line-height:1;margin-left:0.05em;padding-bottom:0.1em;color:var(--ink);
 }
 .sam-unit-pre{margin-left:0;margin-right:0.02em;padding-bottom:0;align-self:flex-end;}
+.sam-big .sam-count,.sam-big .sam-unit{color:#36A05B;}
+.sam-future .sam-count,.sam-future .sam-unit{color:#36A05B;}
+.sam-current .sam-count,.sam-current .sam-unit{color:#C8DDD0;}
 .sam-cap{margin-top:8px;font-size:clamp(11px,0.85vw,13px);color:var(--muted);letter-spacing:-0.02em;line-height:1.45;}
 .sam-blurb{
   margin:clamp(16px,2vw,24px) 0 0;font-size:clamp(13px,0.95vw,15px);
@@ -331,7 +334,7 @@
 .tl-board{display:block;position:sticky;top:50vh;transform:translateY(-50%);}
 .tl-stage{position:relative;min-height:320px;}
 .tl-card{
-  position:absolute;inset:0;background:#0a0a0a;border-radius:20px;
+  position:absolute;inset:0;background:#C8DDD0;border-radius:20px;
   padding:clamp(20px,2vw,32px);display:flex;flex-direction:column;gap:14px;
   opacity:0;visibility:hidden;transform:translateY(10px);
   transition:opacity .45s cubic-bezier(.22,.61,.36,1),
@@ -344,22 +347,22 @@
   transition-delay:0s;pointer-events:auto;
 }
 .tl-card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
-.tl-gate-id{font-size:clamp(11px,0.85vw,12px);font-weight:500;letter-spacing:-0.02em;color:#888;}
+.tl-gate-id{font-size:clamp(11px,0.85vw,12px);font-weight:500;letter-spacing:-0.02em;color:#3a5a47;}
 .tl-gate-tag{
-  font-size:11px;color:#888;letter-spacing:-0.02em;
-  padding:4px 10px;border:1px solid #2e2e2e;border-radius:999px;white-space:nowrap;
+  font-size:11px;color:#3a5a47;letter-spacing:-0.02em;
+  padding:4px 10px;border:1px solid rgba(0,0,0,0.15);border-radius:999px;white-space:nowrap;
 }
 .tl-card-title{
   font-size:clamp(18px,1.6vw,24px);font-weight:500;
-  letter-spacing:-0.04em;line-height:1.25;color:#f5f5f3;
+  letter-spacing:-0.04em;line-height:1.25;color:#0a0a0a;
 }
-.tl-card-sub{font-size:clamp(12px,0.95vw,14px);color:#777;letter-spacing:-0.03em;line-height:1.4;margin-top:-6px;}
+.tl-card-sub{font-size:clamp(12px,0.95vw,14px);color:#3a5a47;letter-spacing:-0.03em;line-height:1.4;margin-top:-6px;}
 .tl-card-list{
   list-style:none;padding:14px 0 0;margin:0;
-  display:flex;flex-direction:column;gap:8px;border-top:1px solid #262626;
+  display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(0,0,0,0.12);
 }
-.tl-card-list li{font-size:clamp(12px,0.9vw,13px);color:#cfcfcf;letter-spacing:-0.03em;line-height:1.45;}
-.tl-card-list li .dim{color:#666;}
+.tl-card-list li{font-size:clamp(12px,0.9vw,13px);color:#2a2a2a;letter-spacing:-0.03em;line-height:1.45;}
+.tl-card-list li .dim{color:#3a5a47;}
 .tl-track{
   position:relative;display:flex;justify-content:space-between;
   align-items:flex-start;padding:32px 0 4px;margin-top:clamp(20px,2.4vw,32px);
@@ -766,14 +769,14 @@
             </div>
           </div>
           <div class="sam-side">
-            <div class="sam-stat">
+            <div class="sam-stat sam-future">
               <div class="sam-eyebrow">Market 2034</div>
               <div class="sam-mid">
                 <span class="sam-unit sam-unit-pre">$</span><span class="sam-count" data-count-to="579.70" data-count-decimals="2">0</span><span class="sam-unit">B</span>
               </div>
               <div class="sam-cap">Geolocation Ad Market by 2034</div>
             </div>
-            <div class="sam-stat">
+            <div class="sam-stat sam-current">
               <div class="sam-eyebrow">Market 2026</div>
               <div class="sam-mid">
                 <span class="sam-unit sam-unit-pre">$</span><span class="sam-count" data-count-to="150.09" data-count-decimals="2">0</span><span class="sam-unit">B</span>
@@ -807,14 +810,14 @@
             </div>
           </div>
           <div class="sam-side">
-            <div class="sam-stat">
+            <div class="sam-stat sam-future">
               <div class="sam-eyebrow">Market 2031</div>
               <div class="sam-mid">
                 <span class="sam-unit sam-unit-pre">$</span><span class="sam-count" data-count-to="3.26" data-count-decimals="2">0</span><span class="sam-unit">B</span>
               </div>
               <div class="sam-cap">Canada LBS Market by 2031</div>
             </div>
-            <div class="sam-stat">
+            <div class="sam-stat sam-current">
               <div class="sam-eyebrow">Market 2026</div>
               <div class="sam-mid">
                 <span class="sam-unit sam-unit-pre">$</span><span class="sam-count" data-count-to="1.56" data-count-decimals="2">0</span><span class="sam-unit">B</span>
@@ -848,14 +851,14 @@
             </div>
           </div>
           <div class="sam-side">
-            <div class="sam-stat">
+            <div class="sam-stat sam-future">
               <div class="sam-eyebrow">Market 2033</div>
               <div class="sam-mid">
                 <span class="sam-unit sam-unit-pre">$</span><span class="sam-count" data-count-to="5.28" data-count-decimals="2">0</span><span class="sam-unit">B</span>
               </div>
               <div class="sam-cap">Canadian Digital Commerce by 2033</div>
             </div>
-            <div class="sam-stat">
+            <div class="sam-stat sam-current">
               <div class="sam-eyebrow">Market 2026</div>
               <div class="sam-mid">
                 <span class="sam-unit sam-unit-pre">$</span><span class="sam-count" data-count-to="0.99" data-count-decimals="2">0</span><span class="sam-unit">B</span>
