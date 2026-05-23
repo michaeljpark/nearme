@@ -399,9 +399,11 @@
 /* ── Competitor Analysis ──────────────────────────────── */
 .ca-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);margin-top:32px;}
 .ca-card{background:var(--bg);padding:clamp(24px,3vw,40px) clamp(18px,2.4vw,32px);}
-.ca-header{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+.ca-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+.ca-header-text{display:flex;align-items:baseline;gap:12px;flex:1;}
 .ca-name{font-size:clamp(16px,1.5vw,20px);font-weight:500;letter-spacing:-0.04em;color:var(--ink);}
 .ca-tag{font-size:11px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;}
+.ca-logo{height:28px;width:auto;object-fit:contain;display:block;flex-shrink:0;margin:6px 0;opacity:0.5;}
 .ca-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
 .ca-list li{font-size:13px;color:var(--muted);line-height:1.6;letter-spacing:-0.02em;}
 .ca-label{display:block;font-size:11px;font-weight:500;color:var(--ink);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:3px;}
@@ -411,6 +413,10 @@
   .ca-grid{grid-template-columns:1fr;}
   .ca-card{border-top:1px solid var(--line);}
   .ca-card:first-child{border-top:none;}
+  .ca-header{flex-direction:column;align-items:center;text-align:center;}
+  .ca-header-text{justify-content:center;}
+  .ca-logo{margin:8px auto 0;height:24px;}
+  .ca-card:nth-child(1) .ca-logo{height:36px;}
 }
 
 @media(max-width:880px){
@@ -995,8 +1001,11 @@
 
     <div class="ca-card">
       <div class="ca-header">
-        <div class="ca-name">Flipp</div>
-        <div class="ca-tag">Flyer Aggregator</div>
+        <div class="ca-header-text">
+          <div class="ca-name">Flipp</div>
+          <div class="ca-tag">Flyer Aggregator</div>
+        </div>
+        <img src="./flipplogo.png" alt="Flipp" class="ca-logo">
       </div>
       <ul class="ca-list">
         <li><span class="ca-label">Discovery model</span> Passive flyer browsing — users must manually search by retailer or category, with no intent-based or proximity-aware surfacing.</li>
@@ -1008,8 +1017,11 @@
 
     <div class="ca-card">
       <div class="ca-header">
-        <div class="ca-name">Flashfood</div>
-        <div class="ca-tag">Surplus Marketplace</div>
+        <div class="ca-header-text">
+          <div class="ca-name">Flashfood</div>
+          <div class="ca-tag">Surplus Marketplace</div>
+        </div>
+        <img src="./flashfoodlogo.png" alt="Flashfood" class="ca-logo">
       </div>
       <ul class="ca-list">
         <li><span class="ca-label">Inventory scope</span> Exclusively serves near-expiry and surplus inventory. The platform's supply logic is reactive rather than predictive, constrained to markdown clearance scenarios.</li>
@@ -1021,8 +1033,11 @@
 
     <div class="ca-card">
       <div class="ca-header">
-        <div class="ca-name">Many Penny</div>
-        <div class="ca-tag">Deal Aggregator</div>
+        <div class="ca-header-text">
+          <div class="ca-name">Many Penny</div>
+          <div class="ca-tag">Deal Aggregator</div>
+        </div>
+        <img src="./manypennylogo.png" alt="Many Penny" class="ca-logo">
       </div>
       <ul class="ca-list">
         <li><span class="ca-label">Navigation utility</span> Surfaces deals without guiding users toward an optimal store choice. The experience terminates at discovery, not at a routing or selection recommendation.</li>
@@ -1034,8 +1049,11 @@
 
     <div class="ca-card">
       <div class="ca-header">
-        <div class="ca-name">Foodhero</div>
-        <div class="ca-tag">Discounted Food Listings</div>
+        <div class="ca-header-text">
+          <div class="ca-name">Foodhero</div>
+          <div class="ca-tag">Discounted Food Listings</div>
+        </div>
+        <img src="./foodhero.png" alt="Foodhero" class="ca-logo">
       </div>
       <ul class="ca-list">
         <li><span class="ca-label">Location model</span> Provides location-based listings of discounted food items, but proximity is used as a filter, not as an optimization signal for store selection.</li>
