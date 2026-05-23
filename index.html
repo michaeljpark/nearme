@@ -438,7 +438,7 @@
 
 <nav class="top">
   <div class="nav-inner">
-    <a href="https://michaeljpark.github.io/porrtfolio2026/" class="nav-mark">Michael J. Park &amp; Hyeri Jeong</a>
+    <a href="https://michaeljpark.github.io/porrtfolio2026/" class="nav-mark" id="nav-mark">Michael J. Park &amp; Hyeri Jeong</a>
     <div class="nav-links">
       <a href="https://michaeljpark.github.io/porrtfolio2026/#work">Work</a>
       <a href="https://michaeljpark.github.io/porrtfolio2026/#about">About</a>
@@ -451,9 +451,10 @@
   <div class="hero-back"><a href="https://michaeljpark.github.io/porrtfolio2026/" id="back-link">← Back to Work</a></div>
 <script>
 (function(){
-  var link = document.getElementById('back-link');
   if(document.referrer && document.referrer !== window.location.href){
-    link.addEventListener('click', function(e){ e.preventDefault(); history.back(); });
+    var fn = function(e){ e.preventDefault(); history.back(); };
+    document.getElementById('back-link').addEventListener('click', fn);
+    document.getElementById('nav-mark').addEventListener('click', fn);
   }
 })();
 </script>
