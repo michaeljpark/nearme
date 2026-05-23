@@ -452,6 +452,66 @@
   .tl-node-dot{width:12px;height:12px;}
   .tl-node-meta{display:none;}
 }
+
+/* ── Potential Partnerships ─────────────────────────────── */
+.pp-section{
+  padding-top:80px;padding-bottom:80px;
+  border-top:1px solid var(--line);
+}
+.pp-head{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:24px;margin-bottom:48px;
+}
+.pp-head-left{max-width:560px;}
+.pp-horizon-tag{
+  font-size:12px;color:var(--muted);letter-spacing:-0.02em;
+  padding-top:4px;white-space:nowrap;
+}
+.pp-marquee-wrap{
+  position:relative;overflow:hidden;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 72px,#000 calc(100% - 72px),transparent);
+  mask-image:linear-gradient(to right,transparent,#000 72px,#000 calc(100% - 72px),transparent);
+}
+.pp-marquee-track{
+  display:flex;gap:12px;width:max-content;
+  animation:pp-scroll 22s linear infinite;
+}
+.pp-marquee-track:hover{animation-play-state:paused;}
+@keyframes pp-scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+.pp-chip{
+  display:flex;align-items:center;justify-content:center;
+  padding:16px 32px;flex-shrink:0;
+}
+.pp-chip img{
+  height:32px;width:auto;object-fit:contain;display:block;
+  opacity:0.5;
+}
+.pp-foot{
+  margin-top:48px;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(24px,3vw,56px);align-items:start;
+}
+.pp-foot-main{font-size:15px;color:var(--muted);line-height:1.7;letter-spacing:-0.02em;}
+.pp-foot-note{
+  display:flex;flex-direction:column;gap:14px;padding-top:4px;
+  align-items:flex-end;text-align:right;
+}
+.pp-foot-stat{display:flex;flex-direction:column;gap:3px;}
+.pp-foot-stat-num{
+  font-size:clamp(22px,2.5vw,32px);font-weight:500;
+  letter-spacing:-0.05em;line-height:1;
+}
+.pp-foot-stat-label{font-size:12px;color:var(--muted);letter-spacing:-0.02em;}
+@media(max-width:760px){
+  .pp-head{flex-direction:column;gap:8px;}
+  .pp-foot{grid-template-columns:1fr;}
+  .pp-foot-note{flex-direction:column;gap:14px;align-items:flex-start;text-align:left;}
+  .pp-foot-stat-num{font-size:88px;}
+  .pp-foot-stat-label{font-size:24px;}
+}
 </style>
 </head>
 <body>
@@ -640,6 +700,50 @@
       <p class="ph-body" style="margin-top:20px;">Near Me is a real-time, geolocation-based deals platform that activates proximity as a digital channel — built to accelerate clearance cycles, optimize inventory turnover, and establish a unified commercial data layer between merchants and shoppers at the moment of intent.</p>
     </div>
     <div class="ph-img" style="min-height:480px;">Image / Map Placeholder</div>
+  </div>
+</section>
+
+<!-- Potential Partnerships -->
+<section class="pp-section wrap">
+  <div class="pp-head">
+    <div class="pp-head-left">
+      <div class="ph-label" style="margin-bottom:12px;">Potential Partnerships</div>
+      <h2 class="ph-heading" style="margin-bottom:0;">Platforms positioned for H-2 engagement</h2>
+    </div>
+    <div class="pp-horizon-tag">Horizon 2 · Direct Integration Targets</div>
+  </div>
+
+  <div class="pp-marquee-wrap">
+    <div class="pp-marquee-track">
+      <!-- set 1 -->
+      <div class="pp-chip"><img src="./loblaws.png" alt="Loblaws"></div>
+      <div class="pp-chip"><img src="./ubereats.png" alt="Uber Eats"></div>
+      <div class="pp-chip"><img src="./skip.png" alt="Skip the Dishes"></div>
+      <div class="pp-chip"><img src="./nofrills.png" alt="No Frills"></div>
+      <div class="pp-chip"><img src="./longos.png" alt="Longos"></div>
+      <div class="pp-chip"><img src="./metro.png" alt="Metro"></div>
+      <!-- set 2 (duplicate for seamless loop) -->
+      <div class="pp-chip"><img src="./loblaws.png" alt="Loblaws"></div>
+      <div class="pp-chip"><img src="./ubereats.png" alt="Uber Eats"></div>
+      <div class="pp-chip"><img src="./skip.png" alt="Skip the Dishes"></div>
+      <div class="pp-chip"><img src="./nofrills.png" alt="No Frills"></div>
+      <div class="pp-chip"><img src="./longos.png" alt="Longos"></div>
+      <div class="pp-chip"><img src="./metro.png" alt="Metro"></div>
+    </div>
+  </div>
+
+  <div class="pp-foot">
+    <p class="pp-foot-main">These platforms can directly operate NearMe as a real-time proximity channel, indirectly benefit from proximity-triggered demand signals, or embed NearMe's location activation layer as a sub-component within their existing infrastructure. Each represents a distinct engagement model: direct merchant integration, data-layer licensing, or white-label distribution, targeted for structured partnership development in H-2.</p>
+    <div class="pp-foot-note">
+      <div class="pp-foot-stat">
+        <span class="pp-foot-stat-num" style="color:#36A05B;">6</span>
+        <span class="pp-foot-stat-label">Primary targets identified</span>
+      </div>
+      <div class="pp-foot-stat">
+        <span class="pp-foot-stat-num" style="color:#C8DDD0;">3</span>
+        <span class="pp-foot-stat-label">Engagement models</span>
+      </div>
+    </div>
   </div>
 </section>
 
