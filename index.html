@@ -395,6 +395,22 @@
 }
 .tl-node.is-active .tl-node-label{color:var(--ink);}
 .tl-node.is-active .tl-node-tag{color:var(--muted);}
+
+/* ── Competitor Analysis ──────────────────────────────── */
+.ca-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:32px;}
+.ca-card{background:#C8DDD0;border-radius:12px;padding:clamp(20px,2.4vw,32px);}
+.ca-header{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(0,0,0,0.1);}
+.ca-name{font-size:clamp(16px,1.5vw,20px);font-weight:500;letter-spacing:-0.04em;color:var(--ink);}
+.ca-tag{font-size:11px;color:#3a5a47;letter-spacing:0.04em;text-transform:uppercase;}
+.ca-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.ca-list li{font-size:13px;color:#3a3a3a;line-height:1.6;letter-spacing:-0.02em;}
+.ca-label{display:block;font-size:11px;font-weight:500;color:var(--ink);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:3px;}
+.ca-list li:last-child .ca-label{color:#36A05B;}
+.ca-list li:last-child{color:#36A05B;}
+@media(max-width:640px){
+  .ca-grid{grid-template-columns:1fr;}
+}
+
 @media(max-width:880px){
   .tl-section{padding-top:48px;padding-bottom:24px;}
   .tl-head{margin-bottom:16px;flex-direction:column;gap:6px;}
@@ -969,6 +985,67 @@
   </div>
 </section>
 
+<!-- Competitor Analysis -->
+<section class="project-section wrap" style="border-top:1px solid var(--line);">
+  <div class="ph-label" style="margin-bottom:16px;">Competitor Analysis</div>
+  <h2 class="ph-heading" style="max-width:760px; margin-bottom:28px;">Structural gaps across four incumbent platforms</h2>
+  <div class="ca-grid">
+
+    <div class="ca-card">
+      <div class="ca-header">
+        <div class="ca-name">Flipp</div>
+        <div class="ca-tag">Flyer Aggregator</div>
+      </div>
+      <ul class="ca-list">
+        <li><span class="ca-label">Discovery model</span> Passive flyer browsing — users must manually search by retailer or category, with no intent-based or proximity-aware surfacing.</li>
+        <li><span class="ca-label">Decision support</span> Optimizes for deal visibility, not store selection. Provides no guidance on where to go relative to a user's current location or time constraints.</li>
+        <li><span class="ca-label">Scope</span> Scoped to promotional flyers and coupons. Does not address full grocery planning, real-time inventory states, or live pricing at the store level.</li>
+        <li><span class="ca-label">Gap</span> No location-in-time activation — cannot convert nearby proximity into a relevant, actionable offer at the moment of intent.</li>
+      </ul>
+    </div>
+
+    <div class="ca-card">
+      <div class="ca-header">
+        <div class="ca-name">Flashfood</div>
+        <div class="ca-tag">Surplus Marketplace</div>
+      </div>
+      <ul class="ca-list">
+        <li><span class="ca-label">Inventory scope</span> Exclusively serves near-expiry and surplus inventory. The platform's supply logic is reactive rather than predictive, constrained to markdown clearance scenarios.</li>
+        <li><span class="ca-label">Availability</span> Store-level coverage is uneven and depends on individual retailer participation. Users in underserved markets encounter sparse or absent listings.</li>
+        <li><span class="ca-label">Use case breadth</span> Does not generalize to everyday retail deal discovery — it serves a narrow salvage use case that excludes standard promotions and clearance-stage pricing.</li>
+        <li><span class="ca-label">Gap</span> Inventory awareness is reactive and partial; no general-purpose proximity-deal layer exists within the platform.</li>
+      </ul>
+    </div>
+
+    <div class="ca-card">
+      <div class="ca-header">
+        <div class="ca-name">Many Penny</div>
+        <div class="ca-tag">Deal Aggregator</div>
+      </div>
+      <ul class="ca-list">
+        <li><span class="ca-label">Navigation utility</span> Surfaces deals without guiding users toward an optimal store choice. The experience terminates at discovery, not at a routing or selection recommendation.</li>
+        <li><span class="ca-label">Data integration</span> Weak coupling to live store conditions — pricing and availability are not validated against real-time inventory or point-of-sale systems.</li>
+        <li><span class="ca-label">Location intelligence</span> Limited use of geolocation as an active signal. The platform does not rank or filter offers based on proximity, dwell context, or user trajectory.</li>
+        <li><span class="ca-label">Gap</span> No intelligence layer connecting offer relevance to user location, time, or store-level conditions.</li>
+      </ul>
+    </div>
+
+    <div class="ca-card">
+      <div class="ca-header">
+        <div class="ca-name">Foodhero</div>
+        <div class="ca-tag">Discounted Food Listings</div>
+      </div>
+      <ul class="ca-list">
+        <li><span class="ca-label">Location model</span> Provides location-based listings of discounted food items, but proximity is used as a filter, not as an optimization signal for store selection.</li>
+        <li><span class="ca-label">Decision support</span> Does not help users evaluate which store represents the best overall option given their location, basket, or time availability.</li>
+        <li><span class="ca-label">Scope</span> Constrained to discounted food; no cross-category coverage or generalized proximity-deal infrastructure applicable to broader retail verticals.</li>
+        <li><span class="ca-label">Gap</span> Location is a passive input rather than an active driver — the platform lacks a proximity-first ranking or recommendation engine.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 <!-- Competitive Positioning -->
 <section class="diagram-section wrap">
   <div class="ph-label" style="margin-bottom:16px;">Competitive Positioning</div>
@@ -1472,9 +1549,10 @@
           <g transform="translate(1120 505)"><rect class="entity-card" width="200" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 186 Q 200 0 200 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">RAW_FEED_ITEM</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK raw_item_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">source_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">job_id FK</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">payload / fetched_at</text></g>
           <g transform="translate(1370 330)"><rect class="entity-card" width="166" height="126" rx="14"/><path class="entity-head" d="M 14 0 H 152 Q 166 0 166 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">DATA_SOURCE</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK source_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">source_type</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">RSS / market API</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">flyer app</text></g>
           <g transform="translate(1370 505)"><rect class="entity-card" width="166" height="126" rx="14"/><path class="entity-head" d="M 14 0 H 152 Q 166 0 166 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">INGESTION_JOB</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK job_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">source_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">job_type</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">daily / 36h cleanup</text></g>
-          <rect class="note-box" x="60" y="748" width="1480" height="76" rx="12"/>
-          <text x="82" y="772" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="500" fill="#171717">Operational rules</text>
-          <text x="82" y="796" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#525252">Map and search default to a 200m radius. Server jobs ingest RSS, market APIs, and flyer-app data, normalize it into regional query data, and remove stale deals after 36 hours.</text>
+          <rect class="note-box" x="60" y="730" width="1480" height="96" rx="12"/>
+          <text x="82" y="758" font-family="'Helvetica Neue',Arial,sans-serif" font-size="18" font-weight="500" fill="#171717">Operational rules</text>
+          <text x="82" y="786" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="#525252">Map and search default to a 200m radius. Server jobs ingest RSS, market APIs, and flyer-app data,</text>
+          <text x="82" y="808" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="#525252">normalize it into regional query data, and remove stale deals after 36 hours.</text>
         </svg>
       </div>
       <div class="er-mobile">
@@ -1557,9 +1635,10 @@
           <g transform="translate(1065 464)"><polygon class="geo-relationship" points="45,0 90,24 45,48 0,24"/><text x="45" y="18" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">SUPPLIES</text><text x="45" y="32" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">LIVE DATA</text></g>
           <g transform="translate(1340 335)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="38" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">MAPS</text><text x="45" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">RESULT</text></g>
           <g transform="translate(335 565)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="38" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">RENDERS</text><text x="45" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">MAP</text></g>
-          <rect class="geo-note-box" x="60" y="796" width="1480" height="82" rx="12"/>
-          <text x="82" y="822" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="500" fill="#171717">Operational interpretation</text>
-          <text x="82" y="848" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#525252">The backend receives coordinates, queries nearby stores within 2 km, matches store IDs against live deal sources, builds a GeoJSON response, and the map SDK renders market markers with deal metadata.</text>
+          <rect class="geo-note-box" x="60" y="776" width="1480" height="112" rx="12"/>
+          <text x="82" y="804" font-family="'Helvetica Neue',Arial,sans-serif" font-size="18" font-weight="500" fill="#171717">Operational interpretation</text>
+          <text x="82" y="832" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="#525252">The backend receives coordinates, queries nearby stores within 2 km, matches store IDs against live deal sources,</text>
+          <text x="82" y="856" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="#525252">builds a GeoJSON response, and the map SDK renders market markers with deal metadata.</text>
         </svg>
       </div>
       <div class="geo-mobile">
