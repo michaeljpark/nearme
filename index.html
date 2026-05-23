@@ -65,7 +65,7 @@
 .em-bcg .bcg-corner-row div:last-child{display:flex;justify-content:space-between;padding:0 6px 0 8px;}
 .em-bcg .bcg-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:9pt;}
 .em-bcg .bcg-table th,.em-bcg .bcg-table td{padding:9px;border:1px solid #bdbdbd;text-align:left;vertical-align:top;}
-.em-bcg .bcg-table th{background:#ebebea;font-weight:500;}
+.em-bcg .bcg-table th{background:#C8DDD0;font-weight:500;}
 .em-bcg .bcg-insight{padding:12px;border:1px solid var(--line);margin-top:14px;}
 .em-bcg .bcg-insight strong{display:block;margin-bottom:6px;font-size:10.5pt;font-weight:500;}
 
@@ -75,10 +75,11 @@
 .em-comp .comp-matrix{position:relative;display:flex;flex-direction:column;min-width:0;min-height:0;}
 .em-comp .comp-title{font-size:11px;font-weight:500;color:#171717;margin-bottom:5px;letter-spacing:0.1px;}
 .em-comp .comp-plot{position:relative;flex:1;border:0.75px solid var(--line);background:var(--bg);}
+.em-comp .comp-plot::after{content:'';position:absolute;right:0;top:0;width:50%;height:50%;background:rgba(168,207,181,0.18);pointer-events:none;}
 .em-comp .comp-ws{position:absolute;top:0;right:0;width:50%;height:50%;background:#e5e5e5;opacity:0.75;pointer-events:none;}
 .em-comp .comp-vd{position:absolute;top:0;left:50%;width:0;height:100%;border-left:0.5px dashed #d9d9d9;}
 .em-comp .comp-hd{position:absolute;top:50%;left:0;width:100%;height:0;border-top:0.5px dashed #d9d9d9;}
-.em-comp .comp-axis{position:absolute;font-size:10px;color:#A8CFB5;pointer-events:none;line-height:1;font-weight:400;letter-spacing:0.2px;}
+.em-comp .comp-axis{position:absolute;font-size:10px;color:#737373;pointer-events:none;line-height:1;font-weight:400;letter-spacing:0.2px;}
 .em-comp .comp-axis.tl{top:5px;left:7px;}.em-comp .comp-axis.tr{top:5px;right:7px;}
 .em-comp .comp-axis.bl{bottom:5px;left:7px;}.em-comp .comp-axis.br{bottom:5px;right:7px;}
 .em-comp .comp-node{position:absolute;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;pointer-events:none;}
@@ -115,14 +116,14 @@
 .em-bmc .bmc-kp{grid-column:1/3;grid-row:1/3;}
 .em-bmc .bmc-ka{grid-column:3/5;grid-row:1/2;}
 .em-bmc .bmc-kr{grid-column:3/5;grid-row:2/3;}
-.em-bmc .bmc-vp{grid-column:5/7;grid-row:1/3;background:#efefee;}
+.em-bmc .bmc-vp{grid-column:5/7;grid-row:1/3;background:#C8DDD0;}
 .em-bmc .bmc-cr{grid-column:7/9;grid-row:1/2;}
 .em-bmc .bmc-ch{grid-column:7/9;grid-row:2/3;}
 .em-bmc .bmc-cs{grid-column:9/11;grid-row:1/3;}
 .em-bmc .bmc-cost{grid-column:1/6;grid-row:3/4;}
 .em-bmc .bmc-rev{grid-column:6/11;grid-row:3/4;}
 .em-bmc .bmc-head{display:flex;align-items:baseline;gap:10px;padding-bottom:10px;border-bottom:0.5px dashed #e6e3da;}
-.em-bmc .bmc-num{font-size:9.5px;font-weight:500;color:#A8CFB5;letter-spacing:0.5px;width:18px;flex-shrink:0;}
+.em-bmc .bmc-num{font-size:9.5px;font-weight:500;color:#888;letter-spacing:0.5px;width:18px;flex-shrink:0;}
 .em-bmc .bmc-ttl{font-size:11px;font-weight:500;color:#0a0a0a;text-transform:uppercase;letter-spacing:1.8px;}
 .em-bmc .bmc-glabel{font-size:9.5px;font-weight:500;color:#555;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;margin-top:2px;}
 .em-bmc .bmc-group+.bmc-group{margin-top:10px;}
@@ -145,7 +146,7 @@
 .em-er .er-slide{min-width:600px;width:100%;aspect-ratio:16/8.3;overflow:hidden;}
 .em-er .er-slide svg{display:block;width:100%;height:100%;}
 .em-er .entity-card{fill:var(--bg);stroke:#171717;stroke-width:0.8;}
-.em-er .entity-head{fill:#A8CFB5;stroke:#171717;stroke-width:0.8;}
+.em-er .entity-head{fill:#C8DDD0;stroke:#171717;stroke-width:0.8;}
 .em-er .entity-title{fill:#171717;font-size:13px;font-weight:500;}
 .em-er .field{fill:#262626;font-size:10.5px;font-weight:500;}
 .em-er .field-key{fill:#171717;font-size:10.5px;font-weight:500;}
@@ -153,7 +154,7 @@
 .em-er .relationship{fill:none;stroke:#171717;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;}
 .em-er .relationship-light{fill:none;stroke:#8c8c8c;stroke-width:0.65;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:5 5;}
 .em-er .rel-label{fill:#404040;font-size:9.5px;font-weight:500;}
-.em-er .note-box{fill:var(--bg);stroke:#cfcfcf;stroke-width:0.7;}
+.em-er .note-box{fill:#C8DDD0;stroke:none;}
 .em-er .note-title{fill:#171717;font-size:11px;font-weight:500;}
 .em-er .note-text{fill:#525252;font-size:10px;font-weight:500;}
 @media(max-width:640px){.em-er{padding:0;}}
@@ -170,7 +171,7 @@
 .em-geo .geo-rel-text{fill:#171717;font-size:10.4px;font-weight:500;text-anchor:middle;dominant-baseline:middle;}
 .em-geo .geo-line{fill:none;stroke:#171717;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;}
 .em-geo .geo-cardinality{fill:#171717;font-size:10px;font-weight:500;}
-.em-geo .geo-note-box{fill:var(--bg);stroke:#cfcfcf;stroke-width:0.7;}
+.em-geo .geo-note-box{fill:#C8DDD0;stroke:none;}
 .em-geo .geo-note-title{fill:#171717;font-size:11px;font-weight:500;}
 .em-geo .geo-note-text{fill:#525252;font-size:10px;font-weight:500;}
 @media(max-width:640px){.em-geo{padding:0;}}
@@ -847,7 +848,7 @@
   requestAnimationFrame(function(){
   var w = skChart.clientWidth, h = skChart.clientHeight;
   var cx = w/2, cy = h/2, minS = Math.min(w,h);
-  var fills = {1:'#f5f5f3',2:'#eaeae8',3:'#dfdfdd',4:'#d2d2d0'};
+  var fills = {1:'#e4f0ea',2:'#daeae2',3:'#d0e4da',4:'#C8DDD0'};
   var strokes = {1:'#171717',2:'#404040',3:'#525252',4:'#737373'};
   var layerAngles = {1:-96,2:-84,3:-70,4:-45};
   var om = [0.40,0.30,0.20,0.10];
@@ -1260,7 +1261,7 @@
           <g transform="translate(1065 464)"><polygon class="geo-relationship" points="45,0 90,24 45,48 0,24"/><text x="45" y="18" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">SUPPLIES</text><text x="45" y="32" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">LIVE DATA</text></g>
           <g transform="translate(1340 335)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="38" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">MAPS</text><text x="45" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">RESULT</text></g>
           <g transform="translate(335 565)"><polygon class="geo-relationship" points="45,0 90,45 45,90 0,45"/><text x="45" y="38" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">RENDERS</text><text x="45" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.4" font-weight="500" fill="#171717" text-anchor="middle" dominant-baseline="middle">MAP</text></g>
-          <rect class="geo-note-box" x="60" y="796" width="1480" height="82"/>
+          <rect class="geo-note-box" x="60" y="796" width="1480" height="82" rx="12"/>
           <text x="82" y="822" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="500" fill="#171717">Operational interpretation</text>
           <text x="82" y="848" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#525252">The backend receives coordinates, queries nearby stores within 2 km, matches store IDs against live deal sources, builds a GeoJSON response, and the map SDK renders market markers with deal metadata.</text>
         </svg>
