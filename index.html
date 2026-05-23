@@ -143,7 +143,7 @@
 
 .em-er{width:100%;overflow-x:auto;}
 .em-er *{box-sizing:border-box;}
-.em-er .er-slide{min-width:600px;width:100%;aspect-ratio:16/8.3;overflow:hidden;}
+.em-er .er-slide{min-width:600px;width:100%;aspect-ratio:1600/870;overflow:hidden;}
 .em-er .er-slide svg{display:block;width:100%;height:100%;}
 .em-er .entity-card{fill:var(--bg);stroke:#171717;stroke-width:0.8;}
 .em-er .entity-head{fill:#C8DDD0;stroke:#171717;stroke-width:0.8;}
@@ -397,18 +397,20 @@
 .tl-node.is-active .tl-node-tag{color:var(--muted);}
 
 /* ── Competitor Analysis ──────────────────────────────── */
-.ca-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:32px;}
-.ca-card{background:#C8DDD0;border-radius:12px;padding:clamp(20px,2.4vw,32px);}
-.ca-header{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(0,0,0,0.1);}
+.ca-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);margin-top:32px;}
+.ca-card{background:var(--bg);padding:clamp(24px,3vw,40px) clamp(18px,2.4vw,32px);}
+.ca-header{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line);}
 .ca-name{font-size:clamp(16px,1.5vw,20px);font-weight:500;letter-spacing:-0.04em;color:var(--ink);}
-.ca-tag{font-size:11px;color:#3a5a47;letter-spacing:0.04em;text-transform:uppercase;}
+.ca-tag{font-size:11px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;}
 .ca-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
-.ca-list li{font-size:13px;color:#3a3a3a;line-height:1.6;letter-spacing:-0.02em;}
+.ca-list li{font-size:13px;color:var(--muted);line-height:1.6;letter-spacing:-0.02em;}
 .ca-label{display:block;font-size:11px;font-weight:500;color:var(--ink);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:3px;}
-.ca-list li:last-child .ca-label{color:#36A05B;}
-.ca-list li:last-child{color:#36A05B;}
+.ca-list li:last-child{background:#C8DDD0;border-radius:10px;padding:14px 16px;color:var(--ink);margin-top:4px;}
+.ca-list li:last-child .ca-label{color:var(--ink);}
 @media(max-width:640px){
   .ca-grid{grid-template-columns:1fr;}
+  .ca-card{border-top:1px solid var(--line);}
+  .ca-card:first-child{border-top:none;}
 }
 
 @media(max-width:880px){
@@ -1483,7 +1485,7 @@
   <div class="diagram-wrap" style="margin-top:32px;">
     <div class="em-er">
       <div class="er-slide">
-        <svg viewBox="0 0 1600 830" role="img" aria-label="Crow's foot ER diagram for real-time proximity deals platform">
+        <svg viewBox="0 0 1600 870" role="img" aria-label="Crow's foot ER diagram for real-time proximity deals platform">
           <defs>
             <marker id="one-end" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth"><path d="M 4 1 L 4 11 M 8 1 L 8 11" fill="none" stroke="#171717" stroke-width="0.75"/></marker>
             <marker id="one-start" markerWidth="12" markerHeight="12" refX="2" refY="6" orient="auto" markerUnits="strokeWidth"><path d="M 8 1 L 8 11 M 4 1 L 4 11" fill="none" stroke="#171717" stroke-width="0.75"/></marker>
@@ -1549,10 +1551,10 @@
           <g transform="translate(1120 505)"><rect class="entity-card" width="200" height="124" rx="14"/><path class="entity-head" d="M 14 0 H 186 Q 200 0 200 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">RAW_FEED_ITEM</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK raw_item_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">source_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">job_id FK</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">payload / fetched_at</text></g>
           <g transform="translate(1370 330)"><rect class="entity-card" width="166" height="126" rx="14"/><path class="entity-head" d="M 14 0 H 152 Q 166 0 166 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">DATA_SOURCE</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK source_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">source_type</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">RSS / market API</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">flyer app</text></g>
           <g transform="translate(1370 505)"><rect class="entity-card" width="166" height="126" rx="14"/><path class="entity-head" d="M 14 0 H 152 Q 166 0 166 14 V 36 H 0 V 14 Q 0 0 14 0 Z"/><text x="16" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" font-weight="500" fill="#171717">INGESTION_JOB</text><text x="16" y="54" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" font-weight="500" fill="#171717">PK job_id</text><text x="16" y="73" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">source_id FK</text><text x="16" y="92" font-family="'Helvetica Neue',Arial,sans-serif" font-size="10.5" fill="#262626">job_type</text><text x="16" y="111" font-family="'Helvetica Neue',Arial,sans-serif" font-size="9.8" fill="#606060">daily / 36h cleanup</text></g>
-          <rect class="note-box" x="60" y="730" width="1480" height="96" rx="12"/>
-          <text x="82" y="758" font-family="'Helvetica Neue',Arial,sans-serif" font-size="18" font-weight="500" fill="#171717">Operational rules</text>
-          <text x="82" y="786" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="#525252">Map and search default to a 200m radius. Server jobs ingest RSS, market APIs, and flyer-app data,</text>
-          <text x="82" y="808" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="#525252">normalize it into regional query data, and remove stale deals after 36 hours.</text>
+          <rect class="note-box" x="60" y="748" width="1480" height="100" rx="12"/>
+          <text x="82" y="776" font-family="'Helvetica Neue',Arial,sans-serif" font-size="18" font-weight="500" fill="#171717">Operational rules</text>
+          <text x="82" y="804" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="#525252">Map and search default to a 200m radius. Server jobs ingest RSS, market APIs, and flyer-app data,</text>
+          <text x="82" y="826" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" fill="#525252">normalize it into regional query data, and remove stale deals after 36 hours.</text>
         </svg>
       </div>
       <div class="er-mobile">
