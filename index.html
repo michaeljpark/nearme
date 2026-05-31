@@ -464,8 +464,8 @@
   position:relative;width:100%;overflow:hidden;border-radius:16px;
   background:#e8e8e6;
 }
-.demo-frame.is-desktop{aspect-ratio:16/9;}
-.demo-frame.is-mobile{aspect-ratio:9/19.5;}
+.demo-frame.is-desktop{}
+.demo-frame.is-mobile{aspect-ratio:9/19.5;width:100%;}
 .demo-frame iframe{
   position:absolute;inset:0;width:100%;height:100%;border:none;display:block;
 }
@@ -1823,6 +1823,20 @@
 </section>
 
 <script>
+/* Demo iframe height sync */
+(function(){
+  function syncDemo(){
+    var mob = document.querySelector('.demo-frame.is-mobile');
+    var desk = document.querySelector('.demo-frame.is-desktop');
+    if(!mob || !desk) return;
+    desk.style.height = mob.offsetHeight + 'px';
+  }
+  window.addEventListener('resize', syncDemo);
+  if(document.readyState === 'complete') syncDemo();
+  else window.addEventListener('load', syncDemo);
+  setTimeout(syncDemo, 50);
+})();
+
 /* Market Research: scroll-driven TAM/SAM/SOM panel switcher with count-up */
 (function(){
   var stack = document.querySelector('.market-stack');
