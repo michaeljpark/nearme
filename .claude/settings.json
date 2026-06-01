@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Read(//c/Users/joong/Desktop/Github/porrtfolio2026/**)"
+      "Read(//c/Users/joong/Desktop/Github/porrtfolio2026/**)",
+      "Bash(python3 -c ' *)",
+      "Bash(node -e ' *)",
+      "Bash(node -e \"try{const d=require\\('./16-9.json'\\);console.log\\('JSON OK. op',d.op,'layers',d.layers.length,'firstLayerO',JSON.stringify\\(d.layers[0].ks.o\\).slice\\(0,120\\)\\);}catch\\(e\\){console.log\\('JSON ERROR',e.message\\)}\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\joong\\Desktop\\Github\\porrtfolio2026"
