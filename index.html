@@ -453,6 +453,33 @@
   .tl-node-meta{display:none;}
 }
 
+/* ── User Personas ────────────────────────────────────── */
+.ps-section{ padding-top:80px; padding-bottom:80px; border-top:1px solid var(--line); }
+.ps-list{ display:flex; flex-direction:column; gap:56px; margin-top:48px; }
+.ps-row{ display:flex; gap:32px; align-items:center; }
+.ps-row--right{ flex-direction:row-reverse; }
+.ps-photo{ width:20%; border-radius:16px; flex-shrink:0; height:auto; display:block; }
+.ps-card{ flex:1; }
+.ps-card-type{ font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:8px; }
+.ps-card-name{ font-size:clamp(17px,1.8vw,22px); font-weight:500; letter-spacing:-0.04em; line-height:1.15; margin-bottom:4px; }
+.ps-card-meta{ font-size:12px; color:var(--muted); line-height:1.6; margin-bottom:14px; }
+.ps-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:24px; }
+.ps-tag{ font-size:11px; color:#fff; background:#36A05B; border-radius:100px; padding:3px 10px; letter-spacing:-0.01em; }
+.ps-sections{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; padding:20px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-bottom:20px; }
+.ps-sec-title{ font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:8px; }
+.ps-sec-item{ font-size:12px; color:var(--muted); line-height:1.6; margin-bottom:3px; padding-left:12px; position:relative; }
+.ps-sec-item::before{ content:"—"; position:absolute; left:0; font-size:10px; top:3px; color:var(--line); }
+.ps-quote{ font-size:13px; font-style:italic; line-height:1.65; letter-spacing:-0.02em; margin-bottom:20px; color:var(--ink); }
+.ps-usecase{ padding-top:16px; border-top:1px solid var(--line); }
+.ps-usecase-title{ font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:8px; }
+.ps-usecase-item{ font-size:12px; color:var(--muted); line-height:1.6; margin-bottom:3px; padding-left:14px; position:relative; }
+.ps-usecase-item::before{ content:"→"; position:absolute; left:0; color:var(--muted); }
+@media(max-width:760px){
+  .ps-row,.ps-row--right{ flex-direction:column; gap:20px; }
+  .ps-photo{ width:100%; }
+  .ps-sections{ grid-template-columns:1fr; gap:14px; }
+}
+
 /* ── Map overlays ─────────────────────────────────────── */
 .map-overlay-img{
   position:absolute;
@@ -1631,6 +1658,132 @@
   <div class="ph-label" style="margin-bottom:16px;">Branding Guideline</div>
   <h2 class="ph-heading" style="margin-bottom:32px;">Visual identity system</h2>
   <img src="./Guideline.png" alt="NearMe Branding Guideline" style="width:100%;height:auto;display:block;">
+</section>
+
+<!-- User Personas -->
+<section class="ps-section wrap">
+  <div class="ph-label" style="margin-bottom:16px;">User Research</div>
+  <h2 class="ph-heading" style="margin-bottom:0;">User Journey Mapping</h2>
+  <div class="ps-list">
+
+    <!-- Ji-ho Lee -->
+    <div class="ps-row ps-row--left">
+      <img src="./ps2.png" alt="Ji-ho Lee" class="ps-photo">
+      <div class="ps-card">
+        <div class="ps-card-type">Urban Commuter</div>
+        <div class="ps-card-name">Ji-ho, Lee (29)</div>
+        <div class="ps-card-meta">Startup PM · Downtown Toronto · 3yrs in Canada</div>
+        <div class="ps-tags">
+          <span class="ps-tag">Transit commuter</span>
+          <span class="ps-tag">Time-sensitive</span>
+          <span class="ps-tag">Deal-aware</span>
+        </div>
+        <div class="ps-sections">
+          <div>
+            <div class="ps-sec-title">Context</div>
+            <div class="ps-sec-item">Lives downtown, transit-only commuter</div>
+            <div class="ps-sec-item">30 min window to shop on the way home</div>
+            <div class="ps-sec-item">Heavy smartphone user, app-first habits</div>
+          </div>
+          <div>
+            <div class="ps-sec-title">Goals</div>
+            <div class="ps-sec-item">Find the cheapest grocery deal within his commute route</div>
+            <div class="ps-sec-item">Confirm availability before making a detour</div>
+          </div>
+          <div>
+            <div class="ps-sec-title">Pain Points</div>
+            <div class="ps-sec-item">Flipp shows weekly flyers but not live stock</div>
+            <div class="ps-sec-item">No way to compare nearby stores in real time</div>
+          </div>
+        </div>
+        <div class="ps-quote">"There's a deal nearby on my way home. I just have no way to find it until I'm already past it."</div>
+        <div class="ps-usecase">
+          <div class="ps-usecase-title">Use Case</div>
+          <div class="ps-usecase-item">Push alert at commute time — deals within 200m of route</div>
+          <div class="ps-usecase-item">Map view to compare discount rates across stores instantly</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amara Diallo -->
+    <div class="ps-row ps-row--right">
+      <img src="./ps1.png" alt="Amara Diallo" class="ps-photo">
+      <div class="ps-card">
+        <div class="ps-card-type">International Student</div>
+        <div class="ps-card-name">Amara Diallo (23)</div>
+        <div class="ps-card-meta">UofT Business · St George Campus · 8 months in Canada</div>
+        <div class="ps-tags">
+          <span class="ps-tag">New comer</span>
+          <span class="ps-tag">Budget-constrained</span>
+          <span class="ps-tag">Neighbourhood explorer</span>
+        </div>
+        <div class="ps-sections">
+          <div>
+            <div class="ps-sec-title">Context</div>
+            <div class="ps-sec-item">Studio near campus, food budget under CAD $300/mo</div>
+            <div class="ps-sec-item">Still mapping which grocery stores exist nearby</div>
+            <div class="ps-sec-item">Shops in gaps between classes — distance matters</div>
+          </div>
+          <div>
+            <div class="ps-sec-title">Goals</div>
+            <div class="ps-sec-item">Stretch her budget as far as possible each week</div>
+            <div class="ps-sec-item">Quickly learn which stores are cheap in her area</div>
+          </div>
+          <div>
+            <div class="ps-sec-title">Pain Points</div>
+            <div class="ps-sec-item">New city — doesn't know what's nearby or on sale</div>
+            <div class="ps-sec-item">Google only returns weekly promos, not real-time stock</div>
+          </div>
+        </div>
+        <div class="ps-quote">"I want to stop by somewhere cheap after class. I just don't know where to go."</div>
+        <div class="ps-usecase">
+          <div class="ps-usecase-title">Use Case</div>
+          <div class="ps-usecase-item">Radius search to discover deals within walking distance of campus</div>
+          <div class="ps-usecase-item">Favourite stores to receive instant alerts when deals drop</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sarah Campbell -->
+    <div class="ps-row ps-row--left">
+      <img src="./ps3.png" alt="Sarah Campbell" class="ps-photo">
+      <div class="ps-card">
+        <div class="ps-card-type">Family Deal-Seeker</div>
+        <div class="ps-card-name">Sarah Campbell (38)</div>
+        <div class="ps-card-meta">Part-time nurse · Scarborough · Family of 3</div>
+        <div class="ps-tags">
+          <span class="ps-tag">Weekly bulk shopper</span>
+          <span class="ps-tag">Clearance hunter</span>
+          <span class="ps-tag">Multi-app user</span>
+        </div>
+        <div class="ps-sections">
+          <div>
+            <div class="ps-sec-title">Context</div>
+            <div class="ps-sec-item">1–2 large shops/week, drives to 2–3 stores per trip</div>
+            <div class="ps-sec-item">Currently uses Flipp and Flashfood side by side</div>
+            <div class="ps-sec-item">Actively seeks near-expiry markdowns to reduce waste</div>
+          </div>
+          <div>
+            <div class="ps-sec-title">Goals</div>
+            <div class="ps-sec-item">Cut weekly grocery spend without compromising quality</div>
+            <div class="ps-sec-item">Only see deals that are actually in stock right now</div>
+          </div>
+          <div>
+            <div class="ps-sec-title">Pain Points</div>
+            <div class="ps-sec-item">Drove to a flyer deal — item was out of stock on arrival</div>
+            <div class="ps-sec-item">Juggling multiple apps with no unified real-time view</div>
+          </div>
+        </div>
+        <div class="ps-quote">"I followed a flyer and it was gone. I just want deals that are actually there when I show up."</div>
+        <div class="ps-usecase">
+          <div class="ps-usecase-title">Use Case</div>
+          <div class="ps-usecase-item">Pre-trip clearance scan — compare deals across 2km radius</div>
+          <div class="ps-usecase-item">Optimal multi-stop route auto-recommended before driving</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- Design Strategic Value / Weak Signals -->
