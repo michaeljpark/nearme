@@ -453,6 +453,21 @@
   .tl-node-meta{display:none;}
 }
 
+/* ── Map overlays ─────────────────────────────────────── */
+.map-overlay-img{
+  position:absolute;
+  height:42%;
+  width:auto;
+  border-radius:20px;
+  pointer-events:none;
+  animation:map-breathe 3s ease-in-out infinite;
+  will-change:transform;
+}
+@keyframes map-breathe{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.06);}
+}
+
 /* ── Product Demo ─────────────────────────────────────── */
 .demo-section{padding-top:48px;padding-bottom:48px;border-top:1px solid var(--line);}
 .demo-grid{display:grid;grid-template-columns:1fr 268px;gap:24px;align-items:start;}
@@ -739,6 +754,9 @@
   </div>
   <div class="ph-video" style="margin-top:40px;background:none;border-radius:0;">
     <img src="./mapimg.png" alt="Map" style="width:100%;height:100%;object-fit:cover;border-radius:20px;">
+    <img src="./tt1.png" alt="" class="map-overlay-img" id="mo1">
+    <img src="./tt2.png" alt="" class="map-overlay-img" id="mo2">
+    <img src="./tt3.png" alt="" class="map-overlay-img" id="mo3">
   </div>
   <p class="ph-body" style="margin-top:20px;text-align:right;margin-left:auto;max-width:560px;">Near Me is a real-time, geolocation-based deals platform that activates proximity as a digital channel — built to accelerate clearance cycles, optimize inventory turnover, and establish a unified commercial data layer between merchants and shoppers at the moment of intent.</p>
 </section>
@@ -1832,6 +1850,31 @@
 </section>
 
 <script>
+/* Map overlay: zone-based non-overlapping placement + random breathing */
+(function(){
+  var imgs = document.querySelectorAll('.map-overlay-img');
+  if(!imgs.length) return;
+  /* triangle: top-center, bottom-left, bottom-right */
+  var zones = [
+    { lMin:38, lMax:44, tMin:5,  tMax:12 },
+    { lMin:8,  lMax:16, tMin:46, tMax:54 },
+    { lMin:66, lMax:74, tMin:46, tMax:54 }
+  ];
+  /* shuffle so tt images rotate across positions each load */
+  zones.sort(function(){ return Math.random() - 0.5; });
+  imgs.forEach(function(img, i){
+    var z = zones[i];
+    var l = (z.lMin + Math.random() * (z.lMax - z.lMin)).toFixed(1);
+    var t = (z.tMin + Math.random() * (z.tMax - z.tMin)).toFixed(1);
+    var dur = (2.4 + Math.random() * 2.2).toFixed(2);
+    var delay = (Math.random() * 1.8).toFixed(2);
+    img.style.left = l + '%';
+    img.style.top  = t + '%';
+    img.style.animationDuration = dur + 's';
+    img.style.animationDelay   = '-' + delay + 's';
+  });
+})();
+
 /* Demo iframe height sync */
 (function(){
   function syncDemo(){

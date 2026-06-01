@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/joong/Desktop/Github/porrtfolio2026/**)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\joong\\Desktop\\Github\\porrtfolio2026"
+    ]
+  }
+}
