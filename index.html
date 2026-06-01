@@ -517,8 +517,11 @@
 }
 
 @media(max-width:760px){
-  .ps-row,.ps-row--right{ flex-direction:column; gap:20px; }
-  .ps-photo{ width:100%; }
+  .ps-row,.ps-row--right{ display:block; }
+  .ps-photo{ float:left; width:40%; margin:0 16px 8px 0; }
+  .ps-tags{ clear:left; padding-top:4px; }
+  .ps-meta-i{ display:block; }
+  .ps-meta-sep{ display:none; }
   .ps-sections{ grid-template-columns:1fr; gap:14px; }
 }
 
@@ -1730,7 +1733,7 @@
       <div class="ps-card">
         <div class="ps-card-type">Urban Commuter</div>
         <div class="ps-card-name">Ji-ho, Lee (29)</div>
-        <div class="ps-card-meta">Startup PM · Downtown Toronto · 3yrs in Canada</div>
+        <div class="ps-card-meta"><span class="ps-meta-i">Startup PM</span><span class="ps-meta-sep"> · </span><span class="ps-meta-i">Downtown Toronto</span><span class="ps-meta-sep"> · </span><span class="ps-meta-i">3yrs in Canada</span></div>
         <div class="ps-tags">
           <span class="ps-tag">Transit commuter</span>
           <span class="ps-tag">Time-sensitive</span>
@@ -1769,7 +1772,7 @@
       <div class="ps-card">
         <div class="ps-card-type">International Student</div>
         <div class="ps-card-name">Amara Diallo (23)</div>
-        <div class="ps-card-meta">UofT Business · St George Campus · 8 months in Canada</div>
+        <div class="ps-card-meta"><span class="ps-meta-i">UofT Business</span><span class="ps-meta-sep"> · </span><span class="ps-meta-i">St George Campus</span><span class="ps-meta-sep"> · </span><span class="ps-meta-i">8 months in Canada</span></div>
         <div class="ps-tags">
           <span class="ps-tag">New comer</span>
           <span class="ps-tag">Budget-constrained</span>
@@ -1808,7 +1811,7 @@
       <div class="ps-card">
         <div class="ps-card-type">Family Deal-Seeker</div>
         <div class="ps-card-name">Sarah Campbell (38)</div>
-        <div class="ps-card-meta">Part-time nurse · Scarborough · Family of 3</div>
+        <div class="ps-card-meta"><span class="ps-meta-i">Part-time nurse</span><span class="ps-meta-sep"> · </span><span class="ps-meta-i">Scarborough</span><span class="ps-meta-sep"> · </span><span class="ps-meta-i">Family of 3</span></div>
         <div class="ps-tags">
           <span class="ps-tag">Weekly bulk shopper</span>
           <span class="ps-tag">Clearance hunter</span>
