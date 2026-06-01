@@ -474,10 +474,68 @@
 .ps-usecase-title{ font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:8px; }
 .ps-usecase-item{ font-size:12px; color:var(--muted); line-height:1.6; margin-bottom:3px; padding-left:14px; position:relative; }
 .ps-usecase-item::before{ content:"→"; position:absolute; left:0; color:var(--muted); }
+
+/* ── Journey Map ──────────────────────────────────────── */
+.jm-wrap{ margin-top:72px; padding-top:48px; border-top:1px solid var(--line); }
+.jm-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.jm-table{ width:100%; border-collapse:collapse; min-width:800px; }
+.jm-table thead th{
+  padding:0 20px 14px; text-align:left; border-bottom:1px solid var(--line); font-weight:400; vertical-align:bottom;
+}
+.jm-table thead th:first-child{ padding-left:0; width:72px; font-size:10px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); }
+.jm-pill{ display:inline-block; background:#36A05B; color:#fff; border-radius:100px; padding:4px 12px; font-size:11px; font-weight:400; letter-spacing:-0.01em; white-space:nowrap; }
+.jm-table tbody td{
+  padding:20px; vertical-align:top;
+  font-size:12px; color:var(--muted); line-height:1.65;
+  border-bottom:1px solid var(--line);
+}
+.jm-table tbody td:first-child{
+  padding-left:0; padding-right:20px;
+  font-size:12px; font-weight:500; color:var(--ink);
+  white-space:nowrap;
+}
+.jm-table tbody tr:last-child td{ border-bottom:none; }
+@media(max-width:760px){
+  .jm-scroll{ overflow-x:hidden; }
+  .jm-table,.jm-table tbody,.jm-table tr,.jm-table td{ display:block; width:100%; min-width:0; }
+  .jm-table thead{ display:none; }
+  .jm-table tbody tr{ padding:24px 0; border-top:1px solid var(--line); }
+  .jm-table tbody tr:first-child{ border-top:none; padding-top:0; }
+  .jm-table tbody td{ padding:8px 0; border:none; min-width:0; box-sizing:border-box; }
+  .jm-table tbody td:first-child{ padding-bottom:12px; font-size:13px; white-space:normal; }
+  .jm-table tbody td[data-label]{
+    display:flex; flex-direction:column; align-items:flex-start; gap:6px;
+  }
+  .jm-table tbody td[data-label]::before{
+    content:attr(data-label);
+    display:inline-block; align-self:flex-start;
+    background:transparent; color:#36A05B;
+    border:1px solid #36A05B; border-radius:100px;
+    padding:3px 10px; font-size:10px; letter-spacing:-0.01em;
+    flex-shrink:0;
+  }
+}
+
 @media(max-width:760px){
   .ps-row,.ps-row--right{ flex-direction:column; gap:20px; }
   .ps-photo{ width:100%; }
   .ps-sections{ grid-template-columns:1fr; gap:14px; }
+}
+
+/* ── Emotion Journey ──────────────────────────────────── */
+.em-wrap{ margin-top:64px; padding-top:48px; border-top:1px solid var(--line); }
+.em-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:32px; }
+.em-label-sm{ font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); }
+.em-legend{ display:flex; gap:20px; align-items:center; }
+.em-legend-item{ display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted); letter-spacing:-0.02em; }
+.em-legend-line{ width:28px; height:2px; display:inline-block; flex-shrink:0; }
+.em-legend-line--asis{ background:#36A05B; }
+.em-legend-line--tobe{ border-top:2px dashed rgba(54,160,91,0.6); }
+.em-chart svg{ width:100%; height:auto; display:block; }
+.em-chart-mobile{ display:none; }
+@media(max-width:760px){
+  .em-chart-desktop{ display:none; }
+  .em-chart-mobile{ display:block; }
 }
 
 /* ── Map overlays ─────────────────────────────────────── */
@@ -1663,7 +1721,7 @@
 <!-- User Personas -->
 <section class="ps-section wrap">
   <div class="ph-label" style="margin-bottom:16px;">User Research</div>
-  <h2 class="ph-heading" style="margin-bottom:0;">User Journey Mapping</h2>
+  <h2 class="ph-heading" style="margin-bottom:0;">User Personas</h2>
   <div class="ps-list">
 
     <!-- Ji-ho Lee -->
@@ -1784,6 +1842,237 @@
     </div>
 
   </div>
+
+  <!-- Journey Map -->
+  <div class="jm-wrap">
+    <h2 class="ph-heading" style="margin-bottom:24px;">Journey Map</h2>
+    <div class="jm-scroll">
+      <table class="jm-table">
+        <thead>
+          <tr>
+            <th>Actions</th>
+            <th><span class="jm-pill">Trigger &amp; awareness</span></th>
+            <th><span class="jm-pill">Search &amp; discovery</span></th>
+            <th><span class="jm-pill">Evaluate &amp; decide</span></th>
+            <th><span class="jm-pill">Act &amp; redeem</span></th>
+            <th><span class="jm-pill">Reflect &amp; return</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ji-ho L</td>
+            <td data-label="Trigger &amp; awareness">Finishes work, remembers he needs groceries on the commute home.</td>
+            <td data-label="Search &amp; discovery">Opens Flipp — only weekly flyers. Checks Google Maps for nearby stores.</td>
+            <td data-label="Evaluate &amp; decide">Tries to compare two stores from memory. Unsure which has the better deal.</td>
+            <td data-label="Act &amp; redeem">Makes a detour to store. Finds item in stock. Quick purchase on the way out.</td>
+            <td data-label="Reflect &amp; return">Satisfied only if detour was worth it. Won't repeat if outcome was poor.</td>
+          </tr>
+          <tr>
+            <td>Amara D</td>
+            <td data-label="Trigger &amp; awareness">Between classes, hungry and low on groceries. Wants to shop before heading home.</td>
+            <td data-label="Search &amp; discovery">Googles "cheap grocery near me" — gets generic results. Doesn't know what's close.</td>
+            <td data-label="Evaluate &amp; decide">Picks store she vaguely recalls seeing nearby. No deal comparison made.</td>
+            <td data-label="Act &amp; redeem">Walks in, browses without a target. Pays more than intended.</td>
+            <td data-label="Reflect &amp; return">Frustrated. Wonders if she could have spent less somewhere else nearby.</td>
+          </tr>
+          <tr>
+            <td>Sarah C</td>
+            <td data-label="Trigger &amp; awareness">Plans weekend grocery run. Opens Flipp and Flashfood to cross-reference deals.</td>
+            <td data-label="Search &amp; discovery">Spends 15–20 min comparing two apps manually. Builds route in her head.</td>
+            <td data-label="Evaluate &amp; decide">Decides Store A for produce, Store B for clearance meat. No route optimisation.</td>
+            <td data-label="Act &amp; redeem">Drives to Store A — out of stock. Store B has clearance deal. Mixed outcome.</td>
+            <td data-label="Reflect &amp; return">Partially satisfied. Dreads the manual prep time every single week.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Emotion Journey -->
+  <div class="em-wrap">
+    <div class="em-header">
+      <div class="em-label-sm">Emotion Journey</div>
+      <div class="em-legend">
+        <div class="em-legend-item">
+          <div class="em-legend-line em-legend-line--asis"></div>
+          <span>As-Is</span>
+        </div>
+        <div class="em-legend-item">
+          <div class="em-legend-line em-legend-line--tobe"></div>
+          <span>To-Be — With NearMe</span>
+        </div>
+      </div>
+    </div>
+    <div class="em-chart em-chart-desktop">
+      <svg viewBox="0 0 1440 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="emFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#36A05B" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#36A05B" stop-opacity="0.02"/>
+          </linearGradient>
+        </defs>
+
+        <!-- AS-IS filled area (full width: leading + curve + trailing) -->
+        <polygon points="0,165 120,165 390,342 660,255 930,148 1200,342 1440,342 1440,452 0,452" fill="url(#emFill)"/>
+
+        <!-- Vertical divider at divergence (S4) -->
+        <line x1="930" y1="30" x2="930" y2="452" stroke="#d8d8d8" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+        <!-- Leading horizontal line (left of S1) -->
+        <line x1="0" y1="165" x2="120" y2="165" stroke="#36A05B" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- AS-IS line -->
+        <polyline points="120,165 390,342 660,255 930,148 1200,342" fill="none" stroke="#36A05B" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+        <!-- Trailing AS-IS horizontal line (right of S5) -->
+        <line x1="1200" y1="342" x2="1440" y2="342" stroke="#36A05B" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- TO-BE line -->
+        <line x1="930" y1="148" x2="1200" y2="98" stroke="#36A05B" stroke-width="2" stroke-dasharray="7,5" opacity="0.6"/>
+
+        <!-- Trailing TO-BE horizontal line (right of S5-TOBE) -->
+        <line x1="1200" y1="98" x2="1440" y2="98" stroke="#36A05B" stroke-width="2" stroke-dasharray="7,5" opacity="0.6"/>
+
+        <!-- Text annotations -->
+        <!-- S1: left of center, anchor start -->
+        <text x="120" y="88" text-anchor="middle" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#0a0a0a" style="letter-spacing:-0.03em">
+          <tspan>Clear need, ready to act —</tspan>
+          <tspan x="120" dy="20">but no tool to match.</tspan>
+        </text>
+
+        <!-- S2 -->
+        <text x="390" y="252" text-anchor="middle" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#8a8a8a" style="letter-spacing:-0.03em">
+          <tspan>Existing tools show weekly data,</tspan>
+          <tspan x="390" dy="20">not live proximity. Effort is high.</tspan>
+        </text>
+
+        <!-- S3 -->
+        <text x="660" y="162" text-anchor="middle" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#8a8a8a" style="letter-spacing:-0.03em">
+          <tspan>No confidence the chosen store</tspan>
+          <tspan x="660" dy="20">has the right deal right now.</tspan>
+        </text>
+
+        <!-- S4: offset left of divider -->
+        <text x="905" y="60" text-anchor="end" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#8a8a8a" style="letter-spacing:-0.03em">
+          <tspan>One win, one wasted trip.</tspan>
+          <tspan x="905" dy="20">Spent more than planned.</tspan>
+        </text>
+
+        <!-- S5 AS-IS -->
+        <text x="1320" y="248" text-anchor="middle" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#8a8a8a" style="letter-spacing:-0.03em">
+          <tspan>Without a reliable loop,</tspan>
+          <tspan x="1320" dy="20">habits don't form.</tspan>
+          <tspan x="1320" dy="20">Returns are inconsistent.</tspan>
+        </text>
+
+        <!-- S5 TO-BE -->
+        <text x="1320" y="24" text-anchor="middle" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#36A05B" style="letter-spacing:-0.03em" opacity="0.9">
+          <tspan>NearMe forms a reliable loop.</tspan>
+          <tspan x="1320" dy="20">Habit builds. Users return.</tspan>
+        </text>
+
+        <!-- Markers: outer ring + inner dot -->
+        <circle cx="120" cy="165" r="13" fill="white" stroke="#36A05B" stroke-width="2"/>
+        <circle cx="120" cy="165" r="5" fill="#36A05B"/>
+
+        <circle cx="390" cy="342" r="13" fill="white" stroke="#36A05B" stroke-width="2"/>
+        <circle cx="390" cy="342" r="5" fill="#36A05B"/>
+
+        <circle cx="660" cy="255" r="13" fill="white" stroke="#36A05B" stroke-width="2"/>
+        <circle cx="660" cy="255" r="5" fill="#36A05B"/>
+
+        <!-- S4: divergence point, slightly stronger -->
+        <circle cx="930" cy="148" r="13" fill="white" stroke="#1A5C32" stroke-width="2.5"/>
+        <circle cx="930" cy="148" r="5" fill="#1A5C32"/>
+
+        <circle cx="1200" cy="342" r="13" fill="white" stroke="#36A05B" stroke-width="2"/>
+        <circle cx="1200" cy="342" r="5" fill="#36A05B"/>
+
+        <!-- S5 TO-BE endpoint -->
+        <circle cx="1200" cy="98" r="13" fill="white" stroke="#36A05B" stroke-width="2" opacity="0.65"/>
+        <circle cx="1200" cy="98" r="5" fill="#36A05B" opacity="0.65"/>
+      </svg>
+    </div>
+
+    <!-- Mobile vertical chart -->
+    <div class="em-chart em-chart-mobile">
+      <svg viewBox="0 0 400 590" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;overflow:visible;">
+
+        <!-- Main vertical line S1→S4 -->
+        <line x1="200" y1="65" x2="200" y2="375" stroke="#36A05B" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- AS-IS branch S4→S5 left (solid) -->
+        <line x1="200" y1="375" x2="90" y2="490" stroke="#36A05B" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- TO-BE branch S4→S5 right (dashed) -->
+        <line x1="200" y1="375" x2="310" y2="490" stroke="#36A05B" stroke-width="2" stroke-dasharray="7,5" stroke-linecap="round" opacity="0.6"/>
+
+        <!-- Horizontal divider at divergence S4 -->
+        <line x1="20" y1="375" x2="380" y2="375" stroke="#d8d8d8" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+        <!-- S1 LEFT below dot -->
+        <text x="183" y="82" text-anchor="end" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="12" fill="#0a0a0a" style="letter-spacing:-0.02em">
+          <tspan>Clear need, ready</tspan>
+          <tspan x="183" dy="18">to act — but no</tspan>
+          <tspan x="183" dy="18">tool to match.</tspan>
+        </text>
+
+        <!-- S2 RIGHT below dot -->
+        <text x="217" y="172" text-anchor="start" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" style="letter-spacing:-0.02em">
+          <tspan>Tools show weekly data,</tspan>
+          <tspan x="217" dy="18">not live proximity.</tspan>
+          <tspan x="217" dy="18">Effort is high.</tspan>
+        </text>
+
+        <!-- S3 LEFT below dot -->
+        <text x="183" y="272" text-anchor="end" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" style="letter-spacing:-0.02em">
+          <tspan>No confidence the</tspan>
+          <tspan x="183" dy="18">chosen store has the</tspan>
+          <tspan x="183" dy="18">right deal right now.</tspan>
+        </text>
+
+        <!-- S4 RIGHT above dot -->
+        <text x="217" y="332" text-anchor="start" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" style="letter-spacing:-0.02em">
+          <tspan>One win, one wasted trip.</tspan>
+          <tspan x="217" dy="18">Spent more than planned.</tspan>
+        </text>
+
+        <!-- S5 AS-IS: centered below left branch dot -->
+        <text x="90" y="512" text-anchor="middle" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="11" fill="#8a8a8a" style="letter-spacing:-0.02em">
+          <tspan>Without a reliable loop,</tspan>
+          <tspan x="90" dy="17">habits don't form.</tspan>
+          <tspan x="90" dy="17">Returns are inconsistent.</tspan>
+        </text>
+
+        <!-- S5 TO-BE: centered below right branch dot -->
+        <text x="310" y="512" text-anchor="middle" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="11" fill="#36A05B" style="letter-spacing:-0.02em" opacity="0.9">
+          <tspan>NearMe forms a reliable loop.</tspan>
+          <tspan x="310" dy="17">Habit builds. Users return.</tspan>
+        </text>
+
+        <!-- Dot markers (outer ring + inner dot) — drawn on top -->
+        <circle cx="200" cy="65" r="11" fill="white" stroke="#36A05B" stroke-width="2"/>
+        <circle cx="200" cy="65" r="4" fill="#36A05B"/>
+
+        <circle cx="200" cy="155" r="11" fill="white" stroke="#36A05B" stroke-width="2"/>
+        <circle cx="200" cy="155" r="4" fill="#36A05B"/>
+
+        <circle cx="200" cy="255" r="11" fill="white" stroke="#36A05B" stroke-width="2"/>
+        <circle cx="200" cy="255" r="4" fill="#36A05B"/>
+
+        <!-- S4: divergence, dark green -->
+        <circle cx="200" cy="375" r="11" fill="white" stroke="#1A5C32" stroke-width="2.5"/>
+        <circle cx="200" cy="375" r="4" fill="#1A5C32"/>
+
+        <circle cx="90" cy="490" r="11" fill="white" stroke="#36A05B" stroke-width="2"/>
+        <circle cx="90" cy="490" r="4" fill="#36A05B"/>
+
+        <circle cx="310" cy="490" r="11" fill="white" stroke="#36A05B" stroke-width="2" opacity="0.65"/>
+        <circle cx="310" cy="490" r="4" fill="#36A05B" opacity="0.65"/>
+      </svg>
+    </div>
+  </div>
+
 </section>
 
 <!-- Design Strategic Value / Weak Signals -->
