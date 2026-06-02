@@ -544,6 +544,20 @@ html{ scroll-behavior:smooth; }
   .ks-row,.ks-row--right{ flex-direction:column; gap:28px; align-items:flex-start; }
   .ks-screen{ width:100%; max-width:280px; align-self:center; min-height:440px; }
 }
+
+/* ── Retailer partnership / architecture tag ──────────── */
+.arch-tag{ display:inline-block; font-size:11px; letter-spacing:0.04em; color:#36A05B; border:1px solid #36A05B; border-radius:100px; padding:4px 13px; margin-top:16px; }
+.rp-exchange{ display:flex; align-items:stretch; gap:24px; margin-top:8px; }
+.rp-col{ flex:1; background:#C8DDD0; border-radius:16px; padding:24px 26px; }
+.rp-col-head{ font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:#1A5C32; margin-bottom:16px; }
+.rp-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; }
+.rp-list li{ font-size:13px; line-height:1.55; color:var(--ink); padding-left:16px; position:relative; }
+.rp-list li::before{ content:"—"; position:absolute; left:0; color:var(--muted); }
+.rp-arrow{ display:flex; align-items:center; justify-content:center; font-size:22px; color:#36A05B; flex-shrink:0; }
+@media(max-width:760px){
+  .rp-exchange{ flex-direction:column; gap:14px; }
+  .rp-arrow{ transform:rotate(90deg); padding:4px 0; }
+}
 .logo-explain-img{ width:128px; height:auto; flex-shrink:0; display:block; border-radius:16px; }
 .logo-explain-text{ flex:1; font-size:15px; line-height:1.75; letter-spacing:-0.01em; color:var(--ink); max-width:760px; margin:0; }
 @media(max-width:760px){
@@ -2352,11 +2366,46 @@ html{ scroll-behavior:smooth; }
   <p class="ph-body" style="margin-top:40px; max-width:780px;">Together, these signals point to one conclusion: the infrastructure that unifies real-time, location-aware commerce is about to become essential, and it does not yet exist.</p>
 </section>
 
+<!-- Retailer Data Partnership -->
+<section class="project-section wrap" style="border-top:1px solid var(--line);">
+  <div class="two-col" style="margin-bottom:40px;">
+    <div class="ph-text-block">
+      <div class="ph-label">Retailer Partnership</div>
+      <h2 class="ph-heading">The data only flows through the retailer</h2>
+    </div>
+    <div class="ph-text-block" style="padding-top:8px;">
+      <p class="ph-body">The geo-query architecture is only as real as its feed. Public flyers are stale and partial; live, store-level deals and clearance exist only inside the retailer&rsquo;s own systems. So the platform is built around the retailer as a first-party data partner &mdash; not a scraping target.</p>
+    </div>
+  </div>
+  <div class="rp-exchange">
+    <div class="rp-col">
+      <div class="rp-col-head">Retailer provides</div>
+      <ul class="rp-list">
+        <li>Live deal &amp; price feed, per store</li>
+        <li>SKU-level stock &amp; clearance / markdown status</li>
+        <li>Store-network locations &amp; hours</li>
+      </ul>
+    </div>
+    <div class="rp-arrow">&#8646;</div>
+    <div class="rp-col">
+      <div class="rp-col-head">NearMe delivers</div>
+      <ul class="rp-list">
+        <li>A proximity channel &mdash; reach shoppers in range, in the moment</li>
+        <li>Real-time, attributable store-visit conversion</li>
+        <li>Faster clearance velocity &amp; inventory turnover</li>
+        <li>Shopper intent &amp; demand signals back to the retailer</li>
+      </ul>
+    </div>
+  </div>
+  <p class="ph-body" style="max-width:720px; margin-top:28px;">This is why H-1 leads with an anchor-retailer LOI: the partnership <em>is</em> the data source &mdash; the <strong>DATA_SOURCE &rarr; INGESTION_JOB</strong> path in the model below &mdash; and Phase II deepens it into the per-store inventory layer.</p>
+</section>
+
 <!-- Platform Data Model -->
 <section class="diagram-section wrap">
   <div class="ph-label" style="margin-bottom:16px;">Data Model</div>
   <h2 class="ph-heading">Platform entity-relationship model</h2>
-  <p class="ph-body" style="max-width:680px; margin-top:16px;">Crow's foot ER diagram — user profiles, deal discovery, market matching, recommendations, notifications, and server-side data ingestion. 200m default search radius, 36-hour deal lifecycle.</p>
+  <p class="ph-body" style="max-width:680px; margin-top:16px;">Crow's foot ER diagram — user profiles, deal discovery, market matching, recommendations, notifications, and server-side data ingestion. 200m default search radius, 36-hour deal lifecycle. Entities mirror the live app; the fine-grained coordinate and radius fields are the Phase-II precision layer (Phase I runs at postal / region level).</p>
+  <div><span class="arch-tag">Phase I model &middot; geo precision in Phase II</span></div>
   <div class="diagram-wrap" style="margin-top:32px;">
     <div class="em-er">
       <div class="er-slide">
@@ -2459,7 +2508,8 @@ html{ scroll-behavior:smooth; }
 <section class="diagram-section wrap">
   <div class="ph-label" style="margin-bottom:16px;">System Architecture</div>
   <h2 class="ph-heading">Geo-query deal delivery flow</h2>
-  <p class="ph-body" style="max-width:680px; margin-top:16px;">Chen-style ER diagram tracing the full request path — coordinate submission, 2km backend geo-query, store matching, live deal join, and GeoJSON map response rendered by the map SDK.</p>
+  <p class="ph-body" style="max-width:680px; margin-top:16px;">Chen-style ER diagram tracing the full request path — coordinate submission, a 2km backend candidate geo-query narrowed to the user&rsquo;s 200m default radius, store matching, live deal join, and GeoJSON map response rendered by the map SDK.</p>
+  <div><span class="arch-tag">Target architecture &middot; Phase II precision</span></div>
   <div class="diagram-wrap" style="margin-top:32px;">
     <div class="em-geo">
       <div class="geo-slide">
