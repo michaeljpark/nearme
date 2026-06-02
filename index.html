@@ -478,6 +478,70 @@
 /* ── Logo explanation ─────────────────────────────────── */
 .logo-explain{ display:flex; align-items:center; justify-content:center; gap:80px; margin:96px auto 0; max-width:900px; }
 .guide-img{ width:70%; height:auto; display:block; margin:48px auto 0; }
+
+/* ── User Flow ────────────────────────────────────────── */
+.uf-section{ padding-top:80px; padding-bottom:80px; border-top:1px solid var(--line); }
+.uf-intro{ max-width:680px; margin-top:16px; font-size:15px; line-height:1.7; color:var(--muted); }
+.uf-legend{ display:flex; gap:24px; flex-wrap:wrap; margin-top:28px; }
+.uf-legend-item{ display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted); letter-spacing:-0.02em; }
+.uf-legend-dot{ width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+.uf-flow{ display:flex; margin-top:48px; align-items:stretch; }
+.uf-step{ flex:1; position:relative; display:flex; flex-direction:column; padding:0 18px; }
+.uf-step:first-child{ padding-left:0; }
+.uf-step:last-child{ padding-right:0; }
+.uf-step:not(:last-child)::after{
+  content:""; position:absolute; top:24px; right:-5px; width:9px; height:9px;
+  border-top:1.5px solid var(--line); border-right:1.5px solid var(--line);
+  transform:rotate(45deg);
+}
+.uf-num{
+  width:50px; height:50px; border-radius:50%; flex-shrink:0; background:var(--bg);
+  border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+  font-size:13px; font-weight:500; color:var(--ink); margin-bottom:18px;
+}
+.uf-step--key .uf-num{ background:#36A05B; border-color:#36A05B; color:#fff; }
+.uf-phase{ font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:#36A05B; margin-bottom:8px; }
+.uf-title{ font-size:14px; font-weight:500; letter-spacing:-0.03em; line-height:1.3; margin-bottom:8px; color:var(--ink); }
+.uf-desc{ font-size:12px; color:var(--muted); line-height:1.6; }
+.uf-branch{ margin-top:12px; font-size:11px; color:var(--muted); padding-left:13px; position:relative; line-height:1.5; }
+.uf-branch::before{ content:"\21B3"; position:absolute; left:0; color:#36A05B; }
+.uf-loop{ display:flex; align-items:center; gap:14px; margin-top:36px; font-size:12px; color:#36A05B; letter-spacing:-0.02em; }
+.uf-loop-line{ flex:1; height:1px; background:linear-gradient(90deg,rgba(54,160,91,0.45),transparent); }
+@media(max-width:760px){
+  .uf-flow{ flex-direction:column; gap:30px; }
+  .uf-step{ flex-direction:row; gap:16px; padding:0; align-items:flex-start; }
+  .uf-step:not(:last-child)::after{
+    top:auto; right:auto; left:24px; bottom:-24px; transform:rotate(135deg);
+  }
+  .uf-num{ margin-bottom:0; }
+  .uf-step-body{ flex:1; }
+  .uf-loop{ align-items:flex-start; }
+}
+
+/* ── Key Screens ──────────────────────────────────────── */
+.ks-section{ padding-top:80px; padding-bottom:80px; border-top:1px solid var(--line); }
+.ks-intro{ max-width:680px; margin-top:16px; font-size:15px; line-height:1.7; color:var(--muted); }
+.ks-list{ display:flex; flex-direction:column; gap:88px; margin-top:56px; }
+.ks-row{ display:flex; gap:56px; align-items:center; }
+.ks-row--right{ flex-direction:row-reverse; }
+.ks-screen{
+  width:300px; flex-shrink:0; border-radius:28px; overflow:hidden; background:#e8e8e6;
+  display:flex; align-items:center; justify-content:center; min-height:560px;
+}
+.ks-screen img{ width:100%; height:auto; display:block; }
+.ks-screen-label{ display:none; font-size:11px; color:#b0b0ae; letter-spacing:0.06em; text-transform:uppercase; }
+.ks-notes{ flex:1; max-width:540px; }
+.ks-step{ font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:#36A05B; margin-bottom:12px; }
+.ks-title{ font-size:clamp(18px,2vw,24px); font-weight:500; letter-spacing:-0.04em; line-height:1.25; margin:0 0 14px; color:var(--ink); }
+.ks-lead{ font-size:14px; line-height:1.7; color:var(--muted); margin:0 0 22px; }
+.ks-anno{ list-style:none; padding:20px 0 0; margin:0; display:flex; flex-direction:column; gap:13px; border-top:1px solid var(--line); }
+.ks-anno li{ display:flex; gap:12px; font-size:13px; line-height:1.55; color:var(--ink); }
+.ks-anno-n{ flex-shrink:0; width:20px; height:20px; border-radius:50%; background:#36A05B; color:#fff; font-size:11px; display:flex; align-items:center; justify-content:center; margin-top:1px; }
+.ks-anno b{ font-weight:500; }
+@media(max-width:760px){
+  .ks-row,.ks-row--right{ flex-direction:column; gap:28px; align-items:flex-start; }
+  .ks-screen{ width:100%; max-width:280px; align-self:center; min-height:440px; }
+}
 .logo-explain-img{ width:128px; height:auto; flex-shrink:0; display:block; border-radius:16px; }
 .logo-explain-text{ flex:1; font-size:15px; line-height:1.75; letter-spacing:-0.01em; color:var(--ink); max-width:760px; margin:0; }
 @media(max-width:760px){
@@ -775,6 +839,7 @@
         </div>
         <div class="tl-card-title">Anchor partner secured, white-label MVP embedded</div>
         <ul class="tl-card-list">
+          <li>Ship consumer discovery layer <span class="dim">— live map, radius search, deal detail (this case study)</span></li>
           <li>Land LOI / Pilot with anchor retailer <span class="dim">— Loblaws, Empire, Metro, or Canadian Tire</span></li>
           <li>Build white-label SDK or embedded module</li>
           <li>Geo core to ±50m accuracy</li>
@@ -793,8 +858,9 @@
         <ul class="tl-card-list">
           <li>Launch inside partner loyalty app <span class="dim">— PC Optimum, Scene+, moi, or Triangle</span></li>
           <li>Cover all banner stores across partner network</li>
+          <li>Store-level inventory system <span class="dim">— SKU-grade live stock + clearance / markdown feed, per branch (the Phase-II data moat)</span></li>
           <li>Geo upgrade <span class="dim">— indoor positioning, dwell-time, route prediction</span></li>
-          <li>Revenue <span class="dim">— SaaS license fee + attributed-sales rev share</span></li>
+          <li>Revenue <span class="dim">— SaaS license + attributed-sales rev share, plus early retail-media (sponsored deal placements)</span></li>
           <li>KPIs <span class="dim">— feature usage within partner MAU, attributed sales lift vs. control group</span></li>
           <li>Watch <span class="dim">— must prove measurable lift to unlock H-3 expansion budget</span></li>
         </ul>
@@ -809,6 +875,7 @@
         <ul class="tl-card-list">
           <li>Add category-non-compete partner <span class="dim">— Canadian Tire if H-1 was grocer, or vice versa</span></li>
           <li>Re-architect for multi-tenancy <span class="dim">— per-tenant data isolation, shared geo intelligence layer</span></li>
+          <li>Retail media network <span class="dim">— sponsored placements &amp; clearance promotion sold to brands and suppliers as a standalone revenue stream</span></li>
           <li>Brand shift from "feature of X" to "platform powering Canadian retail"</li>
           <li>KPIs <span class="dim">— time-to-onboard 2nd tenant, cross-tenant geo model performance</span></li>
           <li>Watch <span class="dim">— brand positioning work must begin at H-2; the identity shift is the hardest transition</span></li>
@@ -2093,6 +2160,160 @@
     </div>
   </div>
 
+</section>
+
+<!-- User Flow -->
+<section class="uf-section wrap">
+  <div class="ph-label" style="margin-bottom:16px;">User Flow</div>
+  <h2 class="ph-heading" style="margin-bottom:0;">From intent to in-store redemption</h2>
+  <p class="uf-intro">Two personas, one core job — turn proximity into a redeemed deal before the moment passes. The primary task flow runs from trigger to in-store redemption, with live data carrying the two steps incumbents can&rsquo;t reach.</p>
+
+  <div class="uf-legend">
+    <span class="uf-legend-item"><span class="uf-legend-dot" style="background:#36A05B;"></span>Core differentiator — live data</span>
+    <span class="uf-legend-item"><span class="uf-legend-dot" style="border:1px solid var(--line);"></span>Supporting step</span>
+  </div>
+
+  <div class="uf-flow">
+    <div class="uf-step">
+      <div class="uf-num">01</div>
+      <div class="uf-step-body">
+        <div class="uf-phase">Trigger</div>
+        <div class="uf-title">Commute-time push</div>
+        <div class="uf-desc">A deal fires within 200m of the saved route home — or the user opens the app to browse nearby.</div>
+      </div>
+    </div>
+    <div class="uf-step uf-step--key">
+      <div class="uf-num">02</div>
+      <div class="uf-step-body">
+        <div class="uf-phase">Discover</div>
+        <div class="uf-title">Live map view</div>
+        <div class="uf-desc">Deals within walking radius plotted in real time, ranked by distance from where the user stands.</div>
+      </div>
+    </div>
+    <div class="uf-step">
+      <div class="uf-num">03</div>
+      <div class="uf-step-body">
+        <div class="uf-phase">Compare</div>
+        <div class="uf-title">Rank &amp; filter</div>
+        <div class="uf-desc">Sort nearby stores by discount&nbsp;% or distance to decide fast, without leaving the map.</div>
+      </div>
+    </div>
+    <div class="uf-step uf-step--key">
+      <div class="uf-num">04</div>
+      <div class="uf-step-body">
+        <div class="uf-phase">Verify</div>
+        <div class="uf-title">Live stock check</div>
+        <div class="uf-desc">Deal detail confirms price and real-time availability before any detour is made.</div>
+        <div class="uf-branch">Out of stock → one-tap set alert, no wasted trip.</div>
+      </div>
+    </div>
+    <div class="uf-step">
+      <div class="uf-num">05</div>
+      <div class="uf-step-body">
+        <div class="uf-phase">Act</div>
+        <div class="uf-title">Navigate &amp; redeem</div>
+        <div class="uf-desc">Walk to the store with confidence and claim the deal in person.</div>
+      </div>
+    </div>
+    <div class="uf-step">
+      <div class="uf-num">06</div>
+      <div class="uf-step-body">
+        <div class="uf-phase">Retain</div>
+        <div class="uf-title">Favourite &amp; loop</div>
+        <div class="uf-desc">Save the store to receive instant alerts the next time a deal drops.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="uf-loop">
+    <span>&#8635;&nbsp; Habit loop</span>
+    <span class="uf-loop-line"></span>
+    <span>each redemption feeds the next commute-time trigger</span>
+  </div>
+</section>
+
+<!-- Key Screens Walkthrough -->
+<section class="ks-section wrap">
+  <div class="ph-label" style="margin-bottom:16px;">Key Screens</div>
+  <h2 class="ph-heading" style="margin-bottom:0;">Designed around the user, not the map</h2>
+  <p class="ks-intro">Location is the core of NearMe &mdash; but a location-first product doesn&rsquo;t have to be a map-first one. Each key screen is built on a single principle: the user&rsquo;s position should <em>power</em> decisions, not dictate the first thing they see.</p>
+
+  <div class="ks-list">
+
+    <!-- 01 Home -->
+    <div class="ks-row">
+      <div class="ks-screen">
+        <img src="./home.png" alt="Home screen" onerror="this.style.display='none';this.parentNode.querySelector('.ks-screen-label').style.display='block';">
+        <span class="ks-screen-label">Home</span>
+      </div>
+      <div class="ks-notes">
+        <div class="ks-step">01 · Home</div>
+        <h3 class="ks-title">Preference and live deals first &mdash; the map is a destination, not the door</h3>
+        <p class="ks-lead">Opening straight into a map forces orientation before any value lands. So the home screen leads with what the user already cares about &mdash; saved preferences and the freshest discounts nearby &mdash; while the map stays one tap away in the persistent bottom nav. Location informs the ranking; it never gates the entry.</p>
+        <ul class="ks-anno">
+          <li><span class="ks-anno-n">1</span><span><b>Live location header</b> &mdash; sets spatial context without demanding map interaction.</span></li>
+          <li><span class="ks-anno-n">2</span><span><b>Category &amp; store filters</b> &mdash; narrow to preferred items and chains (Metro, Loblaws, No Frills) instantly.</span></li>
+          <li><span class="ks-anno-n">3</span><span><b>&ldquo;You might like&rdquo;</b> &mdash; personalized to saved preferences and the latest markdowns.</span></li>
+          <li><span class="ks-anno-n">4</span><span><b>Map in the bottom nav</b> &mdash; a deliberate, always-reachable touchpoint rather than a forced first screen.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 02 Map -->
+    <div class="ks-row ks-row--right">
+      <div class="ks-screen">
+        <img src="./map.png" alt="Map screen" onerror="this.style.display='none';this.parentNode.querySelector('.ks-screen-label').style.display='block';">
+        <span class="ks-screen-label">Map</span>
+      </div>
+      <div class="ks-notes">
+        <div class="ks-step">02 · Map</div>
+        <h3 class="ks-title">Location made spatial, on demand</h3>
+        <p class="ks-lead">When the user does want to act on proximity, the map turns nearby deals into a distance-based decision &mdash; plotting live offers around their position to compare and route. It&rsquo;s entered intentionally from the nav, so the spatial view serves intent instead of interrupting it.</p>
+        <ul class="ks-anno">
+          <li><span class="ks-anno-n">1</span><span><b>Live deals plotted</b> by real distance from where the user stands.</span></li>
+          <li><span class="ks-anno-n">2</span><span><b>Tap a pin → deal detail</b> with price and real-time stock before any detour.</span></li>
+          <li><span class="ks-anno-n">3</span><span><b>Reachable from any screen</b> via the bottom-nav touchpoint.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 03 List -->
+    <div class="ks-row">
+      <div class="ks-screen">
+        <img src="./list.png" alt="List screen" onerror="this.style.display='none';this.parentNode.querySelector('.ks-screen-label').style.display='block';">
+        <span class="ks-screen-label">List</span>
+      </div>
+      <div class="ks-notes">
+        <div class="ks-step">03 · List</div>
+        <h3 class="ks-title">Savings made tangible</h3>
+        <p class="ks-lead">Saved items roll up into a running SAVE / Total, turning scattered deals into a visible budget win &mdash; directly serving the budget-constrained shopper and giving a concrete reason to come back.</p>
+        <ul class="ks-anno">
+          <li><span class="ks-anno-n">1</span><span><b>Tap + on any item</b> to save it to the list.</span></li>
+          <li><span class="ks-anno-n">2</span><span><b>Running SAVE and Total</b> reinforce realized value.</span></li>
+          <li><span class="ks-anno-n">3</span><span><b>Saved stores feed alerts</b> when their prices drop.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 04 Alerts -->
+    <div class="ks-row ks-row--right">
+      <div class="ks-screen">
+        <img src="./alerts.png" alt="Alerts screen" onerror="this.style.display='none';this.parentNode.querySelector('.ks-screen-label').style.display='block';">
+        <span class="ks-screen-label">Alerts</span>
+      </div>
+      <div class="ks-notes">
+        <div class="ks-step">04 · Alerts</div>
+        <h3 class="ks-title">The trigger that closes the loop</h3>
+        <p class="ks-lead">Flyer-change and deal-drop alerts bring the user back at the right moment, completing the habit loop the whole flow is built around &mdash; re-entering at the commute-time trigger.</p>
+        <ul class="ks-anno">
+          <li><span class="ks-anno-n">1</span><span><b>Notifies on flyer or price changes</b> for tracked items.</span></li>
+          <li><span class="ks-anno-n">2</span><span><b>Tied to favourited stores</b> and saved preferences.</span></li>
+          <li><span class="ks-anno-n">3</span><span><b>Re-enters the flow</b> at the moment of intent.</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- Design Strategic Value / Weak Signals -->
