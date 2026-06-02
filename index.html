@@ -475,6 +475,17 @@
 .ps-usecase-item{ font-size:12px; color:var(--muted); line-height:1.6; margin-bottom:3px; padding-left:14px; position:relative; }
 .ps-usecase-item::before{ content:"→"; position:absolute; left:0; color:var(--muted); }
 
+/* ── Logo explanation ─────────────────────────────────── */
+.logo-explain{ display:flex; align-items:center; justify-content:center; gap:80px; margin:96px auto 0; max-width:900px; }
+.guide-img{ width:70%; height:auto; display:block; border-radius:20px; margin:48px auto 0; }
+.logo-explain-img{ width:128px; height:auto; flex-shrink:0; display:block; border-radius:16px; }
+.logo-explain-text{ flex:1; font-size:15px; line-height:1.75; letter-spacing:-0.01em; color:var(--ink); max-width:760px; margin:0; }
+@media(max-width:760px){
+  .logo-explain{ flex-direction:column; align-items:flex-start; gap:96px; }
+  .logo-explain-img{ width:168px; align-self:center; }
+  .guide-img{ width:100%; }
+}
+
 /* ── Journey Map ──────────────────────────────────────── */
 .jm-wrap{ margin-top:72px; padding-top:48px; border-top:1px solid var(--line); }
 .jm-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
@@ -1718,7 +1729,13 @@
 <section class="project-section wrap" style="border-top:1px solid var(--line);">
   <div class="ph-label" style="margin-bottom:16px;">Branding Guideline</div>
   <h2 class="ph-heading" style="margin-bottom:32px;">Visual identity system</h2>
-  <img src="./Guideline.png" alt="NearMe Branding Guideline" style="width:100%;height:auto;display:block;">
+  <img src="./nmguide1.png" alt="NearMe Branding Guideline" style="width:100%;height:auto;display:block;border-radius:20px;">
+  <div class="logo-explain">
+    <img src="./nmmobile.png" alt="NearMe logo" class="logo-explain-img">
+    <p class="logo-explain-text">The logo combines the letters &ldquo;n&rdquo; and &ldquo;m&rdquo; into a simplified geometric symbol inspired by: finger tap gestures, map interactions, location markers, instant accessibility.The rounded structure reflects the app&rsquo;s approachable personality while reinforcing the idea of seamless interaction through a single touch.The minimal form allows the logo to scale effectively across app icons, navigation systems, and digital interfaces.</p>
+  </div>
+  <img src="./guide2.png" alt="NearMe Branding Guideline" class="guide-img">
+  <img src="./guide3.png" alt="NearMe Branding Guideline" class="guide-img">
 </section>
 
 <!-- User Personas -->
