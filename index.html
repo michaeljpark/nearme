@@ -558,6 +558,22 @@ html{ scroll-behavior:smooth; }
   .rp-exchange{ flex-direction:column; gap:14px; }
   .rp-arrow{ transform:rotate(90deg); padding:4px 0; }
 }
+
+/* ── Validation (survey targets) ──────────────────────── */
+.val-section{ padding-top:80px; padding-bottom:80px; border-top:1px solid var(--line); }
+.val-intro{ max-width:700px; margin-top:16px; font-size:15px; line-height:1.7; color:var(--muted); }
+.val-method{ display:inline-block; margin-top:18px; font-size:11px; letter-spacing:0.03em; color:#1A5C32; background:#C8DDD0; border-radius:100px; padding:5px 14px; }
+.val-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:40px; }
+.val-item{ background:#C8DDD0; border-radius:16px; padding:30px 32px; }
+.val-tag{ font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:#1A5C32; margin-bottom:14px; }
+.val-num{ font-size:clamp(30px,3.6vw,44px); font-weight:500; letter-spacing:-0.04em; color:var(--ink); line-height:1; }
+.val-num .unit{ font-size:15px; color:var(--muted); margin-left:6px; letter-spacing:-0.01em; }
+.val-name{ font-size:14px; font-weight:500; margin:16px 0 8px; color:var(--ink); }
+.val-desc{ font-size:12.5px; line-height:1.6; color:var(--muted); }
+.val-desc b{ color:var(--ink); font-weight:500; }
+@media(max-width:760px){
+  .val-grid{ grid-template-columns:1fr; }
+}
 .logo-explain-img{ width:128px; height:auto; flex-shrink:0; display:block; border-radius:16px; }
 .logo-explain-text{ flex:1; font-size:15px; line-height:1.75; letter-spacing:-0.01em; color:var(--ink); max-width:760px; margin:0; }
 @media(max-width:760px){
@@ -782,29 +798,29 @@ html{ scroll-behavior:smooth; }
   <div class="kpi-head">
     <div class="kpi-title-wrap">
       <div class="kpi-title">KPIs</div>
-      <div class="kpi-title-meta">(Projected · Lorem Ipsum, 2026)</div>
+      <div class="kpi-title-meta">(Projected targets &middot; grounded in the <a href="#validation" style="color:inherit;border-bottom:1px solid currentColor;">survey validation</a>, 2026)</div>
     </div>
     <div class="kpi-hero">
-      <span class="kpi-hero-num">—</span>
+      <span class="kpi-hero-num">30K</span>
       <span class="kpi-hero-label">Active Users</span>
     </div>
   </div>
   <div class="kpi-grid">
     <div class="kpi-item">
-      <div class="kpi-num"><span>—</span><span class="unit">Deals Found</span></div>
-      <div class="kpi-label">Lorem ipsum metric label</div>
+      <div class="kpi-num"><span>5K+</span><span class="unit">Deals Found</span></div>
+      <div class="kpi-label">Live deals surfaced within range</div>
     </div>
     <div class="kpi-item">
-      <div class="kpi-num"><span>—%</span></div>
-      <div class="kpi-label">Deal Redemption Rate</div>
+      <div class="kpi-num"><span>35%</span></div>
+      <div class="kpi-label">Deal Redemption Rate <span style="color:#36A05B;">&mdash; 70% intent &times; 30% threshold</span></div>
     </div>
     <div class="kpi-item">
-      <div class="kpi-num"><span>—</span><span class="unit">Sec</span></div>
+      <div class="kpi-num"><span>8</span><span class="unit">Sec</span></div>
       <div class="kpi-label">Avg. Time to First Deal</div>
     </div>
     <div class="kpi-item">
-      <div class="kpi-num"><span>—</span><span class="unit">km</span></div>
-      <div class="kpi-label">Median Search Radius</div>
+      <div class="kpi-num"><span>0.2</span><span class="unit">km</span></div>
+      <div class="kpi-label">Median Search Radius <span style="color:#36A05B;">&mdash; from &le;200m detour survey</span></div>
     </div>
   </div>
 </section>
@@ -2179,6 +2195,42 @@ html{ scroll-behavior:smooth; }
     </div>
   </div>
 
+</section>
+
+<!-- Survey Validation -->
+<section class="val-section wrap" id="validation" style="scroll-margin-top:80px;">
+  <div class="ph-label" style="margin-bottom:16px;">Validation</div>
+  <h2 class="ph-heading" style="margin-bottom:0;">The targets a survey must hit to validate the bet</h2>
+  <p class="val-intro">Near Me is pre-launch, so these aren&rsquo;t measured outcomes &mdash; they&rsquo;re the thresholds a target-user survey would need to clear before committing to the design. Each maps to a specific decision the case already makes.</p>
+  <div><span class="val-method">Planned survey &middot; N&nbsp;=&nbsp;80 &middot; Toronto shoppers, 18&ndash;40 &middot; student &amp; commuter segments</span></div>
+
+  <div class="val-grid">
+    <div class="val-item">
+      <div class="val-tag">Target to validate &mdash; Desirability</div>
+      <div class="val-num">&ge;&nbsp;70<span class="unit">% top-2-box</span></div>
+      <div class="val-name">Intent to use</div>
+      <div class="val-desc">Share rating &ldquo;likely / very likely to use&rdquo; on a 5-point scale. <b>Below this, the problem isn&rsquo;t worth a product</b> &mdash; the go / no-go gate.</div>
+    </div>
+    <div class="val-item">
+      <div class="val-tag">Target to validate &mdash; Information hierarchy</div>
+      <div class="val-num">#1<span class="unit">stock &middot; map #4 of 5</span></div>
+      <div class="val-name">Feature priority (MaxDiff)</div>
+      <div class="val-desc">Real-time <b>stock / availability ranked most important</b>, in-app map mid-pack. Confirms the core decision &mdash; <b>lead with preferences &amp; deals, map as a destination</b>, not the entry.</div>
+    </div>
+    <div class="val-item">
+      <div class="val-tag">Target to validate &mdash; Search radius</div>
+      <div class="val-num">&le;&nbsp;200<span class="unit">m median detour</span></div>
+      <div class="val-name">Willingness to detour</div>
+      <div class="val-desc">Median distance users would go off-route for a deal. <b>Validates the 200m default radius</b> behind the geo-query and map.</div>
+    </div>
+    <div class="val-item">
+      <div class="val-tag">Target to validate &mdash; Surfacing threshold</div>
+      <div class="val-num">~30<span class="unit">% off</span></div>
+      <div class="val-name">Discount action threshold</div>
+      <div class="val-desc">Median discount that triggers a trip. <b>Sets the alert &amp; ranking cutoff</b> &mdash; which deals get pushed and surfaced first.</div>
+    </div>
+  </div>
+  <p class="val-intro" style="margin-top:28px;">These targets feed the projected KPIs up top &mdash; a confirmed &le;200m detour sets the <b style="color:var(--ink);font-weight:500;">Median Search Radius (0.2km)</b>, and intent &times; discount threshold sets the <b style="color:var(--ink);font-weight:500;">Deal Redemption Rate (35%)</b>.</p>
 </section>
 
 <!-- User Flow -->
