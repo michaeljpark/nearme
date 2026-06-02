@@ -574,6 +574,14 @@ html{ scroll-behavior:smooth; }
 @media(max-width:760px){
   .val-grid{ grid-template-columns:1fr; }
 }
+
+/* ── Closing & footer ─────────────────────────────────── */
+.close-section{ padding-top:120px; padding-bottom:96px; border-top:1px solid var(--line); }
+.close-statement{ font-size:clamp(30px,5vw,60px); font-weight:500; letter-spacing:-0.05em; line-height:1.08; margin:0; max-width:18ch; }
+.close-body{ font-size:15px; line-height:1.7; color:var(--muted); max-width:580px; margin:28px 0 36px; }
+.site-footer{ border-top:1px solid var(--line); padding:36px var(--pad); }
+.site-footer-inner{ max-width:var(--max); margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:16px; font-size:12px; color:var(--muted); letter-spacing:-0.02em; }
+@media(max-width:760px){ .site-footer-inner{ flex-direction:column; align-items:flex-start; gap:8px; } }
 .logo-explain-img{ width:128px; height:auto; flex-shrink:0; display:block; border-radius:16px; }
 .logo-explain-text{ flex:1; font-size:15px; line-height:1.75; letter-spacing:-0.01em; color:var(--ink); max-width:760px; margin:0; }
 @media(max-width:760px){
@@ -2634,10 +2642,20 @@ html{ scroll-behavior:smooth; }
   </div>
 </section>
 
-<!-- Full-width image placeholder -->
-<section class="project-section wrap">
-  <div class="ph-img" style="min-height:520px;">Full-Width Visual Placeholder</div>
+<!-- Closing -->
+<section class="close-section wrap">
+  <div class="ph-label" style="margin-bottom:20px;">Closing</div>
+  <h2 class="close-statement">Proximity, finally given a digital channel.</h2>
+  <p class="close-body">Near Me turns physical retail&rsquo;s one real advantage &mdash; being near &mdash; into something a shopper can act on in the moment and a retailer can measure. From research and validation to data model and architecture, the case holds a single belief: the most useful deal is the one within reach, right now.</p>
+  <a href="https://michaeljpark.github.io/porrtfolio2026/" class="view-link" style="color:var(--ink);">&larr; Back to Work</a>
 </section>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span>Near Me &mdash; Geolocation Market Deal Checker</span>
+    <span>&copy; 2026 Michael Joongmin Park &amp; Hyeri Jeong</span>
+  </div>
+</footer>
 
 <script>
 /* Map overlay: zone-based non-overlapping placement + random breathing */
