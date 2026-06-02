@@ -479,6 +479,8 @@
 .logo-explain{ display:flex; align-items:center; justify-content:center; gap:80px; margin:96px auto 0; max-width:900px; }
 .guide-img{ width:70%; height:auto; display:block; margin:48px auto 0; }
 
+html{ scroll-behavior:smooth; }
+
 /* ── User Flow ────────────────────────────────────────── */
 .uf-section{ padding-top:80px; padding-bottom:80px; border-top:1px solid var(--line); }
 .uf-intro{ max-width:680px; margin-top:16px; font-size:15px; line-height:1.7; color:var(--muted); }
@@ -522,7 +524,7 @@
 .ks-section{ padding-top:80px; padding-bottom:80px; border-top:1px solid var(--line); }
 .ks-intro{ max-width:680px; margin-top:16px; font-size:15px; line-height:1.7; color:var(--muted); }
 .ks-list{ display:flex; flex-direction:column; gap:88px; margin-top:56px; }
-.ks-row{ display:flex; gap:56px; align-items:center; }
+.ks-row{ display:flex; gap:56px; align-items:center; justify-content:space-between; }
 .ks-row--right{ flex-direction:row-reverse; }
 .ks-screen{
   width:300px; flex-shrink:0; border-radius:28px; overflow:hidden; background:#e8e8e6;
@@ -530,7 +532,7 @@
 }
 .ks-screen img{ width:100%; height:auto; display:block; }
 .ks-screen-label{ display:none; font-size:11px; color:#b0b0ae; letter-spacing:0.06em; text-transform:uppercase; }
-.ks-notes{ flex:1; max-width:540px; }
+.ks-notes{ flex:0 1 540px; max-width:540px; }
 .ks-step{ font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:#36A05B; margin-bottom:12px; }
 .ks-title{ font-size:clamp(18px,2vw,24px); font-weight:500; letter-spacing:-0.04em; line-height:1.25; margin:0 0 14px; color:var(--ink); }
 .ks-lead{ font-size:14px; line-height:1.7; color:var(--muted); margin:0 0 22px; }
@@ -728,7 +730,10 @@
 </nav>
 
 <header class="hero wrap">
-  <div class="hero-back"><a href="https://michaeljpark.github.io/porrtfolio2026/" id="back-link">← Back to Work</a></div>
+  <div class="hero-back" style="display:flex;justify-content:space-between;align-items:center;gap:16px;">
+    <a href="https://michaeljpark.github.io/porrtfolio2026/" id="back-link">← Back to Work</a>
+    <a href="#ux-process" class="view-link" style="color:var(--ink);">See UX Process</a>
+  </div>
 <script>
 (function(){
   if(document.referrer && document.referrer !== window.location.href){
@@ -1806,7 +1811,7 @@
 </section>
 
 <!-- User Personas -->
-<section class="ps-section wrap">
+<section class="ps-section wrap" id="ux-process" style="scroll-margin-top:80px;">
   <div class="ph-label" style="margin-bottom:16px;">User Research</div>
   <h2 class="ph-heading" style="margin-bottom:0;">User Personas</h2>
   <div class="ps-list">
